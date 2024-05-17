@@ -1,0 +1,130 @@
+body{
+    background-color: #effafd;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*---------------------*/
+
+.navbar{
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+#heading{
+    box-shadow: 0px 1px 10px #4A8BDF;
+    text-align: center;
+    position: fixed; 
+    top: 0; 
+    width: 100%;
+    background-color: #effafd;
+    z-index: 1000;
+}
+#heading a{
+    display: inline-block;
+    padding: 5px 20px;
+    color: #4A8BDF;
+    transition: background-color 0.5s, border-radius 0.3s;
+}
+#heading  a:hover{
+    border: 1px solid #4A8BDF;
+    background-color: #d4f1f9;
+    border-radius: 10px;
+}
+
+/*---------------------*/
+
+#header {
+    padding-top: 60px;
+    text-align: center;
+    background-color: #00285B;
+    height: 300px;
+    margin-bottom: 100px;
+}
+#header h1{
+    font-size: 75px;
+    margin: 15px 0;
+    color: whitesmoke;
+    padding: 60px;
+}
+#header img{
+    border-radius: 50%;
+    position: relative;
+    top: -80px;
+}
+
+/*---------------------*/
+
+#about{
+    text-align: justify;
+    padding: 10px 20px;
+}
+#about h2{
+    padding: 25px 0 0 0;
+    text-align: center;
+    font-size: 35px;
+    color: #00285B;
+}
+#about p{
+    font-size: 20px;
+    text-align: center;
+    color: #4A8BDF;
+    margin-top: 0px;
+}
+
+/*---------------------*/
+
+#education h2{
+    padding-top: 55px;
+    text-align: center;
+    font-size: 35px;
+    color: #00285B;
+}
+#education-content{
+    font-size: 20px;
+    color: #4A8BDF;
+    list-style: none;
+}
+.education-heading{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.second-ul{
+    list-style: disc;
+}
+h2{
+    text-align: center;
+    font-size: 35px;
+    color: #00285B;
+}
+
+/*---------------------*/
+
+#hobbies ul{
+    font-size: 20px;
+    color: #4A8BDF;
+}
+
+/*---------------------*/
+
+#additionalLinks {
+    text-align: center;
+    margin-top: 20px; 
+  }
+  
+  #additionalLinks h2 {
+    margin-bottom: 20px; 
+  }
+  
+  #additionalLinks a {
+    display: inline-block;
+    margin: 0 15px; 
+  }
+  
+  #additionalLinks img {
+    vertical-align: middle; 
+  }
+  
