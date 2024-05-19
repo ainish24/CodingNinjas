@@ -1,317 +1,222 @@
 body {
-    margin-left: 60px;
-    margin-right: 20px;
-    font-family: serif;
-}
-
-img {
-    width: 100%;
-}
-
-
-
-/*-----header-----*/
-
-#main-header {
-    margin-top: 60px;
-}
-
-#logo img {
-    max-width: 210px;
-}
-
-#site-title {
-    margin-bottom: 0;
-}
-
-#site-title a {
-    font-size: 1.8rem;
-    color: #1a1a1a;
-    text-decoration: none;
-    font-weight: bold;
-    line-height: 1.25;
+    margin: 0px;
     font-family: sans-serif;
+    font-size: 30px;
 }
 
-#site-title a:hover {
-    color: #dc6520;
+/* Body Header */
+
+#body-header {
+    height: 65vh;
+    opacity: 0.8;
+    background-image: url(https://ninjasfiles.s3.amazonaws.com/asset_0000000000000020_1549743985_macbook_mouse.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 1.2rem;
 }
 
-#about-site {
-    color: #3c5349;
-    margin-top: 5px;
+/* Horizontal Lists */
+
+.horizontal-list {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
 }
 
-#header-image-container {
-    margin-top: 50px;
-}
-
-
-
-/*-----main-----*/
-
-#content {
-    margin-top: 80px;
-}
-
-main {
-    width: 70%;
+.horizontal-list li {
     display: inline-block;
-}
-
-#blog-header {
-    margin-bottom: 50px;
-}
-
-#blog-header h1 {
-    font-size: 3.2rem;
-    color: #13222c;
-    font-family: sans-serif;
-}
-
-
-
-/*-----author container-----*/
-
-#author-container {
-    display: inline-block;
-    width: 29%;
-    margin-bottom: 30px;
-    vertical-align: top;
-    font-family: sans-serif;
-    font-size: 1rem;
-}
-
-#author-img {
-    max-width: 60px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    vertical-align: middle;
-}
-
-#author-name {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-#author-container .slash {
-    display: none;
-}
-
-#author-container a {
-    color: #3c5349;
-    text-decoration: none;
-}
-
-#author-container a:hover {
-    color: #dc6520;
-    text-decoration: underline;
-}
-
-
-
-/*-----views-----*/
-
-#views {
-    margin-bottom: 3px;
-}
-
-#views img {
-    margin-left: 2px;
-    width: 18px;
-    margin-bottom: -2px;
-}
-
-#views span {
-    font-size: 1rem;
-    font-family: sans-serif;
-}
-
-
-
-/*-----blog content-----*/
-
-#blog-content {
-    display: inline-block;
-    font-size: 1.1rem;
-    word-spacing: 1px;
-    line-height: 1.4;
-    width: 70%;
-}
-
-#blog-content h4.h-style {
-    margin-bottom: 0;
-}
-
-#blog-content ol li p {
-    margin-top: 10px;
-}
-
-#blog-content .sources a {
-    text-decoration: none;
-}
-
-#blog-content .sources a:hover {
-    color: #000000;
-}
-
-
-
-/*-----aside-----*/
-
-aside {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 3%;
-    width: 25%;
-}
-
-.widget {
-    margin-top: 3.5rem;
-    border-top: 4px solid black;
-    line-height: 1.6;
-    font-size: 1.1rem;
-}
-
-.widget a {
-    color: #dc6520;
-    text-decoration: none;
-}
-
-.widget a:hover {
-    color: #1a1a1a;
-}
-
-.widget .widget-title {
-    text-transform: uppercase;
-    font-family: sans-serif;
-    line-height: 1.4;
-    letter-spacing: 0.05rem;
-    font-size: 1.1rem;
-    word-spacing: 0.1rem;
-}
-
-.widget li {
-    margin-bottom: 0.25rem;
-}
-
-.widget p {
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-label {
-    color: #3c5349;
-    padding-bottom: 3px;
-    display: block;
-    font-size: 1rem;
-}
-
-input,
-textarea {
-    margin-bottom: 15px;
-    padding: 4px 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #d1d1d1;
-    border-radius: 2px;
-    color: #686868;
-    width: 90%;
-    display: block;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    color: #000000;
-}
-
-button[type="submit"] {
-    background-color: #1a1a1a;
+    margin: 0px 8px 8px 0px;
+    font-weight: 100;
     font-size: 0.9rem;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
+}
+
+.horizontal-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu li a {
+    transition: color 0.5s, border-bottom 4s;
+}
+
+.nav-menu li a:hover {
+    color: lightgrey;
+    border-bottom: 1px solid black;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Name and Social Icons */
+
+#name-social-container {
+    margin-top: 20vh;
+}
+
+#my-name {
+    font-size: 3rem;
     letter-spacing: 0.1rem;
-    line-height: 1;
-    padding: 12px 18px;
-    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
-button[type="submit"]:hover {
-    background-color: #dc6520;
-}
-
-#subscription .sub-btn {
-    margin: 10px 0 0;
-}
-
-#search form {
-    margin-top: 30px;
-    margin-bottom: 70px;
-}
-
-#search input {
-    display: inline;
-    width: 80%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-bottom: 0;
-}
-
-#search img {
-    width: 18px;
-    vertical-align: middle
-}
-
-#search button {
-    width: 12%;
-    margin-left: -4px;
-    padding: 7px 0 6px;
-    border-radius: 0 5px 5px 0;
-    line-height: 1.6;
-}
-
-#recent-posts li,
-#recent-comments li {
-    margin-bottom: 0.4rem;
-}
-
-#recent-comments .name {
-    text-transform: uppercase;
+.social-icons li a i {
+    padding: 10px;
     font-size: 1rem;
+    border-radius: 50%;
 }
 
-#facebook{
-    color: #3b5998;
+.social-icons li a i:hover {
+    box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
 }
-#facebook:hover{
-    color: #2d4373
+
+/* About Section */
+
+#about {
+    height: auto;
+    width: 100%;
+    position: relative;
 }
-#linked{
-    color:#0077b5;
+
+#my-image {
+    height: 12rem;
+    width: 12rem;
+    margin: auto;
+    margin-top: -17vh;
 }
-#linkedin:hover{
-    color:#00121c;
+
+#my-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 1px 1px 10px 2px lightgrey;
 }
-#twitter{
-    color:#83c3f3;
+
+#about-para {
+    padding: 10px;
+    width: 70%;
+    text-align: justify;
+    color: grey;
+    line-height: 28px;
+    font-size: 1.1rem;
+    margin: auto;
 }
-#twitter:hover{
-    color:#55acee;
+
+.text-highlight {
+    color: #2857a4;
+    font-weight: 600;
 }
-#gmail{
-    color:#dd4b39;
+
+/* Portfolio Section */
+
+#portfolio-heading, #skill-heading {
+    color: #2857a4;
+    text-align: center;
 }
-#gmail:hover{
-    color:#c23321;
+
+#portfolio-heading i, #portfolio-heading h2, #skill-heading h2, #skill-heading i {
+    display: inline;
 }
-#whatsapp{
-    color:#6ba92f;
+
+#portfolio-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between the two rows of images */
 }
-#whatsapp:hover{
-    color:#528124;
+
+.portfolio-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between the images in a single row */
 }
-#email{
-    color:#ed4926;
+
+.portfolio-item {
+    position: relative;
+    width: 30%;
 }
-#email:hover{
-    color: #cf3311;
+
+.portfolio-img {
+    width: 100%;
+    height: auto;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(211, 211, 211, 0.7); /* Light grey background with opacity */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+}
+#Skills{
+    background-color:lightgrey;
+    height:150px;
+}
+#skills-container{
+	margin:30px 0px;
+}
+.skills-name{
+    font-size:10px;
+    background-color:#BDBDBD;
+    width:20%;
+    /* padding: 3px 0px; */
+    border-radius:10px;
+    
+}
+#skills-container1, #skills-container2{
+    display:flex;
+    justify-content:space-evenly;
+}
+#skills-container1{
+    margin-bottom:20px;
+}
+.inner-name{
+    padding: 3px 0px;
+    padding-left: 10px;
+    border-radius:10px 0px 0px 10px;
+    color:white;
+}
+#cpp{
+    width:50%;
+    background-color: #2857a4;
+}
+#html{
+    width:80%;
+    background-color: coral;
+}
+#css{
+    width:75%;
+    background-color: #B197B3;
+}   
+#js{
+    width:50%;
+    background-color: darkolivegreen;
+}
+#node{
+    width:40%;
+    background-color: #2857a4;
+}
+#mongo{
+    width:75%;
+    background-color: #B197B3;
+}
+
