@@ -125,7 +125,7 @@ body {
 #portfolio-images {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Gap between the two rows of images */
+    gap: 15px; /* Gap between the two rows of images */
 }
 
 .portfolio-row {
@@ -167,7 +167,7 @@ body {
     font-size: 1.5rem;
     text-align: center;
 }
-#Skills{
+#skills{
     background-color:lightgrey;
     height:150px;
 }
@@ -220,3 +220,76 @@ body {
     background-color: #B197B3;
 }
 
+#contact{
+    background-image: linear-gradient(to right, #2857a4, #403066);
+    color: white;
+    
+}
+
+#contact-header{
+    display:flex;
+    justify-content: center;
+}
+#contact-content{
+    display: flex;
+}
+#contact-header i,#contact-header span{
+    padding: 20px 5px;
+    font-size: 25px;
+}
+#contact-form-div{
+    width: 100%;
+}
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20%;
+    align-items: center;
+}
+#contact-form input, #contact-form textarea{
+    padding: 10px 0px;
+    margin: 5px 0px;
+    background-color: transparent;
+}
+.input-fields{
+    border: none;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+#message-button{
+    border: 2px solid white;
+    color: azure;
+    width: 35%;
+}
+#contact-information{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+#contact-information h6{
+    font-size: 15px;
+}
+#contact-information i{
+    font-size: 10px;
+}
+#contact-information p{
+    font-size: 10px;
+    width: 60%;
+}
+#contact-information span{
+    font-size: 10px;
+}
+#first-head{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+#second-head{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.contact-details {
+    display: inline-block;
+    margin: -8px 0; 
+    padding: 0; 
+}
