@@ -113,7 +113,7 @@ body {
 
 /* Portfolio Section */
 
-#portfolio-heading, #skill-heading {
+#portfolio-heading, #skill-heading, #experience-heading {
     color: #2857a4;
     text-align: center;
 }
@@ -220,6 +220,8 @@ body {
     background-color: #B197B3;
 }
 
+/* --------Contact--------- */
+
 #contact{
     background-image: linear-gradient(to right, #2857a4, #403066);
     color: white;
@@ -292,4 +294,94 @@ body {
     display: inline-block;
     margin: -8px 0; 
     padding: 0; 
+}
+
+/*----------Experience Section---------*/
+#experience{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#experience-heading{
+    margin: 1em 0px;
+}
+#experience-heading i, #experience-heading h2{
+    display: inline;
+    margin: 0;
+}
+#experience-container{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    width: 35em;
+    align-items: center;
+    height: 15em;
+    margin-bottom: 1em;
+}
+#center-line{
+    position: relative;
+    height: 11em;
+    border-left: 2px dashed #5D89FE ;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#center-dots{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5em;
+    color: rgba(215, 215, 215, 0.5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 20px;
+}
+#plane{
+    transform: rotate(90deg);
+    z-index: 100;
+    position: sticky;
+    top: 8em;
+    margin: 0%;
+    padding: 0;
+}
+#center-line i{
+    color: rgb(215, 215, 215);
+    font-size: 0.5em;
+}
+#left-container, #right-container{
+    border: none;
+    height: 100%;
+    display: flex;
+}
+#left-container{
+    flex-direction: column;
+    justify-content: space-between;
+}
+#right-container{
+    flex-direction: column;
+    justify-content: space-between;
+}
+#empty-container1, #empty-container2, #empty-container3, #empty-container4{
+    border: none;
+}
+.inner-experience-containers{
+    border: 1px solid black;
+    /* margin: 1em; */
+    font-size: 0.6em;
+    width: 16em;
+    height: 6em;
+    overflow:scroll;
+    -ms-overflow-style: none;  /*for internet explorer 10+*/
+    scrollbar-width: none; /*for firefox*/
+}
+.inner-experience-containers::-webkit-scrollbar{
+    display: none;  /*for safari and chrome*/
 }
