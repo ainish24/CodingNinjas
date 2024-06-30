@@ -1,0 +1,23 @@
+.div-design{
+    width:32%;
+    height:300px;
+    margin:0.44%
+}
+#div-container{
+    display:flex;
+    flex-direction: row;
+}
+@media only screen and (max-width:600px){
+    #div-container {flex-direction:column;}
+    .div-design {width: 100%; 
+        margin: 0 0 0.88% 0;}
+}
+#div1{
+    background-color:#ff8989;
+}
+#div2{
+    background-color:#88f7ce;
+}
+#div3{
+    background-color:#e29df2;
+}
