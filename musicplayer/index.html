@@ -5,15 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Static Template</title>
+    <title>RaveX</title>
+    <!-- Used favicon generator to generate the favicon for the page -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/musicplayer/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/musicplayer/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/musicplayer/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/musicplayer/images/favicon/site.webmanifest" />
+    <!-- This is the link to emmbed fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body>
-    <h1>Welcome Ninja!!</h1>
-    <h3>Write your code here!</h3>
-    <h3>A CSS and JS file has been created and linked for you already.</h3>
-    <h3>Feel free to change the directory structure to your liking.</h3>
-    <h3>Do not delete any .json file from CodeSandbox</h3>
+    <nav id="navbar">
+      <img
+        src="/musicplayer/images/Black and White Simple Music Studio Logo.jpg"
+        alt="logo"
+        id="logo"
+      />
+      <div id="siteName">
+        <span>RaveX</span>
+        <span>Music</span>
+      </div>
+      <span>Favourites</span>
+      <div id="searchbar-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search" class="search-input" />
+        <button class="search-button">Seacrh</button>
+      </div>
+      <i class="fa-solid fa-bell"></i>
+      <div class="profile-container"></div>
+    </nav>
+
+    <section id="main-section"></section>
+
+    <aside id="queue">
+      <article class="queue-song">
+        <span class="queue-order">01</span>
+        <img src="\musicplayer\images\Queue\Softly.jpg" class="song-album-photo" alt="song">
+        <span class="name-details"></span>
+        <span class="name-details-subscript"></span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order"><i class="fa-solid fa-square-poll-vertical"></i></span>
+        <img src="\musicplayer\images\Queue\Case.jpeg" class="song-album-photo" alt="song">
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">03</span>
+        <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-album-photo" alt="song">
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">04</span>
+        <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-album-photo" alt="song">
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">05</span>
+        <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-album-photo" alt="song">
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">06</span>
+        <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-album-photo" alt="song">
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">07</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">08</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">09</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">10</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">11</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+      <article class="queue-song">
+        <span class="queue-order">12</span>
+        <i class="fa-regular fa-heart"></i>
+      </article>
+    </aside>
   </body>
 
   <script src="script.js"></script>
