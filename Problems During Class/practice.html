@@ -64,6 +64,26 @@
 
       let arr2=users.map((item)=>{return item.first_name})
       console.log(arr2)
+
+
+      /* Create a new array with the first names of the users whose first name has greater than 6 letters */
+
+
+      let newArray=[]
+      users.forEach(user=>{
+        if(user.first_name.length>6){newArray.push(user.first_name)}
+        
+      })
+      console.log(newArray)
+
+      let newArr = []
+      users.filter(user=>user.first_name.length>6).forEach(element=>newArr.push(element.first_name))
+      console.log(newArr)
+
+      newestArr=users.filter(ele=>ele.first_name.length>6).map(element=>element.first_name)
+      console.log(newestArr)
+
+      
     </script>
   </head>
   <body></body>

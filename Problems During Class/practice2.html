@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const employees = [
+        { id: 1, name: "Alice", department: "sales", salary: 40000 },
+
+        { id: 2, name: "Bob", department: "engineering", salary: 50000 },
+
+        { id: 3, name: "Charlie", department: "marketing", salary: 45000 },
+
+        { id: 4, name: "David", department: "sales", salary: 35000 },
+
+        { id: 5, name: "Emily", department: "engineering", salary: 55000 },
+      ];
+      employees.forEach((employee, index) => {
+        
+
+        employee.salary =
+          employee.department == "sales"
+            ? Math.round(employee.salary * 1.1)
+            : employee.department == "engineering"
+            ? Math.round(employee.salary * 1.15)
+            : Math.round(employee.salary * 1.05);
+      });
+      console.log(employees);
+    </script>
+  </head>
+  <body></body>
+</html>
