@@ -1,13 +1,46 @@
-
-#body{
+*{
     margin:0px;
     padding:0px;
+    color: #AEC6CF;
+    overflow-x: hidden;
 }
 
+/* To hide the scrollbar from the entire webpage */
+body::-webkit-scrollbar {
+    display: none;
+}
+.background-color{
+    background-color: #101518;
+}
+.gradient-background{
+    background: linear-gradient(to bottom, #101518, rgba(16, 21, 24, 0.6));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
 #navbar{
     display: flex;
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 #logo{
-    width: 2em;
+    width: 4em;
+}
+
+#siteName{
+    text-align: center;
+    margin: 0.5em 1em;
+    display: flex;
+    flex-direction: column;
+}
+#upper-siteName{
+    font-size: 1.2em;
+}
+#upper-siteName span:nth-of-type(2){
+    font-size: 1.4em;
+}
+#lower-siteName{
+    font-size: 0.8em;
 }
