@@ -1,20 +1,28 @@
+:root {
+    --backShadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    --textcolor:#AEC6CF;
+    --backColor: #101518;
+  }
+
 *{
     margin:0px;
     padding:0px;
-    color: #AEC6CF;
+    color: var(--textcolor);
     overflow-x: hidden;
 }
-
+body{
+    background-color: var(--backColor);
+}
 /* To hide the scrollbar from the entire webpage */
 body::-webkit-scrollbar {
     display: none;
 }
 .background-color{
-    background-color: #101518;
+    background-color: var(--backColor);
 }
 .gradient-background{
-    background: linear-gradient(to bottom, #101518, rgba(16, 21, 24, 0.6));
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to bottom, var(--backColor), rgba(16, 21, 24, 0.6));
+    box-shadow: var(--backShadow);
 }
 #navbar{
     display: flex;
@@ -23,6 +31,7 @@ body::-webkit-scrollbar {
     height: 4em;
     z-index: 1000;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 #logo{
@@ -31,7 +40,7 @@ body::-webkit-scrollbar {
 
 #siteName{
     text-align: center;
-    margin: 0.5em 1em;
+    margin: 0.5em 1em 0.5em 0em;
     display: flex;
     flex-direction: column;
 }
@@ -43,4 +52,74 @@ body::-webkit-scrollbar {
 }
 #lower-siteName{
     font-size: 0.8em;
+}
+#navOptions{
+    margin: 0.5em 5em 0.5em 6em;
+    padding-top: 0.8em;
+    padding-left: 1em;
+}
+
+#searchbar-container{
+    margin-left: 28em;
+    padding-top: 1.2em;
+    position: relative;
+    margin-right: 2em;
+    left: 190px;
+}
+
+
+.search-input{
+    background: #1b2328;
+    border: none;
+    box-shadow: var(--backShadow);
+    border-radius: 3%;
+    height: 2em;
+    width: 18em;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+
+/* To edit the border settings of the search bar while inputting text using :focus */
+.search-input:focus {
+    border: 1.2px solid var(--textcolor); 
+    outline: none; /*To remove default focus outline*/
+}
+
+#searchButton{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 53%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+.fa-microphone{
+    position: absolute;
+  top: 49%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.fa-bell{
+    position: relative;
+    top: 36%;
+    left: 13%;
+}
+
+.profile-container{
+    padding-top: 0.5em;
+    position: absolute;
+    right: 10px;
+}
+
+#profilePic{
+    border-radius: 50%;
+    width: 3em;
+}
+
+#carousel{
+    margin-top: 10em;
 }
