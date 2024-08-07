@@ -2,6 +2,7 @@
     --backShadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     --textcolor:#AEC6CF;
     --backColor: #101518;
+    --contrastColor:#1b2328;
   }
 
 *{
@@ -12,6 +13,7 @@
 }
 body{
     background-color: var(--backColor);
+    max-width: 100%;
 }
 /* To hide the scrollbar from the entire webpage */
 body::-webkit-scrollbar {
@@ -69,7 +71,7 @@ body::-webkit-scrollbar {
 
 
 .search-input{
-    background: #1b2328;
+    background: var(--contrastColor);
     border: none;
     box-shadow: var(--backShadow);
     border-radius: 3%;
@@ -122,4 +124,71 @@ body::-webkit-scrollbar {
 
 #carousel{
     margin-top: 10em;
+}
+
+
+/* Queue */
+#queue{
+position: fixed;
+right: 0;
+top: 4em;
+width: 20em;
+height: 100vh;
+box-sizing: border-box;
+overflow-y: auto;
+box-shadow: var(--backShadow);
+/* padding-top: 10em; */
+}
+
+
+.song-queue-photo{
+    width: 2em;
+}
+
+#queueHead{
+    margin-top: 1.5em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.dropdown{
+    display: block;
+    position: absolute;
+    right: 1.2em;
+    height: 8em;
+    width: 10em;
+    top: 2.7em;
+    /* background-color: aliceblue; */
+    z-index: 1111;
+    
+}
+
+#drpbtn{
+    background: transparent;
+    border: none;
+    display: inline-block;
+    position: relative;
+    left: 8.6em;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color:var(--contrastColor);
+    width: 8em;
+    height: 5em;
+}
+
+#drpbtn:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+.dropdown-item{
+    text-decoration: none;
+    margin-left: 0.6em;
+    display: block;
+}
+
+.dropdown-item:nth-child(1){
+    margin-top: 0.6em;
 }
