@@ -1,6 +1,7 @@
 :root {
     --backShadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     --textcolor:#AEC6CF;
+    --textcolordarker:#8A9BAE;
     --backColor: #101518;
     --contrastColor:#1b2328;
   }
@@ -133,17 +134,12 @@ position: fixed;
 right: 0;
 top: 4em;
 width: 20em;
-height: 100vh;
-box-sizing: border-box;
+height: calc(100vh - 4em); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar */
 overflow-y: auto;
 box-shadow: var(--backShadow);
-/* padding-top: 10em; */
+padding-bottom: 1em;
 }
 
-
-.song-queue-photo{
-    width: 2em;
-}
 
 #queueHead{
     margin-top: 1.5em;
@@ -155,12 +151,11 @@ box-shadow: var(--backShadow);
 .dropdown{
     display: block;
     position: absolute;
-    right: 1.2em;
+    right: 0em;
     height: 8em;
     width: 10em;
     top: 2.7em;
-    /* background-color: aliceblue; */
-    z-index: 1111;
+    z-index: 1;
     
 }
 
@@ -169,7 +164,7 @@ box-shadow: var(--backShadow);
     border: none;
     display: inline-block;
     position: relative;
-    left: 8.6em;
+    left: 9.5em;
 }
 .dropdown-content{
     display: none;
@@ -177,6 +172,7 @@ box-shadow: var(--backShadow);
     background-color:var(--contrastColor);
     width: 8em;
     height: 5em;
+    pointer-events: none;
 }
 
 #drpbtn:hover + .dropdown-content,
@@ -192,3 +188,58 @@ box-shadow: var(--backShadow);
 .dropdown-item:nth-child(1){
     margin-top: 0.6em;
 }
+
+.heartIcon{
+    position: relative;
+    float: right;
+    background: transparent;
+    border: none;
+    margin-top: 0.9em;
+    margin-right: 1.5em;
+    z-index: 2; /* To ensure that the heart has specifity greater than the dropdown as it was not getting hover effect due to the dropdown */
+}
+
+.heartIcon:hover i.fa-regular {
+    color: red;
+  }
+
+  .queue-song{
+    margin-top: 1em;
+    box-sizing: border-box;
+  }
+
+/* To hide the queue sccrollbar */
+  #queue::-webkit-scrollbar {
+    display: none; 
+}
+
+.song-queue-photo{
+    width: 2em;
+    margin: auto 1em;
+    /* transform: translateY(0.7em); */
+}
+
+.queue-order{
+    display: inline-block;
+    padding-bottom: 0.3em;
+    padding-left: 0.4em;
+}
+
+.name-details:hover{
+    text-shadow: 1px 1px 8px rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+.name-details-subscript{
+    font-size: 0.7em;
+    color: var(--textcolordarker);
+    cursor: default;
+}
+ .name-details-container{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .outer-name-container{
+    display: inline-block;
+    box-sizing: border-box;
+ }
