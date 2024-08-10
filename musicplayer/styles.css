@@ -303,3 +303,105 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .carouselImage:nth-child(2):has(+ .carouselImage:nth-child(3):hover){
     transform: scale(0.9) translateX(-0.9em);
 }
+
+/* Latest Release */
+
+#LatestRelease{
+    box-sizing: border-box;
+    width: calc(100% - 20em);
+    padding:0em 7em;
+    margin-bottom: 3em;
+    overflow: visible;
+}
+.subSecHead{
+    font-weight: 800;
+    font-size: 1.3em;
+}
+.latestReleasePic{
+    width: 8em;
+    height: 8em;
+}
+.LatestReleaseContainer{
+    position: relative;
+    overflow: visible;
+}
+.latestReleaseDiv{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    overflow: visible;
+}
+
+.latestReleaseDiv:nth-child(1){
+    top:0%;
+    left: 0%;
+    display: flex;
+    margin: 1em 3em 1em 0em;
+}
+.latestReleaseDiv:nth-child(2){
+    top:50%;
+    left: 0%;
+    display: flex;
+}
+.latestReleaseDiv:nth-child(3){
+    position: absolute;
+    top:0%;
+    left: 50%;
+    display: flex;
+    margin: 0em 1em 1em 1em;
+}
+.latestReleaseDiv:nth-child(4){
+    position: absolute;
+    top:50%;
+    left: 50%;
+    display: flex;
+    margin: 0.5em 1em 1em 1em;
+}
+.nameContainer{
+    position: absolute;
+    left: 9em;
+    top: 1.8em;
+}
+.songName{
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.songNameSubscript{
+    font-size: 0.8em;
+}
+.dotNtimeContainer{
+    position: relative;
+    left: 16em;
+    z-index: 1;
+    top: 1em;
+    overflow: visible;
+}
+
+.time{
+    font-size: 0.7em;
+}
+
+
+
+.LatestReleaseDropdown{
+    display: none;
+    position: absolute;
+    width: 7.5em;
+    right: 0.4em;
+    top: 0.7em;
+    background-color: #ffffff;
+    z-index: 1;
+}
+.dropdownIcon, .LR-dropdown-content-item{
+    display: inline-block;
+    font-size: 0.8em;
+    color: #101518;
+}
+.fa-play, .fa-plus, .fa-bars-progress, .fa-circle-info{
+    color: #101518;
+}
+
+.fa-ellipsis:hover+.LatestReleaseDropdown, .LatestReleaseDropdown:hover{
+    display: block;
+    cursor: pointer;
+}
