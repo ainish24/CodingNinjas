@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try</title>
+</head>
+<body>
+    <script>
+        function Person(name){
+            this.name=name;
+        }
+        console.log(Person.__proto__.__proto__===Object.prototype)
+        console.log(Person.__proto__)
+        console.log(Person.__proto__.__proto__)
+        console.log(Person.prototype.__proto__===Object.prototype)
+        console.log(Person.prototype)
+        console.log(Person.prototype.__proto__)
+        console.log(Person.__proto__===Person.prototype)
+        const vinay=new Person("Vinay")
+        console.log(vinay.__proto__===Person.prototype)
+        console.log(vinay.__proto__)
+        console.log(vinay.__proto__.__proto__===Object.prototype)
+        /*
+        Let's go through the code line by line and explain what each line does:
+
+### 1. `function Person(name) { this.name = name; }`
+- **Explanation:** 
+  - This defines a constructor function named `Person`.
+  - The function takes one parameter, `name`, and assigns it to the `name` property of the object that will be created by this constructor using the `new` keyword.
+
+### 2. `console.log(Person.__proto__.__proto__ === Object.prototype)`
+- **Explanation:**
+  - `Person` is a function, and in JavaScript, functions are also objects.
+  - `Person.__proto__` refers to the prototype of the `Person` function, which is `Function.prototype` (since all functions inherit from `Function.prototype`).
+  - `Person.__proto__.__proto__` refers to the prototype of `Function.prototype`, which is `Object.prototype`.
+  - This line checks whether `Function.prototype.__proto__` is equal to `Object.prototype`, which is `true`.
+
+### 3. `console.log(Person.__proto__)`
+- **Explanation:**
+  - This logs `Person.__proto__`, which is `Function.prototype`.
+  - Since `Person` is a function, it inherits from `Function.prototype`.
+
+### 4. `console.log(Person.__proto__.__proto__)`
+- **Explanation:**
+  - This logs `Person.__proto__.__proto__`, which is `Object.prototype`.
+  - This shows that `Function.prototype` is an object and therefore has a prototype itself, which is `Object.prototype`.
+
+### 5. `console.log(Person.prototype.__proto__ === Object.prototype)`
+- **Explanation:**
+  - `Person.prototype` is the prototype object that will be assigned to instances created by the `Person` constructor.
+  - `Person.prototype.__proto__` refers to the prototype of this prototype object, which is `Object.prototype`.
+  - This line checks if `Person.prototype.__proto__` is equal to `Object.prototype`, which is `true`.
+
+### 6. `console.log(Person.prototype)`
+- **Explanation:**
+  - This logs `Person.prototype`.
+  - It’s an object created by JavaScript when the `Person` function is defined. This object is the prototype of all instances created by the `Person` constructor.
+
+### 7. `console.log(Person.prototype.__proto__)`
+- **Explanation:**
+  - This logs `Person.prototype.__proto__`, which is `Object.prototype`.
+  - This shows that the prototype object assigned to `Person.prototype` is itself an object and inherits from `Object.prototype`.
+
+### 8. `console.log(Person.__proto__ === Person.prototype)`
+- **Explanation:**
+  - This checks if `Person.__proto__` (which is `Function.prototype`) is equal to `Person.prototype`.
+  - This is `false` because `Person.__proto__` refers to `Function.prototype`, not `Person.prototype`.
+
+### 9. `const vinay = new Person("Vinay")`
+- **Explanation:**
+  - This creates a new instance of the `Person` constructor, with the `name` property set to `"Vinay"`.
+  - The variable `vinay` now refers to an object whose prototype is `Person.prototype`.
+
+### 10. `console.log(vinay.__proto__ === Person.prototype)`
+- **Explanation:**
+  - This checks if the prototype of the `vinay` object is the same as `Person.prototype`.
+  - This is `true` because `vinay` was created using the `Person` constructor, so its internal prototype (`__proto__`) is set to `Person.prototype`.
+
+### 11. `console.log(vinay.__proto__)`
+- **Explanation:**
+  - This logs `vinay.__proto__`, which is `Person.prototype`.
+  - It confirms that the `vinay` object is linked to `Person.prototype`.
+
+### Summary
+- The code explores the relationships between function constructors, their prototypes, and how JavaScript uses prototypes to enable inheritance.
+- It shows that every function (like `Person`) has a `prototype` object, which instances of the function inherit from.
+- The `.__proto__` chain of objects and functions is used by JavaScript to look up properties and methods, enabling the inheritance mechanism.
+        */
+    </script>
+</body>
+</html>

@@ -1,510 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>RaveX</title>
-    <!-- Used favicon generator to generate the favicon for the page -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/musicplayer/images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/musicplayer/images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/musicplayer/images/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/musicplayer/images/favicon/site.webmanifest" />
-    <!-- This is the link to emmbed fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <nav id="navbar" class="gradient-background">
-      <img
-        src="/musicplayer/images/Black and White Simple Music Studio Logo.png"
-        alt="logo"
-        id="logo"
-      />
-      <div id="siteName">
-        <div id="upper-siteName"><span>Rave</span><span>X</span></div>
-        <div id="lower-siteName">Music</div>
-      </div>
-      <div id="navOptions">
-        <span>Favourites</span>
-      </div>
-      <div id="searchbar-container">
-        <button class="search-button" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <input type="text"  class="search-input" />
-        <i class="fa-solid fa-microphone"></i>
-      </div>
-      <i class="fa-solid fa-bell"></i>
-      <div class="profile-container"> <img src="\musicplayer/images/profile.jpeg" alt="profileImage" id="profilePic"></div>
-    </nav>
-     
-    <!-- carousel  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>RaveX</title>
+  <!-- Used favicon generator to generate the favicon for the page -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/musicplayer/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/musicplayer/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/musicplayer/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/musicplayer/images/favicon/site.webmanifest" />
+  <!-- This is the link to emmbed fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
 
-    <section id="carousel" class="background-color">
-      <div id="carouselContainer">
-        <img src="\musicplayer\images\Carousel\Bandana.jpeg" alt="carousel" class="carouselImage">
-        <img src="\musicplayer\images\Carousel\MoonchildEra.jpeg" alt="carousel" class="carouselImage">
-        <img src="\musicplayer\images\Carousel\WayAhead.jpg" alt="carousel" class="carouselImage">
-      </div>
-    </section>
-    
+<body>
+  <nav id="navbar" class="gradient-background">
+    <img src="/musicplayer/images/Black and White Simple Music Studio Logo.png" alt="logo" id="logo" />
+    <div id="siteName">
+      <div id="upper-siteName"><span>Rave</span><span>X</span></div>
+      <div id="lower-siteName">Music</div>
+    </div>
+    <div id="navOptions">
+      <span>Favourites</span>
+    </div>
+    <div id="searchbar-container">
+      <button class="search-button" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <input type="text" class="search-input" />
+      <i class="fa-solid fa-microphone"></i>
+    </div>
+    <i class="fa-solid fa-bell"></i>
+    <div class="profile-container"> <img src="\musicplayer/images/profile.jpeg" alt="profileImage" id="profilePic">
+    </div>
+  </nav>
 
-    <section id="LatestRelease" class="background-color">
-      <h4 class="subSecHead">Latest Release</h2>
-        <div class="LatestReleaseContainer">
-          <div class="latestReleaseDiv">
-            <img src="\musicplayer\images\Latest Release\Antidote.jpeg" class="latestReleasePic" alt="LatestRelease">
-            <div class="nameContainer">
-              <div class="songName">Antidote</div>
-              <div class="songNameSubscript">June 26, 2024</div>
-            </div>
-            <div class="dotNtimeContainer">
-              <i class="fa-solid fa-ellipsis"></i>
-              <div class="LatestReleaseDropdown">
-                <div class="LR-dropdown-content">
-                  <ul>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
-                      <div class="LR-dropdown-content-item">Play Now</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
-                      <div class="LR-dropdown-content-item">Add to Queue</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
-                      </div>
-                      <div class="LR-dropdown-content-item">Add To Favourites</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
-                      <div class="LR-dropdown-content-item">Get Info</div>
-                    </li>
-                  </ul>
-                </div>
+  <!-- carousel  -->
+
+  <section id="carousel" class="background-color">
+    <div id="carouselContainer">
+      <img src="\musicplayer\images\Carousel\Bandana.jpeg" alt="carousel" class="carouselImage">
+      <img src="\musicplayer\images\Carousel\MoonchildEra.jpeg" alt="carousel" class="carouselImage">
+      <img src="\musicplayer\images\Carousel\WayAhead.jpg" alt="carousel" class="carouselImage">
+    </div>
+  </section>
+
+  <!-- LatestRelease -->
+
+  <section id="LatestRelease" class="background-color">
+    <h4 class="subSecHead">Latest Release</h2>
+      <div class="LatestReleaseContainer">
+        <div class="latestReleaseDiv">
+          <img src="\musicplayer\images\Latest Release\Antidote.jpeg" class="latestReleasePic" alt="LatestRelease">
+          <div class="nameContainer">
+            <div class="primaryName">Antidote</div>
+            <div class="primaryNameSubscript">June 26, 2024</div>
+          </div>
+          <div class="dotNtimeContainer">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="LatestReleaseDropdown">
+              <div class="LR-dropdown-content">
+                <ul>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                    <div class="LR-dropdown-content-item">Play Now</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                    <div class="LR-dropdown-content-item">Add to Queue</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                    </div>
+                    <div class="LR-dropdown-content-item">Add To Favourites</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="LR-dropdown-content-item">Get Info</div>
+                  </li>
+                </ul>
               </div>
-              <div class="time">4:44</div>
             </div>
+            <div class="time">4:44</div>
           </div>
-          <div class="latestReleaseDiv">
-            <img src="\musicplayer\images\Latest Release\LoveYa.jpg" class="latestReleasePic" alt="LatestRelease">
-            <div class="nameContainer">
-              <div class="songName">Love Ya</div>
-              <div class="songNameSubscript">Jan 06, 2024</div>
-            </div>
-            <div class="dotNtimeContainer">
-              <i class="fa-solid fa-ellipsis"></i>
-              <div class="LatestReleaseDropdown">
-                <div class="LR-dropdown-content">
-                  <ul>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
-                      <div class="LR-dropdown-content-item">Play Now</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
-                      <div class="LR-dropdown-content-item">Add to Queue</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
-                      </div>
-                      <div class="LR-dropdown-content-item">Add To Favourites</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
-                      <div class="LR-dropdown-content-item">Get Info</div>
-                    </li>
-                  </ul>
-                </div>
+        </div>
+        <div class="latestReleaseDiv">
+          <img src="\musicplayer\images\Latest Release\LoveYa.jpg" class="latestReleasePic" alt="LatestRelease">
+          <div class="nameContainer">
+            <div class="primaryName">Love Ya</div>
+            <div class="primaryNameSubscript">Jan 06, 2024</div>
+          </div>
+          <div class="dotNtimeContainer">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="LatestReleaseDropdown">
+              <div class="LR-dropdown-content">
+                <ul>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                    <div class="LR-dropdown-content-item">Play Now</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                    <div class="LR-dropdown-content-item">Add to Queue</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                    </div>
+                    <div class="LR-dropdown-content-item">Add To Favourites</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="LR-dropdown-content-item">Get Info</div>
+                  </li>
+                </ul>
               </div>
-              <div class="time">4:44</div>
             </div>
+            <div class="time">4:44</div>
           </div>
-          <div class="latestReleaseDiv">
-            <img src="\musicplayer\images\Latest Release\MVP.jpeg" class="latestReleasePic" alt="LatestRelease">
-            <div class="nameContainer">
-              <div class="songName">MVP</div>
-              <div class="songNameSubscript">May 10, 2024</div>
-            </div>
-            <div class="dotNtimeContainer">
-              <i class="fa-solid fa-ellipsis"></i>
-              <div class="LatestReleaseDropdown">
-                <div class="LR-dropdown-content">
-                  <ul>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
-                      <div class="LR-dropdown-content-item">Play Now</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
-                      <div class="LR-dropdown-content-item">Add to Queue</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
-                      </div>
-                      <div class="LR-dropdown-content-item">Add To Favourites</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
-                      <div class="LR-dropdown-content-item">Get Info</div>
-                    </li>
-                  </ul>
-                </div>
+        </div>
+        <div class="latestReleaseDiv">
+          <img src="\musicplayer\images\Latest Release\MVP.jpeg" class="latestReleasePic" alt="LatestRelease">
+          <div class="nameContainer">
+            <div class="primaryName">MVP</div>
+            <div class="primaryNameSubscript">May 10, 2024</div>
+          </div>
+          <div class="dotNtimeContainer">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="LatestReleaseDropdown">
+              <div class="LR-dropdown-content">
+                <ul>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                    <div class="LR-dropdown-content-item">Play Now</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                    <div class="LR-dropdown-content-item">Add to Queue</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                    </div>
+                    <div class="LR-dropdown-content-item">Add To Favourites</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="LR-dropdown-content-item">Get Info</div>
+                  </li>
+                </ul>
               </div>
-              <div class="time">4:44</div>
             </div>
+            <div class="time">4:44</div>
           </div>
-          <div class="latestReleaseDiv">
-            <img src="\musicplayer\images\Latest Release\TaubaTauba.jpeg" class="latestReleasePic" alt="LatestRelease">
-            <div class="nameContainer">
-              <div class="songName">Tauba Tauba</div>
-              <div class="songNameSubscript">July 02, 2024</div>
-            </div>
-            <div class="dotNtimeContainer">
-              <i class="fa-solid fa-ellipsis"></i>
-              <div class="LatestReleaseDropdown">
-                <div class="LR-dropdown-content">
-                  <ul>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
-                      <div class="LR-dropdown-content-item">Play Now</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
-                      <div class="LR-dropdown-content-item">Add to Queue</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
-                      </div>
-                      <div class="LR-dropdown-content-item">Add To Favourites</div>
-                    </li>
-                    <li>
-                      <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
-                      <div class="LR-dropdown-content-item">Get Info</div>
-                    </li>
-                  </ul>
-                </div>
+        </div>
+        <div class="latestReleaseDiv">
+          <img src="\musicplayer\images\Latest Release\TaubaTauba.jpeg" class="latestReleasePic" alt="LatestRelease">
+          <div class="nameContainer">
+            <div class="primaryName">Tauba Tauba</div>
+            <div class="primaryNameSubscript">July 02, 2024</div>
+          </div>
+          <div class="dotNtimeContainer">
+            <i class="fa-solid fa-ellipsis"></i>
+            <div class="LatestReleaseDropdown">
+              <div class="LR-dropdown-content">
+                <ul>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                    <div class="LR-dropdown-content-item">Play Now</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                    <div class="LR-dropdown-content-item">Add to Queue</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                    </div>
+                    <div class="LR-dropdown-content-item">Add To Favourites</div>
+                  </li>
+                  <li>
+                    <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                    <div class="LR-dropdown-content-item">Get Info</div>
+                  </li>
+                </ul>
               </div>
-              <div class="time">4:44</div>
             </div>
+            <div class="time">4:44</div>
           </div>
         </div>
-        
-    </section>
-
-
-    <section id="PopularArtists" class="background-color">
-      <div>
-        <img src="\musicplayer\images\Popular Artists\APDhillon.jpg" alt="PopularArtists">
-        <span>AP Dhillon</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Popular Artists\DiljithDosanjh.jpeg" alt="PopularArtists">
-        <span>Diljith Dosanjh</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Popular Artists\KaranAujla.jpeg" alt="PopularArtists">
-        <span>Karan Aujla</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Popular Artists\ParmishVerma.jpg" alt="PopularArtists">
-        <span>Parmish Verma</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Popular Artists\Shubh.jpeg" alt="PopularArtists">
-        <span>Shubh</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Popular Artists\SiddhuMoosewala.jpeg" alt="PopularArtists">
-        <span>Siddhu Moosewala</span>
-      </div>
-    </section>
-
-
-    <section id="Stations" class="background-color">
-      <div>
-        <img src="\musicplayer\images\Stations\MusicStation.png" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Love.jpeg" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Party.jpeg" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Podcast.jpeg" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Relax.png" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Slow.jpeg" alt="Stations">
-      </div>
-      <div>
-        <img src="\musicplayer\images\Stations\Workout.png" alt="Stations">
-      </div>
-    </section>
-
-
-    <section id="mood" class="background-color">
-      <div>
-        <img src="\musicplayer\images\Mood\Electronic.jpeg" alt="Mood">
-        <span>Electronic</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Mood\Party.jpg" alt="Mood">
-        <span>Party</span>
-      </div>
-      <div>
-        <img src="\musicplayer\images\Mood\Road Trip.jpeg" alt="Mood">
-        <span>Road Trip</span>
-      </div>
-    </section>
-
-
-    <section id="LatestPunjabi" class="background-color">
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\CarCulture.jpg" alt="LatestPunjabi">
-        <span>Car Culture</span>
-        <span>June 18, 2024</span>
       </div>
 
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\ChandigarhKaChokra.jpg" alt="LatestPunjabi">
-        <span>Chandigarh Ka Chokra</span>
-        <span>November 08, 2024</span>
-      </div>
+  </section>
 
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\Filter.jpg" alt="LatestPunjabi">
-        <span>Filter</span>
-        <span>June 21, 2024</span>
-      </div>
+  <!-- PopularArtists -->
 
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\Obsessed.jpg" alt="LatestPunjabi">
-        <span>Obsessed</span>
-        <span>September 29, 2022</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\OneLove.jpg" alt="LatestPunjabi">
-        <span>One Love</span>
-        <span>august 17, 2023</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Punjabi\OnTop2.jpeg" alt="LatestPunjabi">
-        <span>On Top 2</span>
-        <span>June 09, 2024</span>
-      </div>
-    </section>
-
-
-    <section id="LatestHindi" class="background-color">
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\Heeriye.jpg" alt="LatestHindi">
-        <span>Heeriye</span>
-        <span>September 02, 2023</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\Sajni.jpeg" alt="LatestHindi">
-        <span>Sajni</span>
-        <span>May 27, 2024</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\Satranga.jpg" alt="LatestHindi">
-        <span>Satranga</span>
-        <span>November 28, 2023</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\TumSe.jpg" alt="LatestHindi">
-        <span>Tum Se</span>
-        <span>February 26, 2024</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\VeHaaniyaan.jpeg" alt="LatestHindi">
-        <span>Ve Haaniyaan</span>
-        <span>February 13, 2024</span>
-      </div>
-
-      <div>
-        <img src="\musicplayer\images\Latest Hindi\WhatJhumka.jpg" alt="LatestHindi">
-        <span>What Jhumka</span>
-        <span>July 12, 2023</span>
-      </div>
-    </section>
-
-
-
-    <aside id="queue" class="background-color">
-      <h2 id="queueHead">Queue</h2>
-      <div class="dropdown">
-        <button id="drpbtn">
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#" class="dropdown-item">Queue</a>
-          <a href="#" class="dropdown-item">Playlists</a>
-          <a href="#" class="dropdown-item">Favourites</a>
+  <section id="PopularArtists" class="background-color">
+    <h4 class="subSecHead">Popular Artists</h2>
+      <div id="ArtistsContainer">
+        <div class="innerArtistsContainer"> 
+          <img src="\musicplayer\images\Popular Artists\APDhillon.jpg" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <div class="primaryName">AP Dhillon</div>
+        </div>
+        <div class="innerArtistsContainer">
+          <img src="\musicplayer\images\Popular Artists\DiljithDosanjh.webp" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <span class="primaryName">Diljith Dosanjh</span>
+        </div>
+        <div class="innerArtistsContainer">
+          <img src="\musicplayer\images\Popular Artists\KaranAujla.jpeg" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <span class="primaryName">Karan Aujla</span>
+        </div>
+        <div class="innerArtistsContainer">
+          <img src="\musicplayer\images\Popular Artists\ParmishVerma.jpg" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <span class="primaryName">Parmish Verma</span>
+        </div>
+        <div class="innerArtistsContainer">
+          <img src="\musicplayer\images\Popular Artists\Shubh.jpeg" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <span class="primaryName">Shubh</span>
+        </div>
+        <div class="innerArtistsContainer">
+          <img src="\musicplayer\images\Popular Artists\SiddhuMoosewala.jpeg" alt="PopularArtists" class="artistsImages">
+          <a href="artists.html" class="artistsPage">
+            <div class="overArtists">
+              <i class="fa-solid fa-play play-Artists"></i>
+            </div>
+          </a>
+          <span class="primaryName">Siddhu Moosewala</span>
         </div>
       </div>
-      <article class="queue-song">
-        <div class="queue-order">01</div>
-        <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
-        <!-- nested multiple divs in order to display the Song and Artist name One above the other besides the album picture  -->
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Softly</div>
-            <div class="name-details-subscript">Karan Aujla</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order"><i class="fa-solid fa-square-poll-vertical"></i></div>
-        <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Case</div>
-            <div class="name-details-subscript">Diljith Dosanjh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">03</div>
-        <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">California Love</div>
-            <div class="name-details-subscript">Gur Sidhu</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">04</div>
-        <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Naina</div>
-            <div class="name-details-subscript">Diljith Dosanjh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">05</div>
-        <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Excuses</div>
-            <div class="name-details-subscript">AP Dhillon</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">06</div>
-        <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Cheques</div>
-            <div class="name-details-subscript">Shubh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">07</div>
-        <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Softly</div>
-            <div class="name-details-subscript">Karan Aujla</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">08</div>
-        <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Case</div>
-            <div class="name-details-subscript">Diljith Dosanjh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">09</div>
-        <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">California Love</div>
-            <div class="name-details-subscript">Gur Sidhu</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">10</div>
-        <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Naina</div>
-            <div class="name-details-subscript">Diljith Dosanjh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">11</div>
-        <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Excuses</div>
-            <div class="name-details-subscript">AP Dhillon</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-      <article class="queue-song">
-        <div class="queue-order">12</div>
-        <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
-        <div class="outer-name-container">
-          <div class="name-details-container">
-            <div class="name-details">Cheques</div>
-            <div class="name-details-subscript">Shubh</div>
-          </div>
-        </div>
-        <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
-      </article>
-    </aside>
-  </body>
 
-  <script src="script.js"></script>
+  </section>
+
+
+  <section id="Stations" class="background-color">
+    <div>
+      <img src="\musicplayer\images\Stations\MusicStation.png" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Love.jpeg" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Party.jpeg" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Podcast.jpeg" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Relax.png" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Slow.jpeg" alt="Stations">
+    </div>
+    <div>
+      <img src="\musicplayer\images\Stations\Workout.png" alt="Stations">
+    </div>
+  </section>
+
+
+  <section id="mood" class="background-color">
+    <div>
+      <img src="\musicplayer\images\Mood\Electronic.jpeg" alt="Mood">
+      <span>Electronic</span>
+    </div>
+    <div>
+      <img src="\musicplayer\images\Mood\Party.jpg" alt="Mood">
+      <span>Party</span>
+    </div>
+    <div>
+      <img src="\musicplayer\images\Mood\Road Trip.jpeg" alt="Mood">
+      <span>Road Trip</span>
+    </div>
+  </section>
+
+
+  <section id="LatestPunjabi" class="background-color">
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\CarCulture.jpg" alt="LatestPunjabi">
+      <span>Car Culture</span>
+      <span>June 18, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\ChandigarhKaChokra.jpg" alt="LatestPunjabi">
+      <span>Chandigarh Ka Chokra</span>
+      <span>November 08, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\Filter.jpg" alt="LatestPunjabi">
+      <span>Filter</span>
+      <span>June 21, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\Obsessed.jpg" alt="LatestPunjabi">
+      <span>Obsessed</span>
+      <span>September 29, 2022</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\OneLove.jpg" alt="LatestPunjabi">
+      <span>One Love</span>
+      <span>august 17, 2023</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Punjabi\OnTop2.jpeg" alt="LatestPunjabi">
+      <span>On Top 2</span>
+      <span>June 09, 2024</span>
+    </div>
+  </section>
+
+
+  <section id="LatestHindi" class="background-color">
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\Heeriye.jpg" alt="LatestHindi">
+      <span>Heeriye</span>
+      <span>September 02, 2023</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\Sajni.jpeg" alt="LatestHindi">
+      <span>Sajni</span>
+      <span>May 27, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\Satranga.jpg" alt="LatestHindi">
+      <span>Satranga</span>
+      <span>November 28, 2023</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\TumSe.jpg" alt="LatestHindi">
+      <span>Tum Se</span>
+      <span>February 26, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\VeHaaniyaan.jpeg" alt="LatestHindi">
+      <span>Ve Haaniyaan</span>
+      <span>February 13, 2024</span>
+    </div>
+
+    <div>
+      <img src="\musicplayer\images\Latest Hindi\WhatJhumka.jpg" alt="LatestHindi">
+      <span>What Jhumka</span>
+      <span>July 12, 2023</span>
+    </div>
+  </section>
+
+
+
+  <aside id="queue" class="background-color">
+    <h2 id="queueHead">Queue</h2>
+    <div class="dropdown">
+      <button id="drpbtn">
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#" class="dropdown-item">Queue</a>
+        <a href="#" class="dropdown-item">Playlists</a>
+        <a href="#" class="dropdown-item">Favourites</a>
+      </div>
+    </div>
+    <article class="queue-song">
+      <div class="queue-order">01</div>
+      <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+      <!-- nested multiple divs in order to display the Song and Artist name One above the other besides the album picture  -->
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Softly</div>
+          <div class="name-details-subscript">Karan Aujla</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order"><i class="fa-solid fa-square-poll-vertical"></i></div>
+      <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Case</div>
+          <div class="name-details-subscript">Diljith Dosanjh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">03</div>
+      <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">California Love</div>
+          <div class="name-details-subscript">Gur Sidhu</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">04</div>
+      <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Naina</div>
+          <div class="name-details-subscript">Diljith Dosanjh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">05</div>
+      <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Excuses</div>
+          <div class="name-details-subscript">AP Dhillon</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">06</div>
+      <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Cheques</div>
+          <div class="name-details-subscript">Shubh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">07</div>
+      <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Softly</div>
+          <div class="name-details-subscript">Karan Aujla</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">08</div>
+      <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Case</div>
+          <div class="name-details-subscript">Diljith Dosanjh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">09</div>
+      <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">California Love</div>
+          <div class="name-details-subscript">Gur Sidhu</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">10</div>
+      <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Naina</div>
+          <div class="name-details-subscript">Diljith Dosanjh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">11</div>
+      <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Excuses</div>
+          <div class="name-details-subscript">AP Dhillon</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+    <article class="queue-song">
+      <div class="queue-order">12</div>
+      <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+      <div class="outer-name-container">
+        <div class="name-details-container">
+          <div class="name-details">Cheques</div>
+          <div class="name-details-subscript">Shubh</div>
+        </div>
+      </div>
+      <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+    </article>
+  </aside>
+</body>
+
+<script src="script.js"></script>
+
 </html>

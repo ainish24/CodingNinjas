@@ -362,11 +362,11 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
     left: 9em;
     top: 1.8em;
 }
-.songName{
+.primaryName{
     font-size: 1.1em;
     font-weight: 600;
 }
-.songNameSubscript{
+.primaryNameSubscript{
     font-size: 0.8em;
 }
 .dotNtimeContainer{
@@ -404,4 +404,70 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .fa-ellipsis:hover+.LatestReleaseDropdown, .LatestReleaseDropdown:hover{
     display: block;
     cursor: pointer;
+}
+
+/* To achieve similar effect as above using :has(), we can do the following */
+
+/* .dotNtimeContainer:has(.fa-ellipsis:hover) .LatestReleaseDropdown, .dotNtimeContainer:has(.LatestReleaseDropdown:hover) .LatestReleaseDropdown{
+    display: block;
+    cursor: pointer;
+} */
+#PopularArtists{
+    box-sizing: border-box;
+    padding: 0em 7em;
+}
+
+#ArtistsContainer{
+    display: flex;
+    width: calc(100% - 20em);
+    padding: 0em 3em;
+}
+.artistsImages{
+    display: block;
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+}
+.innerArtistsContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0.5em;
+    align-items: center;
+}
+.overArtists{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    /* box-sizing: border-box; */
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    
+}
+/* .artistsImages:hover + .overArtists,  */
+.overArtists:hover {
+    opacity: 1;
+}
+
+.play-Artists{
+    color: #000000;
+    font-size: 2em;
+    z-index: 12;
+    padding: auto;
+    margin: auto;
+    transform: translate(120%, 120%);
+}
+
+.artistsPage{
+    position: absolute;
+    width: 7em;
+    height: 7em;
+}
+
+.innerArtistsContainer .primaryName{
+    text-align: center;
+    width: 5em;
 }
