@@ -412,6 +412,10 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
     display: block;
     cursor: pointer;
 } */
+
+/* Popular Artists Section  */
+
+
 #PopularArtists{
     box-sizing: border-box;
     padding: 0em 7em;
@@ -470,4 +474,114 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .innerArtistsContainer .primaryName{
     text-align: center;
     width: 5em;
+}
+
+/* Stations */
+#Stations{
+    width: calc(100% - 20em);
+    height: 10em;
+    margin: 1.5em 0em;
+}
+#stationContainer{
+    display: flex;
+    background-color: var(--contrastColor);
+    margin: 0 9em 0 10em;
+    height: 8em;
+    padding: 0%;
+    justify-content: space-between;
+}
+.stationCovers{
+    width: 5em;
+    height: 6em;
+    margin: 1em;
+    border-radius: 50%;
+    position: absolute;
+}
+.innerStationContainer{
+    height: auto;
+    position: relative;
+}
+
+#first{
+    margin: auto;
+    width: 6em;
+    height: 90%;
+    margin-left: 1em;
+}
+#firstOver{
+    margin: auto;
+    width: 6em;
+    height: 95%;
+    margin-left: 1em;
+    padding-top: 3.4em;
+}
+#firstContainer{
+    padding-top: 0.4em;
+}
+.overStation{
+    position: relative;
+    width: 5em;
+    height: 6em;
+    margin: 1em;
+    border-radius: 50%;
+    background-color: rgba(11, 11, 11, 0.7);
+    z-index: 1;
+    color: #c0e0ec;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 2.4em;
+    box-sizing: border-box;
+}
+
+
+/* Mood  */
+
+#mood{
+    width: calc(100% - 20em);
+    display: flex;
+    box-sizing: border-box;
+    /* justify-content: space-evenly; */
+    position: relative;
+    height: 10em;
+    justify-content: center;
+    padding-left: 1.2em;
+}
+.moodContainers{
+    position: relative;
+    height: 6em;
+    overflow: hidden;
+    margin: 0 1em;
+    transition: all 0.5s ease;
+}
+.moodImages{
+    width: 15em;
+    position: relative;
+    transition: all 0.7s ease;
+    object-fit: cover;
+    height: 100%;
+}
+.moodInnerText{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(11, 11, 11, 0.3);
+    width: 100%;
+    height: 100%;
+    padding-top: 17%;
+    box-sizing: border-box;
+    object-fit: cover;
+    transition: all 0.7s ease;
+}
+
+.moodContainers:has(.moodInnerText:hover) .moodImages{
+    transform: scale(1.2);
+}
+.moodInnerText:hover{
+    font-size: 2em;
+    padding-top: 13%;
+}
+.moodContainers:has(.moodInnerText:hover){
+    box-shadow: rgba(70, 40, 90, 0.4) 5px 5px, rgba(70, 40, 90, 0.3) 10px 10px, rgba(70, 40, 90, 0.2) 15px 15px, rgba(70, 40, 90, 0.1) 20px 20px, rgba(70, 40, 90, 0.05) 25px 25px;
 }
