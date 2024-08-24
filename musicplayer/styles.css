@@ -585,3 +585,17 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .moodContainers:has(.moodInnerText:hover){
     box-shadow: rgba(70, 40, 90, 0.4) 5px 5px, rgba(70, 40, 90, 0.3) 10px 10px, rgba(70, 40, 90, 0.2) 15px 15px, rgba(70, 40, 90, 0.1) 20px 20px, rgba(70, 40, 90, 0.05) 25px 25px;
 }
+
+
+/* Latest Punjabi and Latest Hindi  */
+#LatestPunjabi, #LatestHindi{
+    width: calc(100% - 20em);
+}
+
+.latestOuterContainer{
+    display: flex;
+}
+
+.latestImage{
+    width: 6em;
+}
