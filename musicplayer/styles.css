@@ -602,6 +602,7 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .latestImage{
     width: 6em;
     margin: 0em 1em;
+    height: 6em;
 }
 .upperLatestContainerDetails, .lowerLatestContainerDetails{
     width: 6em;
@@ -615,4 +616,99 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .lowerLatestContainerDetails{
     font-size: 0.7em;
     padding-left: 2.7em;
+}
+
+
+
+/* Artist Page  */
+
+#aboutArtist{
+    width: calc(100% - 20em);
+    box-sizing: border-box;
+    height: 38vh;
+    display: flex;
+    margin-top: 10em;
+}
+.artistImage{
+    width: 15em;
+    padding: 0em 2em 0em 4em;
+}
+#rightSideArtistInfo{
+    width: 40em;
+}
+#nameAndFollowers{
+    display: flex;
+    justify-content: space-between;
+}
+#followersCount{
+    font-size: 0.8em;
+    padding-top: 0.5em;
+}
+#artistPara{
+    margin: 1.45em 0em;
+    font-size: 0.9em;
+}
+.artistButtonsInner{
+    height: 2em;
+    width:6em;
+    background: transparent;
+    border: 2px solid var(--textcolor);
+    margin-bottom: 1em;
+}
+#playAllButton{
+    margin-right: 1em;
+}
+.artistButtonsInner:hover{
+    background-color: var(--textcolor);
+    color: var(--backColor);
+}
+#artistInfo{
+    font-size: 0.95em;
+}
+#artistSongs{
+    box-sizing: border-box;
+    position: static;
+    left: 0;
+    width: calc(100% - 20em);
+    padding: 0em 2em 0em 3.4em;
+}
+.plusIcon{
+    position: relative;
+    float: right;
+    background: transparent;
+    border: none;
+    color: var(--textcolor);
+    margin-top: 0.9em;
+    margin-right: 1.5em;
+    z-index: 2000;
+}
+.fa-plus{
+    color: var(--textcolor);
+}
+.heartIconArtist{
+    right: 4em;
+}
+.artistSongContainer{
+    background-color: var(--contrastColor);
+    padding: 0.5em 0em;
+    margin: 0.2em 0em;
+}
+.artistDropdown{
+    position: static;
+}
+.artistDropdownContent{
+    position: static;
+}
+
+
+/* Similar Artists  */
+.similarArtists{
+    flex-direction: column;
+}
+.artist-latestReleaseDiv{
+    display: block;
+}
+.artist-LatestReleaseContainer{
+    display: flex;
+    flex-direction: column;
 }

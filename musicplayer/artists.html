@@ -1,11 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RaveX</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Used favicon generator to generate the favicon for the page -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/musicplayer/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/musicplayer/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/musicplayer/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/musicplayer/images/favicon/site.webmanifest" />
+    <!-- This is the link to emmbed fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+
 <body>
-    
+    <nav id="navbar" class="gradient-background">
+        <img src="/musicplayer/images/Black and White Simple Music Studio Logo.png" alt="logo" id="logo" />
+        <div id="siteName">
+            <div id="upper-siteName"><span>Rave</span><span>X</span></div>
+            <div id="lower-siteName">Music</div>
+        </div>
+        <div id="navOptions">
+            <span>Favourites</span>
+        </div>
+        <div id="searchbar-container">
+            <button class="search-button" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" class="search-input" />
+            <i class="fa-solid fa-microphone"></i>
+        </div>
+        <i class="fa-solid fa-bell"></i>
+        <div class="profile-container"> <img src="\musicplayer/images/profile.jpeg" alt="profileImage" id="profilePic">
+        </div>
+    </nav>
+
+    <!-- Artist Info  -->
+
+    <div id="aboutArtist">
+        <div class="artistImage">
+            <img src="\musicplayer\images\Popular Artists\KaranAujla.jpeg" alt="">
+        </div>
+        <div id="rightSideArtistInfo">
+            <div id="nameAndFollowers">
+                <h2 id="artistName">Karan Aujla</h2>
+                <p id="followersCount"> <b>8.1M</b> Followers</p>
+            </div>
+            <div id="artistPara">
+                Jaskaran Singh Aujla (born 18 January 1997) is an Indian singer, rapper and songwriter based in Canada
+                who is primarily associated with Punjabi music. He is known for his numerous tracks which have charted
+                on
+                the UK Asian chart published by the Official Charts Company, while seven have charted on the Global
+                YouTube
+                music chart. His debut album Bacthafucup peaked at number 20 on Billboard Canadian Albums chart and 34th
+                on
+                the New Zealand albums chart, earning him the title of the Largest Digital Artist 2021 on Spotify and
+                had
+                been listed in their Most Popular Artists in Punjabi Music Industry.
+            </div>
+            <div id="artistButtons">
+                <button class="artistButtonsInner" id="playAllButton">Play All</button>
+                <button class="artistButtonsInner" id="followButton">Follow</button>
+            </div>
+            <div id="artistInfo">
+                54 Tracks | 5 Albums
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Artist Songs  -->
+
+    <aside id="artistSongs" class="background-color">
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">01</div>
+            <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+            <!-- nested multiple divs in order to display the Song and Artist name One above the other besides the album picture  -->
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Softly</div>
+                    <div class="name-details-subscript">Karan Aujla</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order"><i class="fa-solid fa-square-poll-vertical"></i></div>
+            <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Case</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">03</div>
+            <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">California Love</div>
+                    <div class="name-details-subscript">Gur Sidhu</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">04</div>
+            <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Naina</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">05</div>
+            <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Excuses</div>
+                    <div class="name-details-subscript">AP Dhillon</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">06</div>
+            <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Cheques</div>
+                    <div class="name-details-subscript">Shubh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">07</div>
+            <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Softly</div>
+                    <div class="name-details-subscript">Karan Aujla</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">08</div>
+            <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Case</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">09</div>
+            <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">California Love</div>
+                    <div class="name-details-subscript">Gur Sidhu</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">10</div>
+            <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Naina</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">11</div>
+            <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Excuses</div>
+                    <div class="name-details-subscript">AP Dhillon</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+        <article class="queue-song artistSongContainer">
+            <div class="queue-order">12</div>
+            <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Cheques</div>
+                    <div class="name-details-subscript">Shubh</div>
+                </div>
+            </div>
+            <button class="heartIcon heartIconArtist"><i class="fa-regular fa-heart"></i></button>
+            <button class="plusIcon">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </article>
+    </aside>
+
+    <!-- Similar Artists  -->
+
+    <section id="LatestRelease" class="background-color similarArtists">
+        <h4 class="subSecHead">Latest Release</h2>
+            <div class="artist-LatestReleaseContainer">
+                <div class="artist-latestReleaseDiv">
+                    <img src="\musicplayer\images\Latest Release\Antidote.jpeg" class="artist-latestReleasePic"
+                        alt="LatestRelease">
+                    <div class="artist-nameContainer">
+                        <div class="artist-primaryName">Antidote</div>
+                        <div class="artist-primaryNameSubscript">June 26, 2024</div>
+                    </div>
+                    <div class="artist-dotNtimeContainer">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div class="LatestReleaseDropdown">
+                            <div class="LR-dropdown-content">
+                                <ul>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                                        <div class="LR-dropdown-content-item">Play Now</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                                        <div class="LR-dropdown-content-item">Add to Queue</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                                        </div>
+                                        <div class="LR-dropdown-content-item">Add To Favourites</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                                        <div class="LR-dropdown-content-item">Get Info</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="time">4:44</div>
+                    </div>
+                </div>
+                <div class="artist-latestReleaseDiv">
+                    <img src="\musicplayer\images\Latest Release\LoveYa.jpg" class="artist-latestReleasePic"
+                        alt="LatestRelease">
+                    <div class="artist-nameContainer">
+                        <div class="artist-primaryName">Love Ya</div>
+                        <div class="artist-primaryNameSubscript">Jan 06, 2024</div>
+                    </div>
+                    <div class="artist-dotNtimeContainer">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div class="LatestReleaseDropdown">
+                            <div class="LR-dropdown-content">
+                                <ul>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                                        <div class="LR-dropdown-content-item">Play Now</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                                        <div class="LR-dropdown-content-item">Add to Queue</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                                        </div>
+                                        <div class="LR-dropdown-content-item">Add To Favourites</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                                        <div class="LR-dropdown-content-item">Get Info</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="time">4:44</div>
+                    </div>
+                </div>
+                <div class="artist-artist-latestReleaseDiv">
+                    <img src="\musicplayer\images\Latest Release\MVP.jpeg" class="artist-latestReleasePic" alt="LatestRelease">
+                    <div class="artist-nameContainer">
+                        <div class="artist-primaryName">MVP</div>
+                        <div class="artist-primaryNameSubscript">May 10, 2024</div>
+                    </div>
+                    <div class="artist-dotNtimeContainer">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div class="LatestReleaseDropdown">
+                            <div class="LR-dropdown-content">
+                                <ul>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                                        <div class="LR-dropdown-content-item">Play Now</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                                        <div class="LR-dropdown-content-item">Add to Queue</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                                        </div>
+                                        <div class="LR-dropdown-content-item">Add To Favourites</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                                        <div class="LR-dropdown-content-item">Get Info</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="time">4:44</div>
+                    </div>
+                </div>
+                <div class="artist-latestReleaseDiv">
+                    <img src="\musicplayer\images\Latest Release\TaubaTauba.jpeg" class="artist-latestReleasePic"
+                        alt="LatestRelease">
+                    <div class="artist-nameContainer">
+                        <div class="artist-primaryName">Tauba Tauba</div>
+                        <div class="artist-primaryNameSubscript">July 02, 2024</div>
+                    </div>
+                    <div class="artist-dotNtimeContainer">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <div class="LatestReleaseDropdown">
+                            <div class="LR-dropdown-content">
+                                <ul>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-play"></i></div>
+                                        <div class="LR-dropdown-content-item">Play Now</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-plus"></i></div>
+                                        <div class="LR-dropdown-content-item">Add to Queue</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fas fa-bars-progress"></i>
+                                        </div>
+                                        <div class="LR-dropdown-content-item">Add To Favourites</div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownIcon"><i class="fa-solid fa-circle-info"></i></div>
+                                        <div class="LR-dropdown-content-item">Get Info</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="time">4:44</div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Recently Played  -->
+    <aside id="queue" class="background-color">
+        <h2 id="queueHead">Recently Played</h2>
+        <div class="dropdown">
+            <button id="drpbtn">
+                View All
+            </button>
+            <div class="dropdown-content">
+                <a href="#" class="dropdown-item">Queue</a>
+                <a href="#" class="dropdown-item">Playlists</a>
+                <a href="#" class="dropdown-item">Favourites</a>
+            </div>
+        </div>
+        <article class="queue-song">
+            <div class="queue-order">01</div>
+            <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+            <!-- nested multiple divs in order to display the Song and Artist name One above the other besides the album picture  -->
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Softly</div>
+                    <div class="name-details-subscript">Karan Aujla</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order"><i class="fa-solid fa-square-poll-vertical"></i></div>
+            <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Case</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">03</div>
+            <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">California Love</div>
+                    <div class="name-details-subscript">Gur Sidhu</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">04</div>
+            <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Naina</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">05</div>
+            <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Excuses</div>
+                    <div class="name-details-subscript">AP Dhillon</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">06</div>
+            <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Cheques</div>
+                    <div class="name-details-subscript">Shubh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">07</div>
+            <img src="\musicplayer\images\Queue\Softly.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Softly</div>
+                    <div class="name-details-subscript">Karan Aujla</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">08</div>
+            <img src="\musicplayer\images\Queue\Case.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Case</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">09</div>
+            <img src="\musicplayer\images\Queue\CaliforniaLove.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">California Love</div>
+                    <div class="name-details-subscript">Gur Sidhu</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">10</div>
+            <img src="\musicplayer\images\Queue\Naina.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Naina</div>
+                    <div class="name-details-subscript">Diljith Dosanjh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">11</div>
+            <img src="\musicplayer\images\Queue\Excuses.jpeg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Excuses</div>
+                    <div class="name-details-subscript">AP Dhillon</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+        <article class="queue-song">
+            <div class="queue-order">12</div>
+            <img src="\musicplayer\images\Queue\Cheques.jpg" class="song-queue-photo" alt="song">
+            <div class="outer-name-container">
+                <div class="name-details-container">
+                    <div class="name-details">Cheques</div>
+                    <div class="name-details-subscript">Shubh</div>
+                </div>
+            </div>
+            <button class="heartIcon"><i class="fa-regular fa-heart"></i></button>
+        </article>
+    </aside>
+
 </body>
+
 </html>
