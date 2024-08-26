@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function main() {
+            const userProfile = {
+                name: "John Doe",
+                email: "john.doe@example.com",
+                address: {
+                    city: "New York",
+                    street: "123 Main St",
+                    zipCode: "10001"
+                }
+            };
+        
+            const userProfile2 = {
+                name: "Marry Jane",
+                email: "marry.jane@example.com",
+                address: {
+                    city: "L.A",
+                    street: "154, Washington Road",
+                    block: '0101',
+                    zipCode: "10011"
+                }
+            };
+        
+            function hasKey(obj, keys) {
+                let current = obj;
+        
+                for (let key of keys) {
+                    if (current.hasOwnProperty(key)) {
+                        current = current[key];
+                    } else {
+                        return false;
+                    }
+                }
+        
+                return true;
+            }
+        
+            function getUserDetail(profile, keys) {
+                if (!hasKey(profile, keys)) {
+                    return "Not available";
+                }
+        
+                let current = profile;
+                for (let key of keys) {
+                    current = current[key];
+                }
+        
+                return current;
+            }
+        
+            console.log(getUserDetail(userProfile, ["address", "city"])); // Should return "New York"
+            console.log(getUserDetail(userProfile2, ["address", "block"])); // Should return "0101"
+            console.log(getUserDetail(userProfile2, ["address", "country"])); // Should return "Not available"
+        
+            // Do not modify the return statement
+            return getUserDetail;
+        }
+        
+        main();
+        
+    </script>
+</body>
+</html>

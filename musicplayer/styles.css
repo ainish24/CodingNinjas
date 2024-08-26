@@ -173,7 +173,7 @@ padding-bottom: 1em;
     background-color:var(--contrastColor);
     width: 8em;
     height: 5em;
-    pointer-events: none;
+    top: 0.7em;
 }
 
 #drpbtn:hover + .dropdown-content,
@@ -590,12 +590,29 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 /* Latest Punjabi and Latest Hindi  */
 #LatestPunjabi, #LatestHindi{
     width: calc(100% - 20em);
+    padding: 0em 8em;
+    box-sizing: border-box;
 }
 
 .latestOuterContainer{
     display: flex;
+    padding : 1em 3em;
 }
 
 .latestImage{
     width: 6em;
+    margin: 0em 1em;
+}
+.upperLatestContainerDetails, .lowerLatestContainerDetails{
+    width: 6em;
+    text-align: center;
+}
+.upperLatestContainerDetails{
+    font-size: 0.9em;
+    font-weight: 600;
+    padding-left: 1.4em;
+}
+.lowerLatestContainerDetails{
+    font-size: 0.7em;
+    padding-left: 2.7em;
 }
