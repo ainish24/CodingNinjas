@@ -1,279 +1,280 @@
 :root {
-    --backShadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    --textcolor:#AEC6CF;
-    --textcolordarker:#8A9BAE;
-    --backColor: #101518;
-    --contrastColor:#1b2328;
-    --textShadow:1px 1px 8px rgba(255, 255, 255, 1);
-  }
-
-*{
-    margin:0px;
-    padding:0px;
-    color: var(--textcolor);
-    overflow-x: hidden;
+  --backShadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  --textcolor: #aec6cf;
+  --textcolordarker: #8a9bae;
+  --backColor: #101518;
+  --contrastColor: #1b2328;
+  --textShadow: 1px 1px 8px rgba(255, 255, 255, 1);
 }
-body{
-    background-color: var(--backColor);
-    max-width: 100%;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: var(--textcolor);
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--backColor);
+  max-width: 100%;
 }
 /* To hide the scrollbar from the entire webpage */
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-.background-color{
-    background-color: var(--backColor);
+.background-color {
+  background-color: var(--backColor);
 }
-.gradient-background{
-    background: linear-gradient(to bottom, var(--backColor), rgba(16, 21, 24, 0.6));
-    box-shadow: var(--backShadow);
+.gradient-background {
+  background: linear-gradient(
+    to bottom,
+    var(--backColor),
+    rgba(16, 21, 24, 0.6)
+  );
+  box-shadow: var(--backShadow);
 }
-#navbar{
-    display: flex;
-    position: fixed;
-    width: 100%;
-    height: 4em;
-    z-index: 1000;
-    box-sizing: border-box;
-    overflow-y: hidden;
-}
-
-#logo{
-    width: 4em;
-}
-
-#siteName{
-    text-align: center;
-    margin: 0.5em 1em 0.5em 0em;
-    display: flex;
-    flex-direction: column;
-}
-#upper-siteName{
-    font-size: 1.2em;
-}
-#upper-siteName span:nth-of-type(2){
-    font-size: 1.4em;
-}
-#lower-siteName{
-    font-size: 0.8em;
-}
-#navOptions{
-    margin: 0.5em 5em 0.5em 6em;
-    padding-top: 0.8em;
-    padding-left: 1em;
+#navbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 4em;
+  z-index: 1000;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
 
-#searchbar-container{
-    margin-left: 28em;
-    padding-top: 1.2em;
-    position: relative;
-    margin-right: 2em;
-    left: 190px;
+#logo {
+  width: 4em;
 }
 
-
-.search-input{
-    background: var(--contrastColor);
-    border: none;
-    box-shadow: var(--backShadow);
-    border-radius: 3%;
-    height: 2em;
-    width: 18em;
-    padding-left: 30px;
-    padding-right: 30px;
-    box-sizing: border-box;
+#siteName {
+  text-align: center;
+  margin: 0.5em 1em 0.5em 0em;
+  display: flex;
+  flex-direction: column;
+}
+#upper-siteName {
+  font-size: 1.2em;
+}
+#upper-siteName span:nth-of-type(2) {
+  font-size: 1.4em;
+}
+#lower-siteName {
+  font-size: 0.8em;
+}
+#navOptions {
+  margin: 0.5em 5em 0.5em 6em;
+  padding-top: 0.8em;
+  padding-left: 1em;
 }
 
+#searchbar-container {
+  margin-left: 28em;
+  padding-top: 1.2em;
+  position: relative;
+  margin-right: 2em;
+  left: 190px;
+}
+
+.search-input {
+  background: var(--contrastColor);
+  border: none;
+  box-shadow: var(--backShadow);
+  border-radius: 3%;
+  height: 2em;
+  width: 18em;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
 
 /* To edit the border settings of the search bar while inputting text using :focus */
 .search-input:focus {
-    border: 1.2px solid var(--textcolor); 
-    outline: none; /*To remove default focus outline*/
+  border: 1.2px solid var(--textcolor);
+  outline: none; /*To remove default focus outline*/
 }
 
-#searchButton{
-    background: none;
-    border: none;
-    position: absolute;
-    top: 53%;
-    left: 10px;
-    transform: translateY(-50%);
+#searchButton {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 53%;
+  left: 10px;
+  transform: translateY(-50%);
 }
 
-.fa-microphone{
-    position: absolute;
+.fa-microphone {
+  position: absolute;
   top: 49%;
   right: 10px;
   transform: translateY(-50%);
 }
 
-.fa-bell{
-    position: relative;
-    top: 36%;
-    left: 13%;
+.fa-bell {
+  position: relative;
+  top: 36%;
+  left: 13%;
 }
 
-.profile-container{
-    padding-top: 0.5em;
-    position: absolute;
-    right: 10px;
+.profile-container {
+  padding-top: 0.5em;
+  position: absolute;
+  right: 10px;
 }
 
-#profilePic{
-    border-radius: 50%;
-    width: 3em;
+#profilePic {
+  border-radius: 50%;
+  width: 3em;
 }
 
-#carousel{
-    margin-top: 10em;
+#carousel {
+  margin-top: 10em;
 }
-
 
 /* Queue */
-#queue{
-position: fixed;
-right: 0;
-top: 4em;
-width: 20em;
-height: calc(100vh - 4em); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar */
-overflow-y: auto;
-box-shadow: var(--backShadow);
-padding-bottom: 1em;
+#queue {
+  position: fixed;
+  right: 0;
+  top: 4em;
+  width: 20em;
+  height: calc(
+    100vh - 4em
+  ); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar */
+  overflow-y: auto;
+  box-shadow: var(--backShadow);
+  padding-bottom: 1em;
 }
 
-
-#queueHead{
-    margin-top: 1.5em;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    display: inline-block;
+#queueHead {
+  margin-top: 1.5em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
 }
 
-.dropdown{
-    display: block;
-    position: absolute;
-    right: 0em;
-    height: 8em;
-    width: 10em;
-    top: 2.7em;
-    z-index: 1;
-    
+.dropdown {
+  display: block;
+  position: absolute;
+  right: 0em;
+  height: 8em;
+  width: 10em;
+  top: 2.7em;
+  z-index: 1;
 }
 
-#drpbtn{
-    background: transparent;
-    border: none;
-    display: inline-block;
-    position: relative;
-    left: 9.5em;
+#drpbtn {
+  background: transparent;
+  border: none;
+  display: inline-block;
+  position: relative;
+  left: 9.5em;
 }
-.dropdown-content{
-    display: none;
-    position: absolute;
-    background-color:var(--contrastColor);
-    width: 8em;
-    height: 5em;
-    top: 0.7em;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--contrastColor);
+  width: 8em;
+  height: 5em;
+  top: 0.7em;
 }
 
 #drpbtn:hover + .dropdown-content,
 .dropdown-content:hover {
-    display: block;
+  display: block;
 }
-.dropdown-item{
-    text-decoration: none;
-    margin-left: 0.6em;
-    display: block;
-}
-
-.dropdown-item:nth-child(1){
-    margin-top: 0.6em;
+.dropdown-item {
+  text-decoration: none;
+  margin-left: 0.6em;
+  display: block;
 }
 
-.heartIcon{
-    position: relative;
-    float: right;
-    background: transparent;
-    border: none;
-    margin-top: 0.9em;
-    margin-right: 1.5em;
-    z-index: 2; /* To ensure that the heart has specifity greater than the dropdown as it was not getting hover effect due to the dropdown */
+.dropdown-item:nth-child(1) {
+  margin-top: 0.6em;
+}
+
+.heartIcon {
+  position: relative;
+  float: right;
+  background: transparent;
+  border: none;
+  margin-top: 0.9em;
+  margin-right: 1.5em;
+  z-index: 2; /* To ensure that the heart has specifity greater than the dropdown as it was not getting hover effect due to the dropdown */
 }
 
 .heartIcon:hover i.fa-regular {
-    color: red;
-  }
+  color: red;
+}
 
-  .queue-song{
-    margin-top: 1em;
-    box-sizing: border-box;
-  }
+.queue-song {
+  margin-top: 1em;
+  box-sizing: border-box;
+}
 
 /* To hide the queue sccrollbar */
-  #queue::-webkit-scrollbar {
-    display: none; 
+#queue::-webkit-scrollbar {
+  display: none;
 }
 
-.song-queue-photo{
-    width: 2em;
-    margin: auto 1em;
-    /* transform: translateY(0.7em); */
-    box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
+.song-queue-photo {
+  width: 2em;
+  margin: auto 1em;
+  /* transform: translateY(0.7em); */
+  box-shadow: 1px 1px 8px rgba(255, 255, 255, 0.3);
 }
 
-.queue-order{
-    display: inline-block;
-    padding-bottom: 0.3em;
-    padding-left: 0.4em;
+.queue-order {
+  display: inline-block;
+  padding-bottom: 0.3em;
+  padding-left: 0.4em;
 }
 
-.name-details:hover{
-    text-shadow: var(--textShadow);
-    cursor: pointer;
+.name-details:hover {
+  text-shadow: var(--textShadow);
+  cursor: pointer;
 }
-.name-details-subscript{
-    font-size: 0.7em;
-    color: var(--textcolordarker);
-    cursor: default;
+.name-details-subscript {
+  font-size: 0.7em;
+  color: var(--textcolordarker);
+  cursor: default;
 }
- .name-details-container{
-    display: flex;
-    flex-direction: column;
- }
-
- .outer-name-container{
-    display: inline-block;
-    box-sizing: border-box;
- }
-
- /* carousel  */
- #carouselContainer{
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 20em); /*To adjust the queue section width of 20em */
-    height: 35vh;
-    margin-bottom: 4em;
-    justify-content: center;
- }
-
- #carouselContainer::-webkit-scrollbar {
-    display: none; 
+.name-details-container {
+  display: flex;
+  flex-direction: column;
 }
 
- .carouselImage:nth-child(1){
-    margin-right: 1em;
- }
- .carouselImage:nth-child(2){
-    margin-right: 1em;
- }
+.outer-name-container {
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* carousel  */
+#carouselContainer {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 20em); /*To adjust the queue section width of 20em */
+  height: 35vh;
+  margin-bottom: 4em;
+  justify-content: center;
+}
+
+#carouselContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselImage:nth-child(1) {
+  margin-right: 1em;
+}
+.carouselImage:nth-child(2) {
+  margin-right: 1em;
+}
 /* Base styles for the carousel images */
 .carouselImage {
-    transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 /* When hovering over any image */
 .carouselImage:hover {
-    transform: scale(1.1); 
+  transform: scale(1.1);
 }
 /* 
 .carouselImage:nth-child(1)
@@ -281,11 +282,11 @@ padding-bottom: 1em;
 .carouselImage:nth-child(3) 
 */
 
-.carouselImage:nth-child(1):hover ~ .carouselImage:nth-child(2){
-    transform: scale(0.9) translateX(0.9em);
+.carouselImage:nth-child(1):hover ~ .carouselImage:nth-child(2) {
+  transform: scale(0.9) translateX(0.9em);
 }
-.carouselImage:nth-child(1):hover ~ .carouselImage:nth-child(3){
-    transform: scale(0.9);
+.carouselImage:nth-child(1):hover ~ .carouselImage:nth-child(3) {
+  transform: scale(0.9);
 }
 
 /*
@@ -293,117 +294,121 @@ Here I had to discover the :has() pseudo class which can target a parent beased 
 I was unable to target the precedent siblings of the carousel image using the ~ selector.
 */
 
-.carouselImage:nth-child(1):has(+ .carouselImage:nth-child(2):hover), .carouselImage:nth-child(2):hover ~ .carouselImage:nth-child(3){
-    transform: scale(0.9);
+.carouselImage:nth-child(1):has(+ .carouselImage:nth-child(2):hover),
+.carouselImage:nth-child(2):hover ~ .carouselImage:nth-child(3) {
+  transform: scale(0.9);
 }
 
-.carouselImage:nth-child(1):has(~ .carouselImage:nth-child(3):hover){
-    transform: scale(0.9);
+.carouselImage:nth-child(1):has(~ .carouselImage:nth-child(3):hover) {
+  transform: scale(0.9);
 }
-.carouselImage:nth-child(2):has(+ .carouselImage:nth-child(3):hover){
-    transform: scale(0.9) translateX(-0.9em);
+.carouselImage:nth-child(2):has(+ .carouselImage:nth-child(3):hover) {
+  transform: scale(0.9) translateX(-0.9em);
 }
 
 /* Latest Release */
 
-#LatestRelease{
-    box-sizing: border-box;
-    width: calc(100% - 20em);
-    padding:0em 7em;
-    margin-bottom: 3em;
-    overflow: visible;
+#LatestRelease {
+  box-sizing: border-box;
+  width: calc(100% - 20em);
+  padding: 0em 7em;
+  margin-bottom: 3em;
+  overflow: visible;
 }
-.subSecHead{
-    font-weight: 800;
-    font-size: 1.3em;
+.subSecHead {
+  font-weight: 800;
+  font-size: 1.3em;
 }
-.latestReleasePic{
-    width: 8em;
-    height: 8em;
+.latestReleasePic {
+  width: 8em;
+  height: 8em;
 }
-.LatestReleaseContainer{
-    position: relative;
-    overflow: visible;
+.LatestReleaseContainer {
+  position: relative;
+  overflow: visible;
 }
-.latestReleaseDiv{
-    position: relative;
-    display: inline-block;
-    width: 50%;
-    overflow: visible;
-}
-
-.latestReleaseDiv:nth-child(1){
-    top:0%;
-    left: 0%;
-    display: flex;
-    margin: 1em 3em 1em 0em;
-}
-.latestReleaseDiv:nth-child(2){
-    top:50%;
-    left: 0%;
-    display: flex;
-}
-.latestReleaseDiv:nth-child(3){
-    position: absolute;
-    top:0%;
-    left: 50%;
-    display: flex;
-    margin: 0em 1em 1em 1em;
-}
-.latestReleaseDiv:nth-child(4){
-    position: absolute;
-    top:50%;
-    left: 50%;
-    display: flex;
-    margin: 0.5em 1em 1em 1em;
-}
-.nameContainer{
-    position: absolute;
-    left: 9em;
-    top: 1.8em;
-}
-.primaryName{
-    font-size: 1.1em;
-    font-weight: 600;
-}
-.primaryNameSubscript{
-    font-size: 0.8em;
-}
-.dotNtimeContainer{
-    position: relative;
-    left: 16em;
-    z-index: 1;
-    top: 1em;
-    overflow: visible;
+.latestReleaseDiv {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  overflow: visible;
 }
 
-.time{
-    font-size: 0.7em;
+.latestReleaseDiv:nth-child(1) {
+  top: 0%;
+  left: 0%;
+  display: flex;
+  margin: 1em 3em 1em 0em;
+}
+.latestReleaseDiv:nth-child(2) {
+  top: 50%;
+  left: 0%;
+  display: flex;
+}
+.latestReleaseDiv:nth-child(3) {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  display: flex;
+  margin: 0em 1em 1em 1em;
+}
+.latestReleaseDiv:nth-child(4) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  margin: 0.5em 1em 1em 1em;
+}
+.nameContainer {
+  position: absolute;
+  left: 9em;
+  top: 1.8em;
+}
+.primaryName {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.primaryNameSubscript {
+  font-size: 0.8em;
+}
+.dotNtimeContainer {
+  position: relative;
+  left: 16em;
+  z-index: 1;
+  top: 1em;
+  overflow: visible;
 }
 
-
-
-.LatestReleaseDropdown{
-    display: none;
-    position: absolute;
-    width: 7.5em;
-    right: 0.4em;
-    top: 0.7em;
-    background-color: #ffffff;
-    z-index: 1;
-}
-.dropdownIcon, .LR-dropdown-content-item{
-    display: inline-block;
-    font-size: 0.8em;
-    color: #101518;
-}
-.fa-play, .fa-plus, .fa-bars-progress, .fa-circle-info{
-    color: #101518;
+.time {
+  font-size: 0.7em;
 }
 
-.fa-ellipsis:hover+.LatestReleaseDropdown, .LatestReleaseDropdown:hover{
-    display: block;
-    cursor: pointer;
+.LatestReleaseDropdown {
+  display: none;
+  position: absolute;
+  width: 7.5em;
+  right: 0.4em;
+  top: 0.7em;
+  background-color: #ffffff;
+  z-index: 1;
+}
+.dropdownIcon,
+.LR-dropdown-content-item {
+  display: inline-block;
+  font-size: 0.8em;
+  color: #101518;
+}
+.fa-play,
+.fa-plus,
+.fa-bars-progress,
+.fa-circle-info {
+  color: #101518;
+}
+
+.fa-ellipsis:hover + .LatestReleaseDropdown,
+.LatestReleaseDropdown:hover {
+  display: block;
+  cursor: pointer;
 }
 
 /* To achieve similar effect as above using :has(), we can do the following */
@@ -415,300 +420,405 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 
 /* Popular Artists Section  */
 
-
-#PopularArtists{
-    box-sizing: border-box;
-    padding: 0em 7em;
+#PopularArtists {
+  box-sizing: border-box;
+  padding: 0em 7em;
 }
 
-#ArtistsContainer{
-    display: flex;
-    width: calc(100% - 20em);
-    padding: 0em 3em;
+#ArtistsContainer {
+  display: flex;
+  width: calc(100% - 20em);
+  padding: 0em 3em;
 }
-.artistsImages{
-    display: block;
-    width: 7em;
-    height: 7em;
-    border-radius: 50%;
+.artistsImages {
+  display: block;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
 }
-.innerArtistsContainer{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 1em 0.5em;
-    align-items: center;
+.innerArtistsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0.5em;
+  align-items: center;
 }
-.overArtists{
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 7em;
-    height: 7em;
-    border-radius: 50%;
-    /* box-sizing: border-box; */
-    z-index: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
-    
+.overArtists {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+  /* box-sizing: border-box; */
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
 /* .artistsImages:hover + .overArtists,  */
 .overArtists:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-.play-Artists{
-    color: #000000;
-    font-size: 2em;
-    z-index: 12;
-    padding: auto;
-    margin: auto;
-    transform: translate(120%, 120%);
+.play-Artists {
+  color: #000000;
+  font-size: 2em;
+  z-index: 12;
+  padding: auto;
+  margin: auto;
+  transform: translate(120%, 120%);
 }
 
-.artistsPage{
-    position: absolute;
-    width: 7em;
-    height: 7em;
+.artistsPage {
+  position: absolute;
+  width: 7em;
+  height: 7em;
 }
 
-.innerArtistsContainer .primaryName{
-    text-align: center;
-    width: 5em;
+.innerArtistsContainer .primaryName {
+  text-align: center;
+  width: 5em;
 }
 
 /* Stations */
-#Stations{
-    width: calc(100% - 20em);
-    height: 10em;
-    margin: 1.5em 0em;
+#Stations {
+  width: calc(100% - 20em);
+  height: 10em;
+  margin: 1.5em 0em;
 }
-#stationContainer{
-    display: flex;
-    background-color: var(--contrastColor);
-    margin: 0 9em 0 10em;
-    height: 8em;
-    padding: 0%;
-    justify-content: space-between;
+#stationContainer {
+  display: flex;
+  background-color: var(--contrastColor);
+  margin: 0 9em 0 10em;
+  height: 8em;
+  padding: 0%;
+  justify-content: space-between;
 }
-.stationCovers{
-    width: 5em;
-    height: 6em;
-    margin: 1em;
-    border-radius: 50%;
-    position: absolute;
+.stationCovers {
+  width: 5em;
+  height: 6em;
+  margin: 1em;
+  border-radius: 50%;
+  position: absolute;
 }
-.innerStationContainer{
-    height: auto;
-    position: relative;
-}
-
-#first{
-    margin: auto;
-    width: 6em;
-    height: 90%;
-    margin-left: 1em;
-}
-#firstOver{
-    margin: auto;
-    width: 6em;
-    height: 95%;
-    margin-left: 1em;
-    padding-top: 3.4em;
-}
-#firstContainer{
-    padding-top: 0.4em;
-}
-.overStation{
-    position: relative;
-    width: 5em;
-    height: 6em;
-    margin: 1em;
-    border-radius: 50%;
-    background-color: rgba(11, 11, 11, 0.7);
-    z-index: 1;
-    color: #c0e0ec;
-    font-weight: 800;
-    text-align: center;
-    padding-top: 2.4em;
-    box-sizing: border-box;
+.innerStationContainer {
+  height: auto;
+  position: relative;
 }
 
+#first {
+  margin: auto;
+  width: 6em;
+  height: 90%;
+  margin-left: 1em;
+}
+#firstOver {
+  margin: auto;
+  width: 6em;
+  height: 95%;
+  margin-left: 1em;
+  padding-top: 3.4em;
+}
+#firstContainer {
+  padding-top: 0.4em;
+}
+.overStation {
+  position: relative;
+  width: 5em;
+  height: 6em;
+  margin: 1em;
+  border-radius: 50%;
+  background-color: rgba(11, 11, 11, 0.7);
+  z-index: 1;
+  color: #c0e0ec;
+  font-weight: 800;
+  text-align: center;
+  padding-top: 2.4em;
+  box-sizing: border-box;
+}
 
 /* Mood  */
 
-#mood{
-    width: calc(100% - 20em);
-    display: flex;
-    box-sizing: border-box;
-    /* justify-content: space-evenly; */
-    position: relative;
-    height: 10em;
-    justify-content: center;
-    padding-left: 1.2em;
+#mood {
+  width: calc(100% - 20em);
+  display: flex;
+  box-sizing: border-box;
+  /* justify-content: space-evenly; */
+  position: relative;
+  height: 10em;
+  justify-content: center;
+  padding-left: 1.2em;
 }
-.moodContainers{
-    position: relative;
-    height: 6em;
-    overflow: hidden;
-    margin: 0 1em;
-    transition: all 0.5s ease;
+.moodContainers {
+  position: relative;
+  height: 6em;
+  overflow: hidden;
+  margin: 0 1em;
+  transition: all 0.5s ease;
 }
-.moodImages{
-    width: 15em;
-    position: relative;
-    transition: all 0.7s ease;
-    object-fit: cover;
-    height: 100%;
+.moodImages {
+  width: 15em;
+  position: relative;
+  transition: all 0.7s ease;
+  object-fit: cover;
+  height: 100%;
 }
-.moodInnerText{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: rgba(11, 11, 11, 0.3);
-    width: 100%;
-    height: 100%;
-    padding-top: 17%;
-    box-sizing: border-box;
-    object-fit: cover;
-    transition: all 0.7s ease;
-}
-
-.moodContainers:has(.moodInnerText:hover) .moodImages{
-    transform: scale(1.2);
-}
-.moodInnerText:hover{
-    font-size: 2em;
-    padding-top: 13%;
-}
-.moodContainers:has(.moodInnerText:hover){
-    box-shadow: rgba(70, 40, 90, 0.4) 5px 5px, rgba(70, 40, 90, 0.3) 10px 10px, rgba(70, 40, 90, 0.2) 15px 15px, rgba(70, 40, 90, 0.1) 20px 20px, rgba(70, 40, 90, 0.05) 25px 25px;
+.moodInnerText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(11, 11, 11, 0.3);
+  width: 100%;
+  height: 100%;
+  padding-top: 17%;
+  box-sizing: border-box;
+  object-fit: cover;
+  transition: all 0.7s ease;
 }
 
+.moodContainers:has(.moodInnerText:hover) .moodImages {
+  transform: scale(1.2);
+}
+.moodInnerText:hover {
+  font-size: 2em;
+  padding-top: 13%;
+}
+.moodContainers:has(.moodInnerText:hover) {
+  box-shadow: rgba(70, 40, 90, 0.4) 5px 5px, rgba(70, 40, 90, 0.3) 10px 10px,
+    rgba(70, 40, 90, 0.2) 15px 15px, rgba(70, 40, 90, 0.1) 20px 20px,
+    rgba(70, 40, 90, 0.05) 25px 25px;
+}
 
 /* Latest Punjabi and Latest Hindi  */
-#LatestPunjabi, #LatestHindi{
-    width: calc(100% - 20em);
-    padding: 0em 8em;
-    box-sizing: border-box;
+#LatestPunjabi,
+#LatestHindi {
+  width: calc(100% - 20em);
+  padding: 0em 8em;
+  box-sizing: border-box;
 }
 
-.latestOuterContainer{
-    display: flex;
-    padding : 1em 3em;
+.latestOuterContainer {
+  display: flex;
+  padding: 1em 3em;
 }
 
-.latestImage{
-    width: 6em;
-    margin: 0em 1em;
-    height: 6em;
+.latestImage {
+  width: 6em;
+  margin: 0em 1em;
+  height: 6em;
 }
-.upperLatestContainerDetails, .lowerLatestContainerDetails{
-    width: 6em;
-    text-align: center;
+.upperLatestContainerDetails,
+.lowerLatestContainerDetails {
+  width: 6em;
+  text-align: center;
 }
-.upperLatestContainerDetails{
-    font-size: 0.9em;
-    font-weight: 600;
-    padding-left: 1.4em;
+.upperLatestContainerDetails {
+  font-size: 0.9em;
+  font-weight: 600;
+  padding-left: 1.4em;
 }
-.lowerLatestContainerDetails{
-    font-size: 0.7em;
-    padding-left: 2.7em;
+.lowerLatestContainerDetails {
+  font-size: 0.7em;
+  padding-left: 2.7em;
 }
-
-
 
 /* Artist Page  */
 
-#aboutArtist{
-    width: calc(100% - 20em);
-    box-sizing: border-box;
-    height: 38vh;
-    display: flex;
-    margin-top: 10em;
+#aboutArtist {
+  width: calc(100% - 20em);
+  box-sizing: border-box;
+  height: 38vh;
+  display: flex;
+  margin-top: 10em;
 }
-.artistImage{
-    width: 15em;
-    padding: 0em 2em 0em 4em;
+.artistImage {
+  width: 15em;
+  padding: 0em 2em 0em 4em;
 }
-#rightSideArtistInfo{
-    width: 40em;
+#rightSideArtistInfo {
+  width: 40em;
 }
-#nameAndFollowers{
-    display: flex;
-    justify-content: space-between;
+#nameAndFollowers {
+  display: flex;
+  justify-content: space-between;
 }
-#followersCount{
-    font-size: 0.8em;
-    padding-top: 0.5em;
+#followersCount {
+  font-size: 0.8em;
+  padding-top: 0.5em;
 }
-#artistPara{
-    margin: 1.45em 0em;
-    font-size: 0.9em;
+#artistPara {
+  margin: 1.45em 0em;
+  font-size: 0.9em;
 }
-.artistButtonsInner{
-    height: 2em;
-    width:6em;
-    background: transparent;
-    border: 2px solid var(--textcolor);
-    margin-bottom: 1em;
+.artistButtonsInner {
+  height: 2em;
+  width: 6em;
+  background: transparent;
+  border: 2px solid var(--textcolor);
+  margin-bottom: 1em;
 }
-#playAllButton{
-    margin-right: 1em;
+#playAllButton {
+  margin-right: 1em;
 }
-.artistButtonsInner:hover{
-    background-color: var(--textcolor);
-    color: var(--backColor);
+.artistButtonsInner:hover {
+  background-color: var(--textcolor);
+  color: var(--backColor);
 }
-#artistInfo{
-    font-size: 0.95em;
+#artistInfo {
+  font-size: 0.95em;
 }
-#artistSongs{
-    box-sizing: border-box;
-    position: static;
-    left: 0;
-    width: calc(100% - 20em);
-    padding: 0em 2em 0em 3.4em;
+#artistSongs {
+  box-sizing: border-box;
+  position: static;
+  left: 0;
+  width: calc(100% - 20em);
+  padding: 0em 2em 0em 3.4em;
 }
-.plusIcon{
-    position: relative;
-    float: right;
-    background: transparent;
-    border: none;
-    color: var(--textcolor);
-    margin-top: 0.9em;
-    margin-right: 1.5em;
-    z-index: 2000;
+.plusIcon {
+  position: relative;
+  float: right;
+  background: transparent;
+  border: none;
+  color: var(--textcolor);
+  margin-top: 0.9em;
+  margin-right: 1.5em;
+  z-index: 2000;
 }
-.fa-plus{
-    color: var(--textcolor);
+.fa-plus {
+  color: var(--textcolor);
 }
-.heartIconArtist{
-    right: 4em;
+.heartIconArtist {
+  right: 4em;
 }
-.artistSongContainer{
-    background-color: var(--contrastColor);
-    padding: 0.5em 0em;
-    margin: 0.2em 0em;
-}
-.artistDropdown{
-    position: static;
-}
-.artistDropdownContent{
-    position: static;
-}
-
 
 /* Similar Artists  */
-.similarArtists{
-    flex-direction: column;
+
+#SimilarArtists {
+    padding-left: 0.4em;
+    box-sizing: border-box;
+    width: 20em;
+    margin-bottom: 3em;
+    overflow: visible;
+    position: fixed;
+    top: 4.5em;
+    right: 0;
+    box-shadow: -2px 0 1px 0 rgba(0, 0, 0, 0.6);
+    height: 18em;
+  }
+  .artist-subSecHead {
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+  .artist-LatestReleaseContainer {
+    position: relative;
+    overflow: visible;
 }
-.artist-latestReleaseDiv{
-    display: block;
+.artist-latestReleaseDiv {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  overflow: visible;
 }
-.artist-LatestReleaseContainer{
+  .artist-latestReleasePic {
+    width: 4em;
+    height: 3.5em;
+    margin: 0.2em 0em;
+  }
+  
+  .artist-latestReleaseDiv:nth-child(1) {
+    top: 0%;
+    left: 0%;
     display: flex;
-    flex-direction: column;
+    /* margin: 1em 3em 1em 0em; */
+  }
+  .artist-latestReleaseDiv:nth-child(2) {
+    top: 50%;
+    left: 0%;
+    display: flex;
+  }
+  .artist-latestReleaseDiv:nth-child(3) {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    display: flex;
+    /* margin: 0em 1em 1em 1em; */
+  }
+  .artist-latestReleaseDiv:nth-child(4) {
+    position: absolute;
+    top: 150%;
+    left: 0%;
+    display: flex;
+    /* margin: 0.5em 1em 1em 1em; */
+  }
+  .artist-nameContainer {
+    position: absolute;
+    left: 7.5em;
+    top: 0.7em;
+  }
+  .artist-primaryName {
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+  .artist-primaryNameSubscript {
+    font-size: 0.7em;
+    width: 10em;
+  }
+  .artist-dotNtimeContainer {
+    position: relative;
+    left: 13em;
+    z-index: 1;
+    top: 1em;
+    overflow: visible;
+  }
+  
+  .artist-time {
+    font-size: 0.7em;
+  }
+  
+  .artist-LatestReleaseDropdown {
+    display: none;
+    position: absolute;
+    width: 7.5em;
+    right: 0.4em;
+    top: 0.7em;
+    background-color: #ffffff;
+    z-index: 1;
+  }
+  .artist-dropdownIcon,
+  .artist-LR-dropdown-content-item {
+    display: inline-block;
+    font-size: 0.8em;
+    color: #101518;
+  }
+.artist-play, .artist-plus, .artist-bars, .artist-circleInfo{
+    color: #101518;
+  }
+  
+  .artist-ellipsis:hover + .artist-LatestReleaseDropdown,
+  .artist-LatestReleaseDropdown:hover {
+    display: block;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+/* Recently Played  */
+#recentlyPlayed {
+  position: fixed;
+  right: 0;
+  top: 22em;
+  width: 20em;
+  height: calc(
+    100vh - 22em
+  ); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar */
+  overflow-y: auto;
+  box-shadow: -2px 0 1px 0 rgba(0, 0, 0, 0.6);
+  padding-bottom: 1em;
+}
+#recentlyPlayed::-webkit-scrollbar {
+  display: none;
 }
