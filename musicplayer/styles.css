@@ -3,7 +3,7 @@
   --textcolor: #aec6cf;
   --textcolordarker: #8a9bae;
   --backColor: #101518;
-  --contrastColor: #1b2328;
+  --contrastColor: rgb(27, 35, 40);
   --textShadow: 1px 1px 8px rgba(255, 255, 255, 1);
 }
 
@@ -137,8 +137,8 @@ body::-webkit-scrollbar {
   top: 4em;
   width: 20em;
   height: calc(
-    100vh - 4em
-  ); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar */
+    100vh - 8em
+  ); /* To scroll to the last item of the queue which was interfered by the 4em sized fixed navbar and 4em size of the footer */
   overflow-y: auto;
   box-shadow: var(--backShadow);
   padding-bottom: 1em;
@@ -622,7 +622,9 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   font-size: 0.7em;
   padding-left: 2.7em;
 }
-
+#LatestHindi{
+  padding-bottom: 4em;
+}
 /* Artist Page  */
 
 #aboutArtist {
@@ -804,14 +806,18 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 .artist-ellipsis:hover + .artist-LatestReleaseDropdown,
 .artist-latestReleaseDiv:nth-child(3) .artist-LatestReleaseDropdown:hover,
 .artist-latestReleaseDiv:nth-child(2) .artist-LatestReleaseDropdown:hover,
-.artist-latestReleaseDiv:nth-child(1)
-  .artist-LatestReleaseDropdown:hover{
+.artist-latestReleaseDiv:nth-child(1) .artist-LatestReleaseDropdown:hover {
   display: block;
   cursor: pointer;
 }
-.artist-LatestReleaseContainer:has(.artist-latestReleaseDiv:nth-child(4) .artist-dotNtimeContainer .artist-ellipsis:hover)
+.artist-LatestReleaseContainer:has(
+    .artist-latestReleaseDiv:nth-child(4)
+      .artist-dotNtimeContainer
+      .artist-ellipsis:hover
+  )
   .artist-latestReleaseDiv:nth-child(4)
-  .artist-LatestReleaseDropdown, .artist-latestReleaseDiv:nth-child(4) .artist-LatestReleaseDropdown:hover {
+  .artist-LatestReleaseDropdown,
+.artist-latestReleaseDiv:nth-child(4) .artist-LatestReleaseDropdown:hover {
   display: block;
   cursor: pointer;
   top: -2em;
@@ -833,11 +839,195 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   display: none;
 }
 
+/* Footer  */
+
 .pageFooter {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
   width: 100%;
   height: 4em;
   position: fixed;
-  background-color: #ffffff;
+  background-color: var(--contrastColor);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.6);
   bottom: 0em;
   z-index: 10000;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.footerLeft {
+  display: flex;
+  padding: 0.3em 1em;
+  position: relative;
+}
+.footerLeftImg {
+  padding: 0;
+  margin: 0;
+  height: 3.3em;
+  padding-top: 0.1em;
+}
+.footerLeftImg img {
+  transform: translateY(5%);
+  width: 3em;
+}
+.footerLeftInfo {
+  width: 3.5em;
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  padding-top: 0.8em;
+  overflow: hidden;
+  position: relative;
+}
+.leftUpperInfo {
+  font-size: 0.8em;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.leftLowerInfo {
+  font-size: 0.6em;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.revolvingText {
+  display: inline-block;
+  animation: slide 5s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.footerLeftInfo::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2em; /* Width of the fading effect */
+  background: linear-gradient(to left, var(--contrastColor), rgba(27, 35, 40, 0));
+  pointer-events: none; /* Ensure it doesn't interfere with interaction */
+}
+
+.footerLeftIcons{
+  margin-top: 1.2em;
+  width: 4em;
+  padding: 0 0.5em;
+}
+.footerLeftIcons i:nth-child(1):hover{
+  color: red;
+}
+.footerLeftIcons i:nth-child(2):hover{
+  color: #FF9500;
+}
+.footerLeftIcons i:nth-child(2){
+  margin-left: 0.2em;
+}
+
+
+.footerMiddle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 30em;
+  margin: 0 auto;
+  overflow: visible;
+}
+.footerMiddleProgress{
+  position: relative;
+  overflow: visible;
+  display: flex;
+}
+.timeLine{
+  position: relative;
+  background-color: rgb(68, 78, 84);
+  width: 15em;
+  height: 0.3em;
+  border-radius: 3px;
+  margin-top: 0.5em;
+  overflow: visible;
+}
+.timeLine i{
+  position: absolute;
+  font-size: 0.7em;
+  transform: translate(800%, -30%);
+  z-index: 1;
+}
+.timeLine::after{
+  content: '';
+  position: absolute;
+  width: 6em;
+  height: 0.3em;
+  background-color: greenyellow;
+  border-radius: 3px;
+}
+.currentTime{
+  position: relative;
+  top:0.1em;
+  font-size: 0.9em;
+  margin-right: 0.4em;
+}
+.remainingTime{
+ position: relative;
+ top:0.1em;
+ font-size: 0.8em;
+ margin-left: 0.4em;
+}
+
+.footerMiddleIcons{
+  position: relative;
+  height: 2em;
+  padding-top: 0.5em;
+}
+
+.material-symbols-outlined {
+  overflow: hidden;
+  margin-right: 0.5em;
+}
+
+.material-symbols-outlined:hover{
+  color: var(--textcolordarker);
+  cursor: pointer;
+}
+.footerRight{
+  display: flex;
+  position: relative;
+ right: 1em;
+ top: 1.3em;
+}
+.timeLine2{
+  position: relative;
+  background-color: rgb(68, 78, 84);
+  width: 4em;
+  height: 0.3em;
+  border-radius: 3px;
+  margin-top: 0.5em;
+  overflow: visible;
+}
+.timeLine2 i{
+  position: absolute;
+  font-size: 0.7em;
+  transform: translate(180%, -30%);
+  z-index: 1;
+}
+.timeLine2::after{
+  content: '';
+  position: absolute;
+  width: 1.4em;
+  height: 0.3em;
+  background-color: greenyellow;
+  border-radius: 3px;
+}
+.rightFooterIcons{
+  width: 0.8em;
+  height: 0.8em;
+  padding-right: 0.2em;
+  padding-bottom: 0.3em;
 }
