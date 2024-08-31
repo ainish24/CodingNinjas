@@ -1049,10 +1049,6 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
 /* Adding responsiveness  */
 
 @media screen and (max-width:768px) {
-  #navbar{
-
-  }
-
   #navOptions{
     left: 10.5em;
   }
