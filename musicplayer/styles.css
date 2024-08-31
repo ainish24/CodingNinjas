@@ -421,6 +421,9 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   display: block;
   cursor: pointer;
 }
+.play-Artists{
+  color: #101518;
+}
 
 /* To achieve similar effect as above using :has(), we can do the following */
 
@@ -699,7 +702,7 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   margin-right: 1.5em;
   z-index: 2000;
 }
-.fa-plus {
+.artists-Play{
   color: var(--textcolor);
 }
 .heartIconArtist {
@@ -1042,7 +1045,7 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   height: 0.8em;
   padding-right: 0.2em;
   padding-bottom: 0.3em;
-}
+} 
 
 
 
@@ -1230,15 +1233,428 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   padding-right: 0.3em;
 }
 
+/* Artist Page  */
+
+
+#SimilarArtists{
+  position: static;
+}
+#recentlyPlayed{
+  left: 0;
+  top: 4em;
+  height: calc(100vh - 8em);
+  display: none;
+}
+#aboutArtist{
+  width: 100%;
+  margin-top: 8em;
+  height: 40vh;
 }
 
-@media screen and (max-width:480px) {
-  #navbar{
-    background-color: #FF9500;
+.artistImage img{
+  width: 12em;
+  height: 13em;
+}
+
+#artistPara{
+  font-size: 0.8em;
+  padding-right: 1em;
+}
+#artistName{
+  font-size: 1.5em;
+}
+#followersCount{
+  font-size: 0.9em;
+  margin-right: 1em;
+}
+#artistButtons{
+  margin-top: 0em;
+}
+
+#artistSongs{
+  width: 100%;
+}
+
+#SimilarArtists{
+  width: 100%;
+  height: 13em;
+  padding-left: 1em;
+}
+.artist-latestReleaseDiv{
+  position: relative;
+}
+.artist-latestReleaseDiv:nth-child(1){
+  top: 40%;
+}
+.artist-latestReleaseDiv:nth-child(2){
+  left: 50%;
+  transform: translateY(-100%);
+}
+.artist-latestReleaseDiv:nth-child(3){
+  transform: translateY(-90%);
+}
+.artist-latestReleaseDiv:nth-child(4){
+  left: 50%;
+  transform: translateY(-190%);
+}
+.artist-LatestReleaseContainer:has(
+    .artist-latestReleaseDiv:nth-child(3)
+      .artist-dotNtimeContainer
+      .artist-ellipsis:hover
+  )
+  .artist-latestReleaseDiv:nth-child(3)
+  .artist-LatestReleaseDropdown,
+.artist-latestReleaseDiv:nth-child(3) .artist-LatestReleaseDropdown:hover {
+  display: block;
+  cursor: pointer;
+  top: -2em;
+}
+body:has(#navbar .menu:hover) #recentlyPlayed, #recentlyPlayed:hover{
+  color: var(--textcolordarker);
+  cursor: pointer;
+  display: block;
+}
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width:520px) {
+  #logo{
+    width: 2.5em;
+    top: 1em;
+  }
+  #siteName{
+  left: 4.5em;
+  top: 1em;
+  }
+  #upper-siteName {
+    font-size: 0.9em;
+  }
+  #upper-siteName span:nth-of-type(2) {
+    font-size: 1.1em;
+  }
+  #lower-siteName {
+    font-size: 0.6em;
+  }
+  #searchbar-container{
+    right: 6.5em;
+  }
+  .search-input{
+    width: 10em;
+  }
+  #navOptions{
+    left: 7em;
+  }
+  #navOptions span{
+    font-size: 0.9em;
+  }
+  .fa-bell{
+    right: 5em;
+  }
+  #queue{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 4em;
+  }
+  #carousel{
+    margin-top: 7em;
+  }
+  #carouselContainer{
+    margin-bottom: 0em;
+  }
+  .carouselImage{
+    width: 8em;
+    height: 11em;
   }
 
-  #queue{
-    position: static;
-    width: 100%;
+  #LatestRelease{
+    height: 40em;
   }
+
+  .latestReleaseDiv:nth-child(1) {
+    top: 0%;
+    left: 0%;
+    display: flex;
+    margin: 1em 3em 1em 0em;
+  }
+  .latestReleaseDiv:nth-child(2) {
+    top: 0%;
+    left: 0%;
+    display: flex;
+  }
+  .latestReleaseDiv:nth-child(3) {
+    position: absolute;
+    top: 107%;
+    left: 3%;
+    display: flex;
+    margin: 0em 1em 1em 1em;
+  }
+  .latestReleaseDiv:nth-child(4) {
+    position: absolute;
+    top: 155%;
+    left: 3%;
+    display: flex;
+    margin: 0.5em 1em 1em 1em;
+  }
+  .dotNtimeContainer{
+    left:15em;
+  }
+  .nameContainer{
+    width: 8em;
+  }
+  .innerArtistsContainer{
+    width: 5em;
+    height: 7em;
+
+  }
+  .artistsImages {
+    display: block;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+  }
+  .overArtists{
+    width: 4em;
+    height: 4em;
+    margin-left: 1.5em;
+  }
+  .play-Artists {
+    color: #000000;
+    font-size: 1em;
+    z-index: 12;
+    padding-top:0.18em ;
+    padding-left: 0.15em;
+  }
+  .innerArtistsContainer .primaryName {
+   font-size: 0.9em;
+    width: 5em;
+  }
+
+  #Stations{
+    height: 6em;
+    box-sizing: border-box;
+  }
+  #stationContainer{
+    height: 5.2em;
+  }
+  .stationCovers{
+    width: 3.4em;
+    height: 3.4em;
+    margin: 0;
+    margin-top: 0.8em;
+  }
+  .innerStationContainer{
+    height: auto;
+    overflow: visible;
+  }
+  #first{
+    width: 4em;
+    height: 4em;
+  }
+  #firstOver{
+    width: 4.5em;
+    height: 4.5em;
+    padding-top: 1.5em;
+    margin-left: 0.5em;
+  }
+  .overStation{
+    font-size: 0.9em;
+    width: 3.9em;
+    height: 3.9em;
+    margin-left: 0em;
+    padding-top: 1.5em;
+    top: 0;
+    margin-top: 0.8em;
+  }
+
+  .moodInnerText{
+    padding-top:2.5em;
+  }
+  .moodInnerText:hover {
+    font-size: 1.5em;
+    padding-top: 25%;
+  }
+
+  .latestImage {
+    width: 4em;
+    margin: 0em 1em;
+    height: 4em;
+  }
+  .upperLatestContainerDetails,
+.lowerLatestContainerDetails {
+  width: 5.2em;
+}
+.upperLatestContainerDetails {
+  font-size: 0.65em;
+  font-weight: 600;
+  padding-left: 1.8em;
+}
+.lowerLatestContainerDetails {
+  font-size: 0.5em;
+  padding-left: 3.2em;
+
+}
+#LatestHindi{
+  margin-top: 3em;
+  padding-bottom: 4.5em;
+}
+.timeLine{
+  width: 6em;
+}
+.timeLine i{
+  transform: translate(300%, -30%);
+}
+.timeLine::after{
+  width: 2.4em;
+}
+.footerMiddleIcons{
+  padding-left: 0.5em;
+}
+.footerLeftIcons{
+  width: 6em;
+  padding: 0;
+}
+.footerLeftImg{
+  margin-top: 0.5em;
+}
+.footerLeftImg img{
+  height: 2em;
+  width: 4em;
+}
+.footerLeftInfo{
+  width: 5.5em;
+  margin-right: 0.4em;
+  margin-left: 0.5em;
+}
+.rightFooterIcons{
+width: 1.9em;
+}
+.footerRight .material-symbols-outlined{
+  font-size: 1em;
+  padding-right: 0.3em;
+}
+.timeLine2{
+  margin-right: 0em;
+  top: 1em;
+  width: 8em;
+  margin-left: 1em;
+}
+.timeLine2 i{
+  transform: translate(80%, -30%);
+}
+.footerRight .material-symbols-outlined:nth-child(1){
+  position: absolute;
+  left: 0em;
+}
+.footerRight .material-symbols-outlined:nth-child(2){
+  position: absolute;
+  left: 1.5em;
+}
+.footerRight .material-symbols-outlined:nth-child(3){
+  position: absolute;
+  left: 2.8em;
+  margin-right: 0;
+}
+.rightFooterIcons:nth-child(3){
+  width: 1em;
+}
+.timeLine2::after{
+  width: 1.2em;
+}
+
+
+/* Artist page  */
+#aboutArtist{
+  padding: 0;
+  height: 30vh;
+}
+.artistImage{
+  transform: translateX(-20%);
+}
+.artistImage img{
+  margin-left: 0;
+  width: 8em;
+  height: 8em;
+}
+#rightSideArtistInfo{
+  transform: translateX(-10%);
+  width: 40em;
+  padding: 0;
+  margin: 0;
+}
+#artistPara{
+  margin: 0;
+  padding-right: 0;
+  font-size: 0.6em;
+}
+#artistName{
+  font-size: 1.2em;
+}
+#followersCount{
+  font-size: 0.7em;
+  margin-right: 1em;
+}
+#SimilarArtists{
+  padding: 0;
+}
+#artistSongs{
+  padding: 0;
+  padding-left: 1em;
+
+}
+.plusIcon{
+  margin-right: 0em;
+}
+.heartIconArtist{
+  right: 2.4em;
+}
+#SimilarArtists{
+  height: 25em;
+  margin-top: 2em;
+}
+
+.artist-LatestReleaseContainer{
+  margin-top: 1em;
+}
+.artist-latestReleaseDiv{
+  padding-left: 6em;
+}
+.artist-subSecHead{
+  padding-left: 2em;
+}
+.artist-nameContainer{
+  left: 12em;
+}
+
+.artist-latestReleaseDiv:nth-child(1) {
+  top: 0%;
+  left: 0%;
+  display: flex;
+}
+.artist-latestReleaseDiv:nth-child(2) {
+  transform: translateY(25%);
+  left: 0%;
+  display: flex;
+}
+.artist-latestReleaseDiv:nth-child(3) {
+  position: absolute;
+  transform: translateY(50%);
+  left: 0%;
+  display: flex;
+}
+.artist-latestReleaseDiv:nth-child(4) {
+  position: absolute;
+  transform: translateY(75%);
+  left: 0%;
+  display: flex;
+  overflow: visible;
+}
+
 }
