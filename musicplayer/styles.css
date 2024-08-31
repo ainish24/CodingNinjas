@@ -16,6 +16,7 @@
 body {
   background-color: var(--backColor);
   max-width: 100%;
+  cursor: default;
 }
 /* To hide the scrollbar from the entire webpage */
 body::-webkit-scrollbar {
@@ -34,6 +35,7 @@ body::-webkit-scrollbar {
 }
 #navbar {
   display: flex;
+  justify-content: center;
   position: fixed;
   width: 100%;
   height: 4em;
@@ -44,9 +46,13 @@ body::-webkit-scrollbar {
 
 #logo {
   width: 4em;
+  position: absolute;
+  left: 1em;
 }
 
 #siteName {
+  position: absolute;
+  left: 5.3em;
   text-align: center;
   margin: 0.5em 1em 0.5em 0em;
   display: flex;
@@ -62,7 +68,9 @@ body::-webkit-scrollbar {
   font-size: 0.8em;
 }
 #navOptions {
-  margin: 0.5em 5em 0.5em 6em;
+  position: absolute;
+  left: 15em;
+  top: 0.6em;
   padding-top: 0.8em;
   padding-left: 1em;
 }
@@ -70,9 +78,9 @@ body::-webkit-scrollbar {
 #searchbar-container {
   margin-left: 28em;
   padding-top: 1.2em;
-  position: relative;
-  margin-right: 2em;
-  left: 190px;
+  position: absolute;
+  margin: 0 auto;
+  right: 12.5em;
 }
 
 .search-input {
@@ -97,33 +105,36 @@ body::-webkit-scrollbar {
   background: none;
   border: none;
   position: absolute;
-  top: 53%;
+  top: 75%;
   left: 10px;
   transform: translateY(-50%);
 }
 
 .fa-microphone {
   position: absolute;
-  top: 49%;
+  top: 70%;
   right: 10px;
   transform: translateY(-50%);
 }
 
 .fa-bell {
-  position: relative;
-  top: 36%;
-  left: 13%;
+  position: absolute;
+  top: 38%;
+  right: 10.5em;
 }
 
 .profile-container {
   padding-top: 0.5em;
   position: absolute;
-  right: 10px;
+  right: 1em;
 }
 
 #profilePic {
   border-radius: 50%;
   width: 3em;
+}
+.menu{
+  display: none;
 }
 
 #carousel {
@@ -985,6 +996,7 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   position: relative;
   height: 2em;
   padding-top: 0.5em;
+  padding-left: 1.8em;
 }
 
 .material-symbols-outlined {
@@ -1030,4 +1042,207 @@ I was unable to target the precedent siblings of the carousel image using the ~ 
   height: 0.8em;
   padding-right: 0.2em;
   padding-bottom: 0.3em;
+}
+
+
+
+/* Adding responsiveness  */
+
+@media screen and (max-width:768px) {
+  #navbar{
+
+  }
+
+  #navOptions{
+    left: 10.5em;
+  }
+  #searchbar-container{
+    right: 10.5em;
+  }
+  .fa-bell{
+    right: 8.5em;
+  }
+  #logo{
+    left: 2em;
+  }
+  #siteName{
+    left: 5.5em;
+  }
+  .menu{
+    display: inline-block;
+    position: absolute;
+    left: 0.3em;
+    top: 1.4em;
+    height: 100%;
+  }
+  
+  /* queue  */
+  
+  #queue{
+    position: fixed;
+    width: 50%;
+    z-index: 1;
+    left: 0;
+    top: 4em;
+    display: none;
+  }
+  body:has(#navbar .menu:hover) #queue{
+    color: var(--textcolordarker);
+    cursor: pointer;
+    display: block;
+  }
+  #queue:hover{
+    display: block;
+  }
+
+  /* carousel  */
+
+  #carousel{
+    width: 100%;
+  }
+  #carouselContainer{
+    width: 100%;
+  }
+  .carouselImage{
+    width:12em;
+    height: 13.5em;
+  }
+
+  #LatestRelease{
+    width: 100%;
+    display: flex;
+    padding: 0em;
+    flex-direction: column;
+  }
+  .subSecHead{
+    padding-left: 1em;
+  }
+  .LatestReleaseContainer{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+  }
+  .latestReleaseDiv{
+    width: 40%;
+  }
+  .latestReleaseDiv:nth-child(1) {
+    top: 0%;
+    left: 0%;
+    display: flex;
+    margin: 1em 3em 1em 0em;
+  }
+  .latestReleaseDiv:nth-child(2) {
+    top: 50%;
+    left: 0%;
+    display: flex;
+  }
+  .latestReleaseDiv:nth-child(3) {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    display: flex;
+    margin: 0em 1em 1em 1em;
+  }
+  .latestReleaseDiv:nth-child(4) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    margin: 0.5em 1em 1em 1em;
+  }
+  .dotNtimeContainer{
+    left:10em;
+  }
+
+  /*Popular Artists */
+  #PopularArtists{
+    padding: 0 ;
+  }
+  #ArtistsContainer{
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Stations  */
+  #Stations{
+    width: 100%;
+  }
+  #stationContainer{
+    margin: 0;
+  }
+  #firstContainer{
+    margin-right: 1em;
+    width: 7em;
+  }
+  #first{
+    margin-left: 0.5em;
+  }
+  #firstOver{
+    margin-left: 0.5em;
+  }
+
+  /* Mood  */
+  #mood{
+  width: 100%;
+  padding: 0 0.5em;
+}
+
+#LatestPunjabi, #LatestHindi{
+  width: 100%;
+  padding: 0;
+}
+#LatestHindi{
+  padding-bottom: 4em;
+}
+.latestOuterContainer{
+  padding: 0 2em;
+  padding-top: 1em;
+}
+
+/* Footer  */
+.footerLeftImg{
+  height: 2.8em;
+  margin-top: 0.2em;
+}
+.footerLeftImg img{
+  height: 2.5em;
+  width: 3em;
+}
+.footerLeftIcons i{
+ font-size: 0.8em;
+}
+.footerLeftInfo{
+  margin-right: 1.2em;
+}
+.footerLeftIcons i:nth-child(2){
+  margin-left: 0.4em;
+}
+.footerMiddleIcons{
+  padding-top: 0.8em;
+}
+.footerMiddleIcons .material-symbols-outlined{
+  font-size: 1.2em;
+}
+.timeLine{
+  margin-top: 0;
+}
+.currentTime, .remainingTime{
+  top: -0.4em;
+}
+.footerRight .material-symbols-outlined{
+  font-size: 1.2em;
+  padding-right: 0.3em;
+}
+
+}
+
+@media screen and (max-width:480px) {
+  #navbar{
+    background-color: #FF9500;
+  }
+
+  #queue{
+    position: static;
+    width: 100%;
+  }
 }
