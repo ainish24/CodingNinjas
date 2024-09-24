@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name){
+            this.name=name;
+        }
+        Person.prototype.greet = function (){
+            console.log(`Hello!, My name is ${this.name}.`);
+        };
+
+        function Employee(name, position){
+            Person.call(this, name);
+            this.position=position;
+        }
+
+        Employee.prototype = Object.create(Person.prototype);
+
+        Employee.prototype.greet = function (){
+            console.log(`Hello, I am an employee my name is ${this.name}`)
+        };
+        const john = new Employee("JOhn", "Manager")
+        john.greet()
+        const neha = new Person("Neha");
+        neha.greet()
+        Employee.prototype.__proto__.greet = function (){
+            console.log(`Hello, I am an employee my name is ${this.name}`)
+        };
+        john.greet()
+        neha.greet()
+    </script>
+</body>
+</html>
