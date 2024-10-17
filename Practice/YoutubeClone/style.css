@@ -1,0 +1,33 @@
+.yttext img{
+    width: 6em;
+    height: 4em;
+}
+.yttext{
+    text-align: center;
+}
+#vidcontainer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+#vidcontainer iframe{
+    width: 15em;
+    height: 10em;
+    margin: 0.2em 0;
+}
+.profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+.searchButton img{
+    width: 1em;
+    height: 0.9em;
+}
+
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
