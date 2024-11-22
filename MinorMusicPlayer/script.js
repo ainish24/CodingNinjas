@@ -1,73 +1,141 @@
 let songsArray=[
-    {
-        songName:"Winning Speech",
-        singer:"Karan Aujla",
+    {   id: 1,
+        name:"Winning Speech",
+        artist:"Karan Aujla",
         genre:"Rap",
-        audioSrc:"./songAudio/Winning Speech - Karan Aujla.mp3",
-        albumPicSource:"./songAlbum/Winning-Speech-Img.jpeg"
+        img:"./songAudio/Winning Speech - Karan Aujla.mp3",
+        source:"./songAlbum/Winning-Speech-Img.jpeg"
     },
-    {
-        songName:"Millionaire",
-        singer:"Honey Singh",
+    {   id: 2,
+        name:"Millionaire",
+        artist:"Honey Singh",
         genre:"Rap",
-        audioSrc:"./songAudio/Millionaire - Yo Yo Honey Singh.mp3",
-        albumPicSource:"./songAlbum/Millionaire-Img.jpeg"
+        img:"./songAudio/Millionaire - Yo Yo Honey Singh.mp3",
+        source:"./songAlbum/Millionaire-Img.jpeg"
     },
-    {
-        songName:"G.O.A.T",
-        singer:"Diljit Dosanjh",
+    {   id: 3,
+        name:"G.O.A.T",
+        artist:"Diljit Dosanjh",
         genre:"Rock",
-        audioSrc:"./songAudio/G.O.A.T - Diljit Dosanjh.mp3",
-        albumPicSource:"./songAlbum/GOAT-Img.jpeg"
+        img:"./songAudio/G.O.A.T - Diljit Dosanjh.mp3",
+        source:"./songAlbum/GOAT-Img.jpeg"
     },
-    {
-        songName:"Bandana",
-        singer:"Shubh",
+    {   id: 4,
+        name:"Bandana",
+        artist:"Shubh",
         genre:"Rock",
-        audioSrc:"./songAudio/Bandana - Shubh.mp3",
-        albumPicSource:"./songAlbum/Bandana-Img.jpeg"
+        img:"./songAudio/Bandana - Shubh.mp3",
+        source:"./songAlbum/Bandana-Img.jpeg"
     },
-    {
-        songName:"Antidote",
-        singer:"Karan Aujla",
+    {   id: 5,
+        name:"Antidote",
+        artist:"Karan Aujla",
         genre:"Hip-Hop",
-        audioSrc:"./songAudio/ANTIDOTE - Karan Aujla.mp3",
-        albumPicSource:"./songAlbum/Antidote-Img.jpeg"
+        img:"./songAudio/ANTIDOTE - Karan Aujla.mp3",
+        source:"./songAlbum/Antidote-Img.jpeg"
     },
-    {
-        songName:"8 Asle",
-        singer:"Sukha",
+    {   id: 6,
+        name:"8 Asle",
+        artist:"Sukha",
         genre:"Hip-Hop",
-        audioSrc:"./songAudio/8 ASLE - Sukha (DJJOhAL.Com).mp3",
-        albumPicSource:"./songAlbum/8-Asle-Img.jpeg"
+        img:"./songAudio/8 ASLE - Sukha (DJJOhAL.Com).mp3",
+        source:"./songAlbum/8-Asle-Img.jpeg"
     },
-    {
-        songName:"4 Yaar",
-        singer:"Rock",
+    {   id: 7,
+        name:"4 Yaar",
+        artist:"Rock",
         genre:"Hip-Hop",
-        audioSrc:"./songAudio/4 Yaar - Parmish Verma.mp3",
-        albumPicSource:"./songAlbum/4-Yaar-img.jpeg"
+        img:"./songAudio/4 Yaar - Parmish Verma.mp3",
+        source:"./songAlbum/4-Yaar-img.jpeg"
     },
-    {
-        songName:"Legend",
-        singer:"Sidhu Moosewala",
+    {   id: 8,
+        name:"Legend",
+        artist:"Sidhu Moosewala",
         genre:"Hip-Hop",
-        audioSrc:"./songAudio/Legend - Sidhu Moose Wala.mp3",
-        albumPicSource:"./songAlbum/Legend-Song-Img.jpeg"
+        img:"./songAudio/Legend - Sidhu Moose Wala.mp3",
+        source:"./songAlbum/Legend-Song-Img.jpeg"
     },
-    {
-        songName:"Get Up Jawani",
-        singer:"Honey Singh",
+    {   id: 9,
+        name:"Get Up Jawani",
+        artist:"Honey Singh",
         genre:"Rap",
-        audioSrc:"./songAudio/Get Up Jawani - Yo Yo Honey Singh.mp3",
-        albumPicSource:"./songAlbum/Get-Up-Jawani-Img.jpeg"
+        img:"./songAudio/Get Up Jawani - Yo Yo Honey Singh.mp3",
+        source:"./songAlbum/Get-Up-Jawani-Img.jpeg"
     },
-    {
-        songName:"5 Taara",
-        singer:"Diljit Dosanjh",
+    {   id: 10,
+        name:"5 Taara",
+        artist:"Diljit Dosanjh",
         genre:"Rock",
-        audioSrc:"./songAudio/5 Taara.mp3",
-        albumPicSource:"./songAlbum/5-Taara-Img.jpg"
+        img:"./songAudio/5 Taara.mp3",
+        source:"./songAlbum/5-Taara-Img.jpg"
     }
 
 ]
+const uniqueGenres = Array.from(new Set(songsArray.map(song=>song.genre)))
+console.log(uniqueGenres)
+const dropDown=document.getElementById("genre")
+uniqueGenres.forEach((genre)=>{
+    const options = document.createElement("option")
+    options.setAttribute("value",genre)
+    options.innerText=genre
+    dropDown.appendChild(options)
+})
+function showSongs(){
+    const selectedGenre=dropDown.value;
+    const filteredId=songsArray.filter((song)=>{
+        return song.genre==selectedGenre
+    }).map((song)=>{
+        return song.id
+    })
+    let finalIds
+    let genreName
+    if(filteredId.length > 0){
+        finalIds=filteredId
+        genreName=selectedGenre
+    }
+    else{
+        finalIds=songsArray.map((song) => song.id);
+        genreName="All Songs"
+    }
+    const genName=document.getElementsByClassName("genreName")[0]
+    genName.innerText=genreName
+    const songsNameContainer=document.getElementsByClassName("songsName")[0]
+    songsNameContainer.innerText=""
+    finalIds.forEach((id)=>{
+        const songDiv=document.createElement("div")
+        const songName=songsArray.filter((song)=>{
+            return song.id==id
+        })[0].name
+        const artistName=songsArray.filter((song)=>{
+            return song.id==id
+        })[0].artist
+        songDiv.setAttribute("class","songName")
+        songDiv.innerText=`${songName} - ${artistName}`
+        songsNameContainer.appendChild(songDiv)
+    })
+}
+showSongs();
+function renderCurrentSong(){
+
+}
+function addToPlaylist(){
+
+}
+function removeFromPlaylist(){
+
+}
+function createPlaylist(){
+
+}
+function renderPlaylistSong(){
+    
+}
+function searchSong(){
+
+}
+function searchPlaylist(){
+    
+}
+function toggleTheme(){
+
+}

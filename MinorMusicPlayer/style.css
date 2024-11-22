@@ -1,0 +1,62 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.heading{
+    height: 20vh;
+}
+.heading h1{
+    display: flex;
+    height: 100%;
+    font-size: 1.8em;
+    justify-content:center;
+    align-items: center;
+}
+.form-check{
+    position: relative;
+    top: -9em;
+    right: -88em;
+    width: 3em;
+    height: 3em;
+}
+.form-check-input{
+    width: 3em;
+}
+
+.container{
+    height: 100vh;
+    max-width: 100% !important;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 !important;
+}
+.allSongs{
+    background-color: aqua;
+    height: 98vh;
+    width: 100%;
+    border-radius: 0 2% 2% 0;
+    box-shadow: 0 4px 8px rgba(0, 100, 100, 0.6),
+    0 2px 4px rgba(0, 80, 80, 0.8);
+}
+.songCard{
+    background-color: aqua;
+    height: 98vh;
+    width: 100%;
+    margin: 0 1em;
+    border-radius: 0.5% 2% 2% 0.5%;
+    box-shadow: 0 4px 8px rgba(0, 100, 100, 0.6),
+    0 2px 4px rgba(0, 80, 80, 0.8);
+}
+.playlist{
+    background-color: aqua;
+    height: 98vh;
+    width: 100%;
+    border-radius: 0.5% 2% 2% 0.5%;
+    box-shadow: 0 4px 8px rgba(0, 100, 100, 0.6),
+    0 2px 4px rgba(0, 80, 80, 0.8);
+}
