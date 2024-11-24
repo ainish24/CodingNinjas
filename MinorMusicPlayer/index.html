@@ -36,12 +36,54 @@
 
 
         <div class="songCard">
+            <div class="songInfo">
 
+                <div class="albumImage">
+                    <img class="albumImageAttribute" src="./songAlbum/Winning-Speech-Img.jpeg" alt="">
+                </div>
+                <div class="currentSongName">
+                    Winning Speech
+                </div>
+                <div class="artistName">
+                    Karan Aujla
+                </div>
+            </div>
+
+
+
+            <div class="songPlayer">
+                <audio controls class="audioElement">
+                    <source class="audioSource">
+                </audio>
+                <div class="songControls">
+                    <div class="nextPrev">
+                        <button class="previousButton" onclick="prevSong()"><=</button>
+                        <button class="nextButton" onclick="nextSong()">=></button>
+                    </div>
+                    <div class="plstButton">
+                        <button class="addToPlaylist" onclick="addToPlaylist()">Add To Playlist</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
         <div class="playlist">
-
+            <div class="inputArea">
+                <input type="text" placeholder="Enter Playlist Name" class="playlistNameInput">
+                <button class="createPlaylistButton" onclick="createPlaylist()">Create Playlist</button>
+            </div>
+            <div class="playlistInfo">
+                <div class="currentPlaylistDiv">
+                    Current Playlist
+                </div>
+                <div class="allPlaylistDiv">
+                    <div>
+                        All Playlist
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
 
