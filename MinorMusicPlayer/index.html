@@ -13,9 +13,19 @@
 <body>
     <div class="heading">
         <h1>RaveX Music Player</h1>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Light</label>
+        <div class="searchDiv">
+            <div class="songSearchbarDiv">
+                <input type="text" placeholder="Search Song" class="songSearchNameInput">
+                <button class="searchSongButton" onclick="searchSong()">Search</button>
+            </div>
+            <div class="playlistSearchbarDiv">
+                <input type="text" placeholder="Search Playlist" class="playlistSearchNameInput">
+                <button class="searchPlaylistButton" onclick="searchPlaylist()">Search</button>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Light</label>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -30,7 +40,7 @@
                 
             </div>
             <div class="songsName">
-
+                
             </div>
         </div>
 
@@ -52,9 +62,11 @@
 
 
             <div class="songPlayer">
-                <audio controls class="audioElement">
-                    <source class="audioSource">
-                </audio>
+                <div class="audioDiv">
+                    <audio controls class="audioElement">
+                        <source class="audioSource">
+                    </audio>
+                </div>
                 <div class="songControls">
                     <div class="nextPrev">
                         <button class="previousButton" onclick="prevSong()"><=</button>
@@ -62,6 +74,7 @@
                     </div>
                     <div class="plstButton">
                         <button class="addToPlaylist" onclick="addToPlaylist()">Add To Playlist</button>
+                        <button class="removeFromPlaylist" onclick="removeFromPlaylist()">Remove from Playlist</button>
                     </div>
                 </div>
             </div>
@@ -75,13 +88,20 @@
             </div>
             <div class="playlistInfo">
                 <div class="currentPlaylistDiv">
-                    Current Playlist
+                    <div class="playlistHeader">
+                        Current Playlist
+                    </div>
+                    <div class="innerCurrentPlaylistDiv">
+                        
+                    </div>
                 </div>
                 <div class="allPlaylistDiv">
-                    <div>
+                    <div class="playlistHeader">
                         All Playlist
                     </div>
-                    
+                    <div class="innerAllPlaylistDiv">
+
+                    </div>
                 </div>
             </div>
         </div>

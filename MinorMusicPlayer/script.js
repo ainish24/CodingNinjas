@@ -43,7 +43,7 @@ let songsArray=[
     },
     {   id: 7,
         name:"4 Yaar",
-        artist:"Rock",
+        artist:"Parmish Verma",
         genre:"Hip-Hop",
         source:"./songAudio/4 Yaar - Parmish Verma.mp3",
         img:"./songAlbum/4-Yaar-img.jpeg"
@@ -162,38 +162,100 @@ function nextSong(){
 
 const inputtedPlaylistNameTag = document.getElementsByClassName("playlistNameInput")[0]
 let objectOfPlaylists={}
-let allPlaylistDiv=document.getElementsByClassName("allPlaylistDiv")[0]
-function addToPlaylist(){
+let allPlaylistDiv=document.getElementsByClassName("innerAllPlaylistDiv")[0]
 
-}
-function removeFromPlaylist(){
-
-}
 function createPlaylist(){
     objectOfPlaylists[inputtedPlaylistNameTag.value.trim()]=[]
     playlistName=inputtedPlaylistNameTag.value.trim()
     const newPlaylist=document.createElement("div")
     newPlaylist.innerText=playlistName
-    newPlaylist.className="playlist"
-    newPlaylist.setAttribute("onclick","currentPlaylist()")
+    newPlaylist.className="playlistInnerDiv"
+    newPlaylist.setAttribute("onclick","currentPlaylist(event); renderPlaylistSong();")
     allPlaylistDiv.appendChild(newPlaylist)
     inputtedPlaylistNameTag.value =""
-    console.log(objectOfPlaylists)
 }
-function currentPlaylist(){
-    
+
+let clickedPlaylist=null
+const innerCurrentPlaylistDiv = document.getElementsByClassName("innerCurrentPlaylistDiv")[0]
+
+function currentPlaylist(event){
+    clickedPlaylist=event.target.innerText
+}
+
+function addToPlaylist(){
+    let isPresent=false
+    if(clickedPlaylist==null){
+        alert("Select a playlist by clicking on it!")
+    }
+    objectOfPlaylists[clickedPlaylist].forEach(song => {
+        if(song.id==clickedSongObject.id){
+            isPresent=true
+        }
+    });
+    if(!isPresent){
+        objectOfPlaylists[clickedPlaylist].push(clickedSongObject)
+    }
+    renderPlaylistSong()
+}
+function removeFromPlaylist(){
+    let isPresent=false
+    let songIndex
+    objectOfPlaylists[clickedPlaylist].forEach((song, index) => {
+        if(song.id==clickedSongObject.id){
+            isPresent=true
+            songIndex=index
+        }
+    });
+    if(isPresent){
+        objectOfPlaylists[clickedPlaylist].splice(songIndex,1)
+    }
+    renderPlaylistSong()
 }
 
 
 function renderPlaylistSong(){
-    
+    innerCurrentPlaylistDiv.innerText=""
+    objectOfPlaylists[clickedPlaylist].forEach(song=>{
+        const newDiv=document.createElement("div")
+        newDiv.innerText=song.name
+        newDiv.setAttribute("onclick","renderCurrentSong(event)")
+        newDiv.className="innerCurrentPlaylistDivSong"
+        innerCurrentPlaylistDiv.appendChild(newDiv)
+    })
 }
+const songSearchNameInput=document.getElementsByClassName("songSearchNameInput")[0]
+const playlistSearchNameInput=document.getElementsByClassName("playlistSearchNameInput")[0]
 function searchSong(){
-
+    let songPresent=false
+    songsArray.forEach(song=>{
+        if(song.name==songSearchNameInput.value.trim()){
+            songPresent=true
+        }
+    })
+    if(songPresent){
+        clickedSongObject=songsArray.filter((song)=>{
+            return song.name==songSearchNameInput.value.trim()
+        })[0]
+        albumImage.src=clickedSongObject.img
+        currentSonngName.innerText=clickedSongObject.name
+        artistName.innerText=clickedSongObject.artist
+        audioSource.setAttribute("src",clickedSongObject.source)
+        audioElement.load()
+    }
+    else{
+        alert("Song not found, check caps")
+    }
+    songSearchNameInput.value=""
 }
 function searchPlaylist(){
-    
+    if(playlistSearchNameInput.value in objectOfPlaylists){
+        clickedPlaylist=playlistSearchNameInput.value
+        renderPlaylistSong()
+    }
+    else{
+        alert("Playlist not found, check caps")
+    }
 }
 function toggleTheme(){
-
+    
 }
