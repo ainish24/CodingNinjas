@@ -256,6 +256,18 @@ function searchPlaylist(){
         alert("Playlist not found, check caps")
     }
 }
-function toggleTheme(){
-    
+
+function toggleTheme() {
+    const body = document.body;
+    const themeLabel = document.querySelector(".form-check-label");
+
+    if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        themeLabel.textContent = "Light";
+    } else {
+        body.classList.add("dark-mode");
+        themeLabel.textContent = "Dark";
+    }
 }
+
+

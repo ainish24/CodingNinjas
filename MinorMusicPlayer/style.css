@@ -1,19 +1,41 @@
 :root {
-    --root-bg-color:rgba(255, 255, 255, 0.1);
+    --root-bg-color: rgba(255, 255, 255, 0.1);
     --bg-color: linear-gradient(135deg, #E0FFFC, #FFE0FF);
-    --text-color: #3D3332; 
-    --primary-accent: #FF007F; 
-    --secondary-accent: #00FFD1; 
+    --text-color: #3D3332;
+    --primary-accent: #FF007F;
+    --secondary-accent: #00FFD1;
     --border-color: #FFC1E3;
-    --gold-color:#FFD700;
-    --deep-teal:#007F7F;
-  }
+    --gold-color: #FFD700;
+    --deep-teal: #007F7F;
+    --search-bg-color: #ffffff;
+    --search-text-color: #000000;
+    --search-border-color: #cccccc;
+    --genre-bg-color: #ffffff;
+    --genre-text-color: #000000;
+}
+
+.dark-mode {
+    --root-bg-color: rgba(0, 0, 0, 0.8);
+    --bg-color: linear-gradient(135deg, #1A1A1A, #333333);
+    --text-color: #FFFFFF;
+    --primary-accent: #FF4C4C;
+    --secondary-accent: #29B6F6;
+    --border-color: #444444;
+    --gold-color: #FFCC00;
+    --deep-teal: #00A5A5;
+    --search-bg-color: #2D2D2D;
+    --search-text-color: #FFFFFF;
+    --search-border-color: #007F7F;
+    --genre-bg-color: #2D2D2D;
+    --genre-text-color: #FFFFFF;
+}
+
 
 *{
     color: var(--text-color);
 }
 html, body {
-    background:var(--root-bg-color);
+    background:var(--bg-color);
     backdrop-filter: blur(10px);
     margin: 0;
     padding: 0;
@@ -81,9 +103,9 @@ body::-webkit-scrollbar{
 
 .searchDiv{
     display: flex;
-    position: relative;
-    top: -9em;
-    right: -50em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
     width: 45em;
     justify-content: space-between;
 }
@@ -97,7 +119,10 @@ body::-webkit-scrollbar{
     text-shadow: 0 0 5px var(--gold-color);
 }
 #genre{
-    border:2px solid var(--primary-accent)
+    background-color: var(--genre-bg-color);
+    color: var(--genre-text-color);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 #genre option, #genre{
     color:var(--primary-accent);
@@ -210,17 +235,26 @@ body::-webkit-scrollbar{
     padding-left: 0.2em;
 }
 .songSearchNameInput, .playlistSearchNameInput, .playlistNameInput{
-    border:2px solid var(--primary-accent);
+    background-color: var(--search-bg-color);
+    color: var(--search-text-color);
+    border: 1px solid var(--search-border-color);
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .songSearchNameInput::placeholder, .playlistSearchNameInput::placeholder, .playlistNameInput::placeholder{
-    color: var(--primary-accent);
+    color: var(--search-text-color);
+    opacity: 0.7;
 }
 
 .createPlaylistButton, .searchSongButton, .searchPlaylistButton{
-    border:2px solid var(--primary-accent);
-    background-color:white;
-    color: var(--primary-accent);
+    background-color: var(--search-bg-color);
+    color: var(--search-text-color);
+    border: 1px solid var(--search-border-color);
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .songName, .currentSongName, .artistName, .playlistInnerDiv, .innerCurrentPlaylistDivSong{
