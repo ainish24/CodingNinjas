@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Meadia App: Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/users/login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required autocomplete="off"> 
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required autocomplete="off">
+        <br>
+        <button type="submit">Login</button>
+        <br>
+        Don't have an account? Sign up <a href="/signup">here</a>
+    </form>
+</body>
+</html>
