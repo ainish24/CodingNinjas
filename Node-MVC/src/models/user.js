@@ -1,5 +1,5 @@
 const USERS=[]
-const getUSers =function(){
+const getUsers =function(){
     return USERS
 }
 
@@ -9,4 +9,7 @@ const checkUSerEmailExists=function(email){
 const checkUSerExists=function (email,password){
     return USERS.find(user=>user.email==email && user.password==password)
 }
-module.exports ={USERS,checkUSerEmailExists,checkUSerExists}
+const addUser=function(newUser){
+    USERS.push(newUser)
+}
+module.exports ={getUsers,checkUSerEmailExists,checkUSerExists,addUser}
