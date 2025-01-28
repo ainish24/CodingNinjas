@@ -7,6 +7,7 @@ const {displayDashboard,
         updateProduct,
         deleteProduct
 }=require('./src/controllers/product.js')
+const {validateProductMiddleware}=require('./src/middlewares/validateProduct.js')
 
 const app = express()
 
@@ -23,7 +24,7 @@ app.get('/dashboard',displayDashboard)
 
 app.get('/products',fetchProducts)
 
-app.post('/products',createProduct)
+app.post('/products',validateProductMiddleware,createProduct)
 
 app.patch('/products/:id',updateProduct)
 
