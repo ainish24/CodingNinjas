@@ -6,11 +6,22 @@ const {getP,
     updateP,
     deleteP}=require('../models/products')
 
+
+const {validationResult} = require('express-validator')
+
 const fetchProducts=(req, res)=>{
     const products = getP()
     res.json(products)
 }
 const createProduct=(req,res)=>{
+    const products = getP()
+    const errors=validationResult(req)
+    if(!errors.isEmpty()){
+        return res.render('dashboard',{
+            products:products,
+            errorMessage:errors.array()[0].msg
+        })
+    }
     const {title,currentPrice,mrp,imgURL}=req.body
     newProduct={title,currentPrice,mrp,imgURL}
     createP(newProduct)

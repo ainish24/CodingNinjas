@@ -7,8 +7,9 @@ const {displayDashboard,
         updateProduct,
         deleteProduct
 }=require('./src/controllers/product.js')
-const {validateProductMiddleware}=require('./src/middlewares/validateProduct.js')
-
+// const {validateProductMiddleware}=require('./src/middlewares/validateProduct.js')
+const {body, validationResult} = require('express-validator')
+const {validationRules} = require('./src/middlewares/validateProduct.js')
 const app = express()
 
 app.use(express.static('public'))
@@ -24,7 +25,7 @@ app.get('/dashboard',displayDashboard)
 
 app.get('/products',fetchProducts)
 
-app.post('/products',validateProductMiddleware,createProduct)
+app.post('/products',validationRules,createProduct)
 
 app.patch('/products/:id',updateProduct)
 
