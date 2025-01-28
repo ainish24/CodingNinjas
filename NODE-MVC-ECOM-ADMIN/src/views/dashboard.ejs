@@ -94,6 +94,11 @@
     <hr>
 
     <div class="formConatiner">
+      <% if(errorMessage){ %>
+      <div class="alert alert-danger" role="alert">
+        <%= errorMessage %>
+      </div>
+      <% } %>
         <h1 class="mb-3">Add/Edit product</h1>
         <form method="post" action="/products" id="submitForm">
             <div class="mb-3">
