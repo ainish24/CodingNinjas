@@ -6,9 +6,68 @@
     <title>E-Commerce Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/dashboard.css">
-    <style>
-        
-    </style>
+    <script>
+        function unhideEditButton(){
+          document.getElementsByClassName('hidden')[0].style.display='inline-block'
+        }
+        const addBtn=document.getElementById('addButton')
+        const editButton=document.getElementById('editButton')
+        function submitFormFunction(action,method){
+          const form=document.getElementById('submitForm')
+          form.action=action
+          form.method=method
+          form.submit()
+        }
+
+
+        let productId
+
+
+        function addInfo(products){
+          const JSONproduct=JSON.parse(products)
+          productId=JSONproduct.id
+          console.log("Edit Product button clicked")
+          console.log(productId)
+          document.getElementById('title').value=JSONproduct.title
+          document.getElementById('currentPrice').value=JSONproduct.currentPrice
+          document.getElementById('mrp').value=JSONproduct.mrp
+          document.getElementById('imgURL').value=JSONproduct.imgURL
+        }
+
+        async function updateProduct(){
+          const title=document.getElementById('title').value
+          const currentPrice=document.getElementById('currentPrice').value
+          const mrp=document.getElementById('mrp').value
+          const imgURL=document.getElementById('imgURL').value
+          const url=`/products/${productId}`
+          try{
+            axios.patch(url,{
+              title,
+              currentPrice,
+              mrp,
+              imgURL
+            })
+            window.location.reload()
+          }catch(error){
+            console.log(error)
+          }
+        }
+
+        async function deleteProduct(id){
+          const url=`/products/${id}`
+          const isConfirm=confirm('Are you sure you want to deletethe product?')
+          if(!isConfirm){
+            return
+          }else{
+          try{
+            axios.delete(url)
+            window.location.reload()
+          }catch(error){
+            console.log(error)
+          }
+        }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -23,8 +82,8 @@
                         ₹<%= Number(product.currentPrice).toFixed(2) %><br>
                         <sub><s>MRP: ₹<%= Number(product.mrp).toFixed(2) %></s></sub>
                     </p>
-                      <a href="#" class="btn btn-warning">Edit Product</a>
-                      <a href="#" class="btn btn-danger">Delete Product</a>
+                      <a href="#" class="btn btn-warning" onclick="unhideEditButton(); addInfo('<%= JSON.stringify(product) %>');">Edit Product</a>
+                      <a href="#" class="btn btn-danger" onclick="deleteProduct('<%= product.id %>')">Delete Product</a>
                     </div>
                   </div>
             </div>
@@ -32,31 +91,35 @@
         </div>
     </div>
 
-    <div>
-        <h1>Add new product</h1>
-        <form method="post" action="/products">
+    <hr>
+
+    <div class="formConatiner">
+        <h1 class="mb-3">Add/Edit product</h1>
+        <form method="post" action="/products" id="submitForm">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text" name="title" class="form-control" id="title" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-                <label for="price" class="form-label">Current Price</label>
-                <input type="text" name="price" class="form-control" id="price" aria-describedby="emailHelp">
+                <label for="currentPrice" class="form-label">Current Price</label>
+                <input type="text" name="currentPrice" class="form-control" id="currentPrice" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="mrp" class="form-label">MRP</label>
                 <input type="text" name="mrp" class="form-control" id="mrp" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
-                <label for="imageURL" class="form-label">Image URL</label>
-                <input type="text" name="imageURL" class="form-control" id="imageURL" aria-describedby="emailHelp">
+                <label for="imgURL" class="form-label">Image URL</label>
+                <input type="text" name="imgURL" class="form-control" id="imgURL" aria-describedby="emailHelp">
               </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+              <button type="button" class="btn btn-primary" id="addButton" onclick="submitFormFunction('/products','post')">Add</button>
+              <button type="button" class="btn btn-primary hidden" id="editButton" onclick="updateProduct()">Edit</button>
+            </form>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
