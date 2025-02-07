@@ -1,5 +1,5 @@
 const userModel=require('../models/user')
-
+const {validationResult}=require('express-validator')
 
 const fetchUsers=(req,res)=>{
     const users=userModel.getUsers()
@@ -11,7 +11,7 @@ const displayProfilePage=(req,res)=>{
 }
 
 const displayLoginPage=(req,res)=>{
-    res.render('login')
+    res.render('login',{errMsg:""})
 }
 
 const displaySignupPage=(req,res)=>{
@@ -22,12 +22,19 @@ const signupUser=(req,res)=>{
     const {name, email, password, age, imageURL}=req.body
     const newuser={name, email, password, age, imageURL}
     const users = userModel.add(newuser)
-    res.redirect('/profile')
+    console.log(newuser)
+    res.render('profile', newuser)
 }
 const loginUser=(req,res)=>{
     const {email, password}=req.body
     const user=userModel.checkUserExists(email,password)
-    res.redirect('/profile')
+    const errors=validationResult(req)
+    if(!errors.isEmpty()){
+        res.render('login',{errMsg:errors.array()[0].msg})
+    }else if(!user){
+        res.render('login',{errMsg:"Wrong Credentials"})
+    }
+    res.render('profile', user)
 }
 
 module.exports={

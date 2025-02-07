@@ -2,6 +2,7 @@ const express = require ('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const userControllers=require('./src/controllers/user')
+const {validationRules}=require('./src/middlewares/validation')
 
 
 const app=express()
@@ -26,9 +27,9 @@ app.get('/login',userControllers.displayLoginPage)
 
 app.get('/signup',userControllers.displaySignupPage)
 
-app.get('/api/login',userControllers.loginUser)
+app.post('/api/login',validationRules,userControllers.loginUser)
 
-app.get('/api/signup',userControllers.signupUser)
+app.post('/api/signup',userControllers.signupUser)
 
 
 app.listen(3000,()=>{

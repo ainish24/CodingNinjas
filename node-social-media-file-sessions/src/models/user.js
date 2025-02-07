@@ -8,7 +8,7 @@ const USERS =[
         imageURL:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFysEiVjMzVna1gnV5oVY8s8CA3LciJ8u10Q&s'
     }
 ]
-const idCounter =2
+let idCounter =2
 
 const getUsers=()=>{
     return USERS
@@ -30,7 +30,7 @@ const remove=(id)=>{
     USERS.splice(index,1)
 }
 const checkUserExists=(email, password)=>{
-    USERS.find(user=> user.email==email && user.password==password)
+    return USERS.find(user=> user.email==email && user.password==password)
 }
 
 

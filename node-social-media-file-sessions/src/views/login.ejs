@@ -23,7 +23,10 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                <a class="nav-link" aria-current="page" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/contact">Contact Us</a>
               </li>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -39,7 +42,12 @@
       </nav>
 
       <div class="container">
-        <form class="custom-form">
+        <form class="custom-form" method="POST" action="/api/login">
+          <% if(errMsg){ %>
+          <div class="alert alert-danger" role="alert">
+            <%= errMsg %>
+          </div>
+          <% } %>
           <div class="mb-3">
             <label for="exampleInputEmail2" class="form-label">Email</label>
             <input type="email" class="form-control" id="exampleInputEmail2" name="email" autocomplete="off">
