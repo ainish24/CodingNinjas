@@ -19,8 +19,9 @@ const displaySignupPage=(req,res)=>{
 }
 
 const signupUser=(req,res)=>{
-    const {name, email, password, age, imageURL}=req.body
-    const newuser={name, email, password, age, imageURL}
+    const {name, email, password, age}=req.body
+    const {file}=req
+    const newuser={name, email, password, age, imageURL:`/uploads/${file.originalname}`}
     const users = userModel.add(newuser)
     console.log(newuser)
     res.render('profile', newuser)
