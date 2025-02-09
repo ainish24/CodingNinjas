@@ -7,6 +7,7 @@ const userControllers=require('./src/controllers/user')
 const {validationRules}=require('./src/middlewares/validation')
 const upload=require('./src/middlewares/multer')
 const session = require('express-session')
+const cookieParser=require('cookie-parser')
 
 
 const app=express()
@@ -43,6 +44,8 @@ app.get('/dashboard', userControllers.displayDashboard)
 app.post('/api/login',validationRules,userControllers.loginUser)
 
 app.post('/api/signup',upload.single('profileimagefile'),userControllers.signupUser)
+
+app.get('/api/logout',validationRules,userControllers.logoutUser)
 
 
 
