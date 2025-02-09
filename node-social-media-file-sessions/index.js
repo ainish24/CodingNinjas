@@ -1,9 +1,12 @@
 const express = require ('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
+const dotenv=require('dotenv')
+dotenv.config()
 const userControllers=require('./src/controllers/user')
 const {validationRules}=require('./src/middlewares/validation')
 const upload=require('./src/middlewares/multer')
+const session = require('express-session')
 
 
 const app=express()
@@ -13,6 +16,12 @@ app.use(bodyParser.json({extended:true}))
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/src/views')
 app.use(express.static('public'))
+app.use(session({
+    secret: process.env.EXPRESS_SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 60*1000 }
+  }))
 
 
 app.get('/',(req,res)=>{
@@ -28,6 +37,8 @@ app.get('/profile',userControllers.displayProfilePage)
 app.get('/login',userControllers.displayLoginPage)
 
 app.get('/signup',userControllers.displaySignupPage)
+
+app.get('/dashboard', userControllers.displayDashboard)
 
 app.post('/api/login',validationRules,userControllers.loginUser)
 
