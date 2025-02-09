@@ -11,7 +11,7 @@ const displayProfilePage=(req,res)=>{
     if(!req.session.user){
         return res.redirect('/login')
     }
-    res.render('profile',req.session.user)
+    res.render("profile", req.session.user);
 }
 
 const displayLoginPage=(req,res)=>{
@@ -40,7 +40,7 @@ const signupUser=(req,res)=>{
     }else{
         lastloggedInAt=new Date().toLocaleString()
     }
-    req.session.user={...newuser,lastloggedInAt}
+    req.session.user={...user,lastloggedInAt}
     let currentTime=new Date().toLocaleString()
     res.cookie('lastloggedInAt',currentTime,{maxAge:3*24*60*60*1000})
     res.redirect('/profile')
@@ -63,9 +63,10 @@ const loginUser=(req,res)=>{
     }else{
         lastloggedInAt=new Date().toLocaleString()
     }
-    req.session.user={...newuser,lastloggedInAt}
+    req.session.user={...user,lastloggedInAt}
     let currentTime=new Date().toLocaleString()
     res.cookie('lastloggedInAt',currentTime,{maxAge:3*24*60*60*1000})
+
     res.redirect('/profile')
 }
 

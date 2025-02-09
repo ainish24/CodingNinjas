@@ -23,6 +23,7 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 60*1000 }
   }))
+app.use(cookieParser())
 
 
 app.get('/',(req,res)=>{
