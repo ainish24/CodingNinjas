@@ -8,6 +8,7 @@ const {validationRules}=require('./src/middlewares/validation')
 const upload=require('./src/middlewares/multer')
 const session = require('express-session')
 const cookieParser=require('cookie-parser')
+const {isLoggedIn}=require('./src/middlewares/user')
 
 
 const app=express()
@@ -21,7 +22,7 @@ app.use(session({
     secret: process.env.EXPRESS_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 60*1000 }
+    cookie: { maxAge: 60*60*1000 }
   }))
 app.use(cookieParser())
 
@@ -32,21 +33,23 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/api/users',userControllers.fetchUsers)
+app.get('/api/users', userControllers.fetchUsers)
 
-app.get('/profile',userControllers.displayProfilePage)
+app.get('/profile', isLoggedIn, userControllers.displayProfilePage)
 
-app.get('/login',userControllers.displayLoginPage)
+app.get('/login', userControllers.displayLoginPage)
 
-app.get('/signup',userControllers.displaySignupPage)
+app.get('/signup', userControllers.displaySignupPage)
 
-app.get('/dashboard', userControllers.displayDashboard)
+app.get('/dashboard', isLoggedIn, userControllers.displayDashboard)
 
-app.post('/api/login',validationRules,userControllers.loginUser)
+app.get('/connections', isLoggedIn, userControllers.displayConnections)
 
-app.post('/api/signup',upload.single('profileimagefile'),userControllers.signupUser)
+app.post('/api/login', validationRules, userControllers.loginUser)
 
-app.get('/api/logout',validationRules,userControllers.logoutUser)
+app.post('/api/signup', upload.single('profileimagefile'), userControllers.signupUser)
+
+app.get('/api/logout', validationRules, userControllers.logoutUser)
 
 
 

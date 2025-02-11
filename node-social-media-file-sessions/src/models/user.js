@@ -14,9 +14,10 @@ const getUsers=()=>{
     return USERS
 }
 const add=(newUser)=>{
-    USERS.push({
-        id:`${idCounter++}`,
-        ...newUser})
+    const user={id:`${idCounter++}`,
+    ...newUser}
+    USERS.push(user)
+    return user
 }
 const update =(id, updatedUser)=>{
     const index=USERS.findIndex(user=>user.id==id)

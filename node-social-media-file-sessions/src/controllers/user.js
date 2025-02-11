@@ -8,9 +8,6 @@ const fetchUsers=(req,res)=>{
 }
 
 const displayProfilePage=(req,res)=>{
-    if(!req.session.user){
-        return res.redirect('/login')
-    }
     res.render("profile", req.session.user);
 }
 
@@ -21,19 +18,23 @@ const displayLoginPage=(req,res)=>{
 const displaySignupPage=(req,res)=>{
     res.render('signup')
 }
-
+ 
 const displayDashboard=(req,res)=>{
-    if(!req.session.user){
-        return res.redirect('/login')
-    }
     res.send('Welcome to Feed')
+}
+
+const displayConnections=(req,res)=>{
+    const users = userModel.getUsers()
+    const currentUser = req.session.user
+    const otherUsers = users.filter((user)=>user.id!==currentUser.id)
+    res.render('connections',{users:otherUsers, currentUser})
 }
 
 const signupUser=(req,res)=>{
     const {name, email, password, age}=req.body
     const {file}=req
     const newuser={name, email, password, age, imageURL:`/uploads/${file.originalname}`}
-    const users = userModel.add(newuser)
+    const user = userModel.add(newuser)
     let lastloggedInAt=null
     if(req.cookies.lastloggedInAt){
         lastloggedInAt=req.cookies.lastloggedInAt
@@ -50,9 +51,9 @@ const loginUser=(req,res)=>{
     const user=userModel.checkUserExists(email,password)
     const errors=validationResult(req)
     if(!errors.isEmpty()){
-        res.render('login',{errMsg:errors.array()[0].msg})
+        return res.render('login',{errMsg:errors.array()[0].msg})
     }else if(!user){
-        res.render('login',{errMsg:"Wrong Credentials"})
+        return res.render('login',{errMsg:"Wrong Credentials"})
     }
     //we need cookie-parser package to access a cookie from front end
     // to access a cookie, req.cookies
@@ -71,7 +72,7 @@ const loginUser=(req,res)=>{
 }
 
 const logoutUser=(req,res)=>{
-    res.session.destroy((error)=>{
+    req.session.destroy((error)=>{
         if(error){
             console.log(error)
         }else{
@@ -86,6 +87,7 @@ module.exports={
     displaySignupPage,
     displayDashboard,
     displayLoginPage,
+    displayConnections,
     signupUser,
     loginUser,
     logoutUser
