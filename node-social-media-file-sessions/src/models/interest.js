@@ -1,4 +1,4 @@
-const INTERESTS=[
+ const INTERESTS=[
     {
         id:1,
         name:'Swimming',
@@ -37,10 +37,14 @@ const remove=(id)=>{
     const index=INTERESTS.findIndex(interest=>interest.id==id) 
     INTERESTS.splice(index,1)
 }
+const getInterest =(id)=>{
+    return INTERESTS.find(int=>int.id==id)
+}
 
 module.exports={
     getAll,
     add,
     update,
-    remove
+    remove,
+    getInterest
 }

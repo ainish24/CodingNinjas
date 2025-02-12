@@ -69,6 +69,12 @@
             <h5 class="card-title"><%= name %></h5>
             <p class="card-text">Email: <%= email %></p>
             <p class="card-text">Age: <%= age %></p>
+            <hr>
+            <ul style="text-align: left;">
+              <% interests.forEach((interest)=>{ %>
+                <li><%= interest.name %></li>
+              <% }) %>
+            </ul>
           </div>
         </div>
       </div>

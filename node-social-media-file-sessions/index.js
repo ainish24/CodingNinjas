@@ -51,6 +51,8 @@ app.get('/interests', isLoggedIn, interestControllers.displayInterestPage)
 app.get('/api/interests', isLoggedIn, interestControllers.fetchInterests)
 app.post('/api/interests', isLoggedIn, interestControllers.createInterest)
 
+app.get('/api/users/:id/interests',  interestControllers.fetchUserInterest)
+app.post('/api/users/:id/interests',  interestControllers.createUserInterest)
 
 //Single file upload
 // app.post('/submit-upload', upload.single('profileImage') ,(req,res)=>{

@@ -8,7 +8,8 @@ const fetchUsers=(req,res)=>{
 }
 
 const displayProfilePage=(req,res)=>{
-    res.render("profile", req.session.user);
+    const interests = userModel.getInterests(req.session.user.id)
+    res.render("profile", {...req.session.user, interests});
 }
 
 const displayLoginPage=(req,res)=>{

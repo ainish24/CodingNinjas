@@ -57,9 +57,10 @@
                   <img src="<%= interest.imageURL %>" class="card-img-top" alt="profile-img">
                   <div class="card-body">
                     <h5 class="card-title"><%= interest.name %></h5>
-                    <p class="card-text">Email: <%= interest.email %></p>
-                    <p class="card-text">Age: <%= interest.age %></p>
-                    <button type="button" class="btn btn-primary">Send Request</button>
+                    <form action="/api/users/<%= currentUser.id %>/interests" method="post">
+                      <input type="hidden" name="interestId" value="<%= interest.id %>">
+                      <button type="submit" class="btn btn-primary">Add Interest</button>
+                    </form>
                   </div>
                 </div>
             </div>

@@ -35,12 +35,7 @@ const USERS =[
 let idCounter =5
 
 
-const FOLLOWING_LIST=[
-    {
-        userId:1,
-        followingUserIds:[2,3]
-    }
-]
+const USER_INTERESTS=[]
 
 
 const getUsers=()=>{
@@ -67,11 +62,35 @@ const checkUserExists=(email, password)=>{
     return USERS.find(user=> user.email==email && user.password==password)
 }
 
+const getInterests=(userId)=>{
+    const userInt= USER_INTERESTS.find(int=>int.id==userId)
+    if (userInt) {
+        return userInt.interests
+    } else {
+        return []
+    }
+}
+
+const addInterest = (userId, interest)=>{
+    const userInt= USER_INTERESTS.find(int=>int.id==userId)
+    if (userInt) {
+        userInt.interests.push(interest)
+    } else {
+        const obj ={
+            id: userId,
+            interests : [interest]
+        }
+        USER_INTERESTS.push(obj)
+    }
+}
+
 
 module.exports={
     getUsers,
     add,
     update,
     remove,
-    checkUserExists
+    checkUserExists,
+    getInterests,
+    addInterest
 }
