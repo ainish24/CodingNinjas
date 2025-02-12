@@ -9,6 +9,7 @@ const upload=require('./src/middlewares/multer')
 const session = require('express-session')
 const cookieParser=require('cookie-parser')
 const {isLoggedIn}=require('./src/middlewares/user')
+const interestControllers=require('./src/controllers/interest')
 
 
 const app=express()
@@ -33,24 +34,22 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/api/users', userControllers.fetchUsers)
 
 app.get('/profile', isLoggedIn, userControllers.displayProfilePage)
-
+app.get('/dashboard', isLoggedIn, userControllers.displayDashboard)
+app.get('/signup', userControllers.displaySignupPage)
 app.get('/login', userControllers.displayLoginPage)
 
-app.get('/signup', userControllers.displaySignupPage)
 
-app.get('/dashboard', isLoggedIn, userControllers.displayDashboard)
-
-app.get('/connections', isLoggedIn, userControllers.displayConnections)
-
-app.post('/api/login', validationRules, userControllers.loginUser)
-
+app.get('/api/users', userControllers.fetchUsers)
 app.post('/api/signup', upload.single('profileimagefile'), userControllers.signupUser)
-
+app.post('/api/login', validationRules, userControllers.loginUser)
 app.get('/api/logout', validationRules, userControllers.logoutUser)
 
+
+app.get('/interests', isLoggedIn, interestControllers.displayInterestPage)
+app.get('/api/interests', isLoggedIn, interestControllers.fetchInterests)
+app.post('/api/interests', isLoggedIn, interestControllers.createInterest)
 
 
 //Single file upload

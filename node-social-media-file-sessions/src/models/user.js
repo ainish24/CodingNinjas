@@ -1,14 +1,47 @@
 const USERS =[
     {
         id:'1',
-        name:'Ainish Vadhwani',
-        email:"ainish@gmail.com",
+        name:'Rohit',
+        email:"rohit@gmail.com",
         password:'123',
-        age:23,
-        imageURL:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFysEiVjMzVna1gnV5oVY8s8CA3LciJ8u10Q&s'
+        age:36,
+        imageURL:'/uploads/rohit.jpg'
+    },
+    {
+        id:'2',
+        name:'Kohli',
+        email:"kohli@gmail.com",
+        password:'123',
+        age:37,
+        imageURL:'/uploads/kohli.jpg'
+    },
+    {
+        id:'3',
+        name:'Dhoni',
+        email:"dhoni@gmail.com",
+        password:'123',
+        age:52,
+        imageURL:'/uploads/dhoni.webp'
+    },
+    {
+        id:'4',
+        name:'Tendulkar',
+        email:"tendulkar@gmail.com",
+        password:'123',
+        age:63,
+        imageURL:'/uploads/tendulkar.webp'
     }
 ]
-let idCounter =2
+let idCounter =5
+
+
+const FOLLOWING_LIST=[
+    {
+        userId:1,
+        followingUserIds:[2,3]
+    }
+]
+
 
 const getUsers=()=>{
     return USERS

@@ -81,6 +81,7 @@ const logoutUser=(req,res)=>{
     })
 }
 
+
 module.exports={
     fetchUsers,
     displayProfilePage,

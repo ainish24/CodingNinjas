@@ -29,7 +29,7 @@
                 <a class="nav-link" aria-current="page" href="/contact">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/connections">Connections</a>
+                <a class="nav-link active" aria-current="page" href="/interests">Interests</a>
               </li>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -51,14 +51,15 @@
 
       <div class="container">
         <div class="row">
-            <% users.forEach((user)=>{ %>
+            <% interests.forEach((interest)=>{ %>
             <div class="col-md-4">
                 <div class="card custom-card" style="width: 18rem;">
-                  <img src="<%= user.imageURL %>" class="card-img-top" alt="profile-img">
+                  <img src="<%= interest.imageURL %>" class="card-img-top" alt="profile-img">
                   <div class="card-body">
-                    <h5 class="card-title"><%= user.name %></h5>
-                    <p class="card-text">Email: <%= user.email %></p>
-                    <p class="card-text">Age: <%= user.age %></p>
+                    <h5 class="card-title"><%= interest.name %></h5>
+                    <p class="card-text">Email: <%= interest.email %></p>
+                    <p class="card-text">Age: <%= interest.age %></p>
+                    <button type="button" class="btn btn-primary">Send Request</button>
                   </div>
                 </div>
             </div>
