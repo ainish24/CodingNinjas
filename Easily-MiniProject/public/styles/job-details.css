@@ -1,0 +1,74 @@
+body{
+    background-color: #f0f8ff;
+
+}
+.navbar {
+    background-color: #77bfe7 !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.postedOn{
+    background-color: #198754;
+    color: #fff;
+    width: 14em;
+    padding: 5px 3px;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+.outerJobDetailContainer{
+    display: flex;
+    justify-content: center;
+    margin-top:2em ;
+}
+.jobDetailContainer{
+    background-color: #fff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid black;
+    border-radius: 7px;
+    width: 80vw;
+    height: 70vh;
+}
+.job-skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jobDetailContainer h1{
+    margin: 10px 0 10px 15px;
+    
+}
+.jobDetailContainer h3{
+    margin-top: 35px;
+    margin-left: 25px;
+    margin-bottom: 0;
+}
+.jobDetailContainer h5{
+    margin-left: 25px;
+}
+.card-content{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.job-skills{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.apply-now-button{
+    border-radius:10px;
+    margin-bottom: 10px;
+}
+.job-applicants{
+    color: red;
+}
+.h1-1{
+    color: #198754;
+}
+.h1-2{
+    color: #0d6efd;
+}
+.h1-3{
+
+    color: #ffc107;
+}
+.h5-2{
+    color: #dc3545;
+}
