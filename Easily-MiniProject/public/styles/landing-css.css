@@ -154,10 +154,10 @@ body{
     align-items:center;
     line-height: normal;
     padding-bottom: 3px;
-    color:rgba(48, 94, 141,0.8);
+    color:#dee2e6;
 }
 .close:hover{
-    border: 1px solid rgba(48, 94, 141,0.8);
+    border: 1px solid #dee2e6;
     border-radius: 10%;
 }
 .submit-button{
