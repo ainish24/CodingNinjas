@@ -2,7 +2,7 @@
 
 
 const onRender=(req,res)=>{
-    res.render('jobDetails')
+    res.render('landingPage')
 }
 
 export {onRender}

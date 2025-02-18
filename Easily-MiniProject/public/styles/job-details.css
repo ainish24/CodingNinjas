@@ -172,4 +172,77 @@ body{
     font-family: "Sigmar", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+
+
+.postJobBody{
+    background-color: #fff;
+}
+.outerPostJobFormContainer{
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.postJobFormContainer{
+    width: 50vw;
+    height: 70vh;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+}
+.postJobFormContainer h2{
+    width: fit-content;
+    margin:10px auto;
+}
+.postJobFormContainer{
+    padding: 0 15px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15); /* Light grey shadow on bottom & right */
+    border-top: 7px solid #77bfe7;  /* Thick border on top */
+    border-left: 4px solid #77bfe7; /* Thick border on left */
+    border-right: none;
+    border-bottom: none;
+}
+.postJobFormContainer form{
+    margin-top:20px;
+}
+.company-name, .total-positions, .skillsAndApplyBy,.login-email, .login-password{
+    width: 100%;
+    margin-left: 0;
+}
+.postJobSubmit{
+    width: 100%;
+}
+.jobLocation, .roleSelect, .categorySelect{
+    border: 2px solid #ced4da;
+}
+
+.noto-serif-font {
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  .loginFormContainer{
+    height: fit-content;
+  }
+  .loginSubmit{
+    margin-bottom: 30px;
+  }
+  .outerLoginFormContainer{
+    flex-direction: column;
+    justify-content:flex-start;
+    padding-top: 7em;
+  }
+  .fredoka-font {
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
   }
