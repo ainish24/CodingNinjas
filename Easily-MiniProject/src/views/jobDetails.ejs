@@ -48,47 +48,47 @@
       <div class="outerJobDetailContainer">
         <div class="jobDetailContainer">
           <h1>
-              <span class="h1-1">SDE</span>
-              <span class="h1-2">opportunity in Gurgaon Hr IND Remote at</span>
-              <span class="h1-3">Coding Ninjas</span>
+              <span class="h1-1"><%= job.jobRole %></span>
+              <span class="h1-2">opportunity in <%= job.jobLocation %> at</span>
+              <span class="h1-3"><%= job.companyName %></span>
           </h1>
-          <h3>Coding Ninjas</h3>
+          <h3><%= job.companyName %></h3>
           <h5>
-              <span class="h5-1">Tech</span> 
-              <span class="h5-2">SDE</span>
+              <span class="h5-1"><%= job.jobCategory %></span> 
+              <span class="h5-2"><%= job.jobRole %></span>
           </h5>
           <div class="card-content">
               <div class="job-location">
                 <span><i class="fa-solid fa-location-dot"></i></span>
-                <span>Gurgaon</span>
+                <span><%= job.jobLocation %></span>
               </div>
               <div class="job-salary">
                 <span><i class="fa-solid fa-indian-rupee-sign"></i></span>
-                <span>14-16LPA</span>
+                <span><%= job.salary %></span>
               </div>
               <div class="job-deadline">
                 <span><i class="fa-regular fa-hourglass-half"></i></span>
-                <span>Apply By 28 February 2025</span>
+                <span>Apply By <%= job.applyBy %></span>
               </div>
               <div class="job-openings">
                 <span><i class="fas fa-briefcase"></i></i></span>
-                <span>Number of Openings 5</span>
+                <span>Number of Openings <%= job.totalOpenings %></span>
               </div>
               <div class="job-applicants">
                 <span><i class="fas fa-users"></i></span>
-                <span>Applicants 1</span>
+                <a href="/applicants/<%= job.id %>"><span>Applicants <%= job.applicants.length %></span></a>
               </div>
               <div class="job-skills">
-                <div class="skills"><button type="button" class="btn btn-outline-warning">React</button></div>
-                <div class="skills"><button type="button" class="btn btn-outline-warning">Javascript</button></div>
-                <div class="skills"><button type="button" class="btn btn-outline-warning">Express</button></div>
-                <div class="skills"><button type="button" class="btn btn-outline-warning">Node</button></div>
-                <div class="skills"><button type="button" class="btn btn-outline-warning">MongoDB</button></div>
-                <div class="skills"><button type="button" class="btn btn-outline-warning">HTML</button></div>
+                <% if(Array.isArray( job.skills)){ %>
+                  <% job.skills.forEach((skill)=>{ %>
+                    <div class="skills"><button type="button" class="btn btn-outline-warning"><%= skill %></button></div>
+                  <% })} else{ %>
+                    <div class="skills"><button type="button" class="btn btn-outline-warning"><%= job.skills %></button></div>
+                  <% } %>
               </div>
               <button type="button" class="btn btn-primary apply-now-button" id="apply-now-button">Apply Now</button>
             </div>
-            <div class="postedOn">Posted: 2/17/2025, 1:08:39 PM</div>
+            <div class="postedOn">Posted: <%= job.postedOn %></div>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
           <hr>
           <div class="innerFormContainer">
             <h4>Apply in less than 1 minute</h4>
-            <form action="">
+            <form action="/applyJob/<%= job.id %>" method="post" enctype="multipart/form-data">
               <div class="input-group">
                 <label for="name" class="input-label">Name</label>
                 <input type="text" id="name" name="name" class="input-field" placeholder="enter your name">
@@ -115,10 +115,10 @@
                 <input type="tel" id="contact" name="contact" class="input-field" placeholder="+91 ____ __ ____">
               </div>
               <div class="input-group">
-                <label for="contact" class="input-label">Resume</label>
-                <input type="number" id="contact" name="contact" class="input-field" placeholder="+91 ____ __ ____">
+                <label for="resume" class="input-label">Resume</label>
+                <input type="file" id="resume" name="resume" class="input-field">
               </div>
-              <button type="button" class="btn btn-success success-button">Success</button>
+              <button type="submit" class="btn btn-success success-button">Apply</button>
             </form>
           </div>
           <hr>

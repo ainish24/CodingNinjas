@@ -25,16 +25,20 @@
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Jobs</a>
+                <a class="nav-link" href="/jobs">Jobs</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Recruiters
+                  <%= name %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Log In</a></li>
+                  <% if(isExist) {%>
+                    <li><a class="dropdown-item" href="/logout">Log Out</a></li>
+                  <% } else{ %>
+                    <li><a class="dropdown-item" href="/login">Log In</a></li>
+                  <% } %>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Post New Job</a></li>
+                  <li><a class="dropdown-item" href="/postJob">Post New Job</a></li>
                 </ul>
               </li>
             </ul>
@@ -52,7 +56,7 @@
         <p>job opportunities & internships</p>
       </div>
       <div class="buttonsContainer">
-        <button type="button" class="btn btn-light added-buttons oswald-font">I'm a Job Seeker</button>
+        <a href="/jobs"><button type="button" class="btn btn-light added-buttons oswald-font">I'm a Job Seeker</button></a>
         <button type="button" class="btn btn-light added-buttons oswald-font" id="register-button">I'm a Recruiter</button>
       </div>
 
@@ -62,7 +66,7 @@
           <span class="close" id="register-close">&times;</span>
           <h2>Experience Easily!</h2>
           <hr>
-          <form>
+          <form method="post" action="/register">
             <div class="input-group">
               <label for="name" class="input-label">Name</label>
               <input type="text" id="name" name="name" class="input-field" placeholder="enter your name">
@@ -92,14 +96,14 @@
           <span class="close" id="login-close">&times;</span>
           <h2>Experience Easily!</h2>
           <hr>
-          <form>
+          <form method="post" action="/login">
             <div class="input-group">
               <label for="login-email" class="input-label">Email</label>
-              <input type="email" id="login-email" name="login-email" class="input-field" placeholder="enter your email">
+              <input type="email" id="login-email" name="email" class="input-field" placeholder="enter your email">
             </div>
             <div class="input-group">
               <label for="login-password" class="input-label">Password</label>
-              <input type="password" id="login-password" name="login-password" class="input-field" placeholder="enter your password"> 
+              <input type="password" id="login-password" name="password" class="input-field" placeholder="enter your password"> 
             </div>
             <button type="submit" class="submit-button">Log In</button>
           </form>

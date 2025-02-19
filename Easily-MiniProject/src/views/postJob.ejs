@@ -49,57 +49,57 @@
     <div class="outerPostJobFormContainer">
         <div class="postJobFormContainer">
             <h2 class="noto-serif-font">Post a new Job</h3>
-            <form>
+            <form method="post" action="/postJob">
                 <div class="mb-3">
-                    <select class="form-select categorySelect" aria-label="Default select example">
+                    <select class="form-select categorySelect" aria-label="Default select example" name="jobCategory">
                         <option selected>select job category</option>
-                        <option value="tech">Tech</option>
-                        <option value="non-tech">Non Tech</option>
+                        <option value="Tech">Tech</option>
+                        <option value="Non-Tech">Non-Tech</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <select class="form-select roleSelect" aria-label="Default select example">
+                    <select class="form-select roleSelect" aria-label="Default select example" name="jobRole">
                         <option selected>select job designation</option>
-                        <option value="hr">HR</option>
-                        <option value="sde">SDE</option>
-                        <option value="devops">DevOps</option>
-                        <option value="mern">MERN Developer</option>
-                        <option value="mean">MEAN Developer</option>
-                        <option value="java">JAVA Developer</option>
-                        <option value="frontend">Front-End Developer</option>
-                        <option value="backend">Back-End Developer</option>
-                        <option value="fullstack">Full-Stack Developer</option>
+                        <option value="HR">HR</option>
+                        <option value="SDE">SDE</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="MERN Developer">MERN Developer</option>
+                        <option value="MEAN Developer">MEAN Developer</option>
+                        <option value="JAVA Developer">JAVA Developer</option>
+                        <option value="Front-End Developer">Front-End Developer</option>
+                        <option value="Back-End Developer">Back-End Developer</option>
+                        <option value="Full-Stack Developer">Full-Stack Developer</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="job-location" class="form-label">Enter job location</label>
-                    <input type="password" class="form-control jobLocation" id="job-location">
+                    <input type="text" class="form-control jobLocation" id="job-location" name="jobLocation">
                 </div>
                 <div class="input-group mb-3 company-name">
                     <span class="input-group-text" id="inputGroup-sizing-default">Company Name</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="companyName">
                 </div>
                 <div class="input-group mb-3 total-positions">
-                    <input type="text" class="form-control" placeholder="enter salary" aria-label="Username">
+                    <input type="text" class="form-control" placeholder="enter salary" aria-label="Username" name="salary">
                     <span class="input-group-text">Total Positions</span>
-                    <input type="number" class="form-control" placeholder="total number of openings" aria-label="Server">
+                    <input type="number" class="form-control" placeholder="total number of openings" aria-label="Server" name="totalOpenings">
                 </div>
                 <div class="input-group mb-3 skillsAndApplyBy">
-                    <select class="form-select" multiple aria-label="multiple select example">
+                    <select class="form-select" multiple aria-label="multiple select example" name="skills">
                         <option selected disabled>select skills required for this job</option>
-                        <option value="1">React</option>
-                        <option value="2">Nodejs</option>
-                        <option value="3">Angular</option>
-                        <option value="3">MongoDB</option>
-                        <option value="3">SQL</option>
-                        <option value="3">Express</option>
-                        <option value="3">JAVA</option>
-                        <option value="3">SpringBoot</option>
-                        <option value="3">C++</option>
-                        <option value="3">Data Structures & Algo</option>
+                        <option value="React">React</option>
+                        <option value="NodeJs">NodeJs</option>
+                        <option value="Angular">Angular</option>
+                        <option value="MongoDB">MongoDB</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Express">Express</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="SpringBoot">SpringBoot</option>
+                        <option value="C++">C++</option>
+                        <option value="Data Structures & Algo">Data Structures & Algo</option>
                     </select>
                     <span class="input-group-text">Apply By</span>
-                    <input name="apply_by" type="date" class="form-control" aria-label="Server">
+                    <input type="date" class="form-control" aria-label="Server" name="applyBy">
                 </div>
                 <button type="submit" class="btn btn-primary postJobSubmit">Submit</button>
               </form>

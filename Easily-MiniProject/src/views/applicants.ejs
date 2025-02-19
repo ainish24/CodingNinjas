@@ -56,13 +56,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="table-light">
-                <th scope="row">1</th>
-                <td>Vivek</td>
-                <td>krvivi28@gmail.com</td>
-                <td>7839358367</td>
-                <td><button type="button" class="btn btn-primary">view</button></td>
-              </tr>
+              <% applicants.forEach((applicant)=>{ %>
+                <tr class="table-light">
+                  <th scope="row"><%= applicant.id %></th>
+                  <td><%= applicant.name %></td>
+                  <td><%= applicant.email %></td>
+                  <td><%= applicant.contact %></td>
+                  <td><a href="<%= applicant.resumeLink %>"><button type="button" class="btn btn-primary">view</button></a></td>
+                </tr>
+              <% }) %>
             </tbody>
           </table>
     </div>
