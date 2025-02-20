@@ -1,4 +1,4 @@
-const jobs=[
+let jobs=[
     {
         id:1,
         companyName:"Coding Ninjas",
@@ -84,11 +84,22 @@ const addApplicant=(jobid,newApplicant)=>{
 const getApplicants=(jid)=>{
     return jobs.find(job=>job.id==jid).applicants
 }
+const updateJob=(jid,updatedJob)=>{
+const jobIndex=jobs.findIndex(job=>job.id==jid)
+const newJob={...jobs[jobIndex],...updatedJob}
+jobs[jobIndex]=newJob
+console.log(jobs)
+}
+const deleteJob=(jid)=>{
+    jobs=jobs.filter(job=>job.id!=jid)
+}
 
 export{
     getJobs,
     findJob,
     addNewJob,
     addApplicant,
-    getApplicants
+    getApplicants,
+    updateJob,
+    deleteJob
 }

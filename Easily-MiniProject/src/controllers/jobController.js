@@ -38,7 +38,8 @@ const getJobs=(req,res)=>{
 const viewDetails=(req,res)=>{
     const jobId=req.params.id
     const job=jobModel.findJob(jobId)
-    res.render("jobDetails",{job})
+    const isLoggedIn = req.session.user ? true : false
+    res.render("jobDetails",{isLoggedIn:true,job})
 }
 const getPostJob=(req,res)=>{
     res.render("postJob")
@@ -61,9 +62,28 @@ const viewApplicants=(req,res)=>{
     const applicants=jobModel.getApplicants(req.params.id)
     res.render("applicants",{applicants})
 }
+const viewEditJob=(req,res)=>{
+    const jobId=req.params.id
+    const job=jobModel.findJob(jobId)
+    res.render("updateJob",{job})
+}
+const editJob=(req,res)=>{
+    const jobId=req.params.id
+    const updatedJob=req.body
+    jobModel.updateJob(jobId,updatedJob)
+    const jobs=jobModel.getJobs()
+    res.render("jobsPage",{jobs})
+}
+const deleteJob=(req,res)=>{
+    const jid=req.params.id
+    jobModel.deleteJob(jid)
+    const jobs=jobModel.getJobs()
+    res.render("jobsPage",{jobs})
+}
 
 
-export {
+
+export {    
     onRender,
     register,
     login,
@@ -74,5 +94,8 @@ export {
     getPostJob,
     postJob,
     applyJob,
-    viewApplicants
+    viewApplicants,
+    viewEditJob,
+    editJob,
+    deleteJob
 }

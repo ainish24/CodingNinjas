@@ -37,7 +37,7 @@ body{
     
 }
 .jobDetailContainer h3{
-    margin-top: 35px;
+    margin-top: 10px;
     margin-left: 25px;
     margin-bottom: 0;
 }
@@ -57,7 +57,7 @@ body{
     margin-bottom: 10px;
 }
 .job-applicants{
-    color: red;
+    color: #dc3545;
 }
 .h1-1{
     color: #198754;
@@ -246,3 +246,41 @@ body{
     font-variation-settings:
       "wdth" 100;
   }
+  .applicantsAnchorTag{
+    text-decoration: none;
+    color: #dc3545;
+  }
+  .applicantsAnchorTag:hover{
+    color: #a71d2a;
+  }
+  .actively-hiring{
+    width: 180px;
+    border:1px solid #D6E2F0 ;
+    padding: 3px 0px 3px 14px;
+    background-color: #334B63;
+    color: #D6E2F0 ;
+    margin-left: 25px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: inline-block;
+}
+.recruiterButtons{
+    display: inline-block;
+    font-size: 1.1em;
+    margin-left: 1em;
+}
+.editButton{
+    color: #FFC107;
+    margin-right: 2px;
+}
+.editButton:hover{
+    color: #E0A800;
+    cursor: pointer;
+}
+.deleteButton{
+    color: #DC3545;
+}
+.deleteButton:hover{
+    color: #C82333;
+    cursor: pointer;
+}

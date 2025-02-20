@@ -46,6 +46,9 @@ app.get("/postJob",jobMiddlewares.isLoggedIn,jobControllers.getPostJob)
 app.post("/postJob",jobControllers.postJob)
 app.post("/applyJob/:id",upload.single("resume"),jobControllers.applyJob)
 app.get("/applicants/:id",jobMiddlewares.isLoggedIn,jobControllers.viewApplicants)
+app.get("/patchJob/:id",jobControllers.viewEditJob)
+app.patch("/patchJob/:id",jobControllers.editJob)
+app.delete("/deleteJob/:id",jobControllers.deleteJob)
 
 app.listen(3000,()=>{
     console.log("Server is Up!")
