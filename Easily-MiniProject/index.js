@@ -9,6 +9,7 @@ import * as jobControllers from "./src/controllers/jobController.js"
 import * as jobMiddlewares from "./src/middlewares/recruiter.js"
 import { isLoggedIn } from "./src/middlewares/recruiter.js"
 
+
 const app = express()
 dotenv.config()
 
