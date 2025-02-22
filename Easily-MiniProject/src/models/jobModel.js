@@ -10,6 +10,7 @@ let jobs=[
         skills:["React","NodeJs","JS","SQL","MongoDB","Express","AWS"],
         postedOn: "2/17/2025, 1:08:39 PM",
         applyBy:"30 Aug 2025",
+        recruiterId:1,
         applicants:[
             {
                 id:1,
@@ -31,6 +32,7 @@ let jobs=[
         skills:["SpringBoot","JAVA","SQL"],
         postedOn: "2/04/2025, 6:15:47 PM",
         applyBy:"23 March 2025",
+        recruiterId:1,
         applicants:[]
     },
     {
@@ -44,6 +46,7 @@ let jobs=[
         skills:["React","NodeJs","JS","MongoDB","Express","Data Structures & Algo"],
         postedOn: "1/25/2025, 2:27:10 PM",
         applyBy:"17 March 2025",
+        recruiterId:2,
         applicants:[]
     }
 ]
@@ -65,9 +68,7 @@ const addNewJob=(newJob)=>{
         month:"short",
         year:"numeric"
     }).format(dateObj)
-    console.log(pushJob)
     pushJob.applyBy=formattedDate
-    console.log(pushJob)
     jobs.push(pushJob)
 }
 const addApplicant=(jobid,newApplicant)=>{
@@ -75,11 +76,9 @@ const addApplicant=(jobid,newApplicant)=>{
         if(job.id==jobid){
             const applicantid=job.applicants.length+1
             const addApplicant={id:applicantid,...newApplicant}
-            console.log(addApplicant)
             job.applicants.push(addApplicant)
         }
     })
-    console.log(jobs)
 }
 const getApplicants=(jid)=>{
     return jobs.find(job=>job.id==jid).applicants
@@ -88,10 +87,14 @@ const updateJob=(jid,updatedJob)=>{
 const jobIndex=jobs.findIndex(job=>job.id==jid)
 const newJob={...jobs[jobIndex],...updatedJob}
 jobs[jobIndex]=newJob
-console.log(jobs)
 }
 const deleteJob=(jid)=>{
     jobs=jobs.filter(job=>job.id!=jid)
+}
+const searchJob=(searchInput)=>{
+    return jobs.filter((job)=>{
+        return Object.values(job).some(value=>String(value).includes(searchInput))
+    })
 }
 
 export{
@@ -101,5 +104,6 @@ export{
     addApplicant,
     getApplicants,
     updateJob,
-    deleteJob
+    deleteJob,
+    searchJob
 }

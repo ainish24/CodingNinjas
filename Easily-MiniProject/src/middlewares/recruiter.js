@@ -5,6 +5,7 @@ import dotenv from "dotenv"
 dotenv.config()
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { body } from "express-validator"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -49,4 +50,61 @@ const mailerFunction=(recEmail,data)=>{
     
 }
 
-export {mailerFunction}
+const applyValidator=[
+    body('name').notEmpty().withMessage("Name cannot be empty"),
+    body('email').notEmpty().withMessage("Email cannot be empty").isEmail().withMessage("Enter a valid Email"),
+    body('contact').notEmpty().withMessage("Contact cannot be empty").isMobilePhone().withMessage("Enter a valid contact number"),
+    body("file")
+    .custom((_, { req }) => {
+      if (!req.file) {
+        throw new Error("No file uploaded!");
+      }
+      if (!req.file.originalname.toLowerCase().endsWith(".pdf")) {
+        throw new Error("Only .pdf files are allowed!");
+      }
+      return true;
+    }),
+]
+const postValidator=[
+    body("jobCategory").custom((value,{req})=>{
+        if(!value || value=="select job category"){
+            throw new Error("Select Job Category")
+        }
+        return true
+    }),
+    body("jobRole").custom((value,{req})=>{
+        if(!value || value=="select job designation"){
+            throw new Error("Select Job role")
+        }
+        return true
+    }),
+    body("jobLocation").notEmpty().withMessage("Enter Job Location"),
+    body("companyName").notEmpty().withMessage("Enter Company Name"),
+    body("salary").notEmpty().withMessage("Enter salary"),
+    body("totalOpenings").notEmpty().withMessage("Enter Total Openings"),
+    body("skills").custom((value,{req})=>{
+        if(!value || value=="select skills required for this job"){
+            throw new Error("Select Required Skills")
+        }
+        return true
+    }),
+    body("applyBy").custom((value,{req})=>{
+        if(!value){
+            throw new Error("Select Date")
+        }
+        return true
+    })
+]
+
+const registerValidator=[
+    body("name").notEmpty().withMessage("Enter Name"),
+    body("email").isEmail().withMessage("Enter Email"),
+    body("password").notEmpty().withMessage("Enter Password").isLength({min:3}).withMessage("Password should be more than 3 characters")
+]
+
+export {
+    mailerFunction,
+    applyValidator,
+    postValidator,
+    registerValidator
+}

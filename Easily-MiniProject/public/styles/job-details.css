@@ -91,6 +91,21 @@ body{
     left: 0;
     background:rgba(0, 0, 0, 0.24);
 }
+.showForm{
+    display: flex;
+}
+.errorMessage{
+    text-align: center;
+    font-size: 1.2em;
+    color:#a71d2a;
+    visibility: hidden;
+    display: block;
+    height: 1.2em;
+}
+.isVisible{
+    margin-top: 10px;
+    visibility: visible;
+}
 .innerApplyNowContainer{
     position: relative;
     background-color: #fff;
@@ -126,7 +141,7 @@ body{
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     width: 23vw;
     height: 40vh;
-    margin: 70px auto;
+    margin: 30px auto 70px;
 }
 .innerFormContainer h4{
     margin-top: 10px;
@@ -189,8 +204,10 @@ body{
 .postJobFormContainer{
     width: 50vw;
     height: 70vh;
-    /* border: 1px solid black; */
     border-radius: 10px;
+}
+.postJobFormContainer:has(.isVisible){
+    height: 72vh;
 }
 .postJobFormContainer h2{
     width: fit-content;
@@ -198,9 +215,9 @@ body{
 }
 .postJobFormContainer{
     padding: 0 15px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15); /* Light grey shadow on bottom & right */
-    border-top: 7px solid #77bfe7;  /* Thick border on top */
-    border-left: 4px solid #77bfe7; /* Thick border on left */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+    border-top: 7px solid #77bfe7;
+    border-left: 4px solid #77bfe7;
     border-right: none;
     border-bottom: none;
 }

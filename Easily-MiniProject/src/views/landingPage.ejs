@@ -41,6 +41,11 @@
                   <li><a class="dropdown-item" href="/postJob">Post New Job</a></li>
                 </ul>
               </li>
+              <% if(isExist){ %>
+              <li class="nav-link" style="padding: 0; transform: translateY(20%);">
+                <p>Last logged in at :- <%= loginDate %></p>
+              </li>
+              <% } %>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,12 +65,20 @@
         <button type="button" class="btn btn-light added-buttons oswald-font" id="register-button">I'm a Recruiter</button>
       </div>
 
-
-      <div id="popup-form" class="popup">
+      <% if(isVisible){ %>
+        <div id="popup-form" class="popup isVisible" style="display: flex;">
+        <% }else{ %>
+          <div id="popup-form" class="popup">
+      <% } %>
         <div class="popup-content">
           <span class="close" id="register-close">&times;</span>
           <h2>Experience Easily!</h2>
           <hr>
+          <% if(errMsg){ %>
+          <div class="errMsg">
+            <%= errMsg %>
+          </div>
+          <% } %>
           <form method="post" action="/register">
             <div class="input-group">
               <label for="name" class="input-label">Name</label>

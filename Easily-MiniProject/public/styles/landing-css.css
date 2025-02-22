@@ -81,6 +81,13 @@ body{
     right: 0;
 }
 
+.errMsg{
+    color:#a71d2a;
+    font-size: 1.2em;
+    transform: translateY(-30%);
+}
+
+
 .popup-content {
     background: white;
     padding: 20px;
@@ -89,6 +96,9 @@ body{
     text-align: center;
     height: 300px;
     position: relative;
+}
+#popup-form.isVisible .popup-content {
+    height: 330px;
 }
 
 #popup-login-form{

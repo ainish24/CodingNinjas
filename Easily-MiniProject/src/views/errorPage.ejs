@@ -42,6 +42,11 @@
               <li><a class="dropdown-item" href="/postJob">Post New Job</a></li>
             </ul>
           </li>
+          <% if(isExist){ %>
+            <li class="nav-link" style="padding: 0; transform: translateY(20%);">
+              <p>Last logged in at :- <%= loginDate %></p>
+            </li>
+            <% } %>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -41,6 +41,11 @@
               <li><a class="dropdown-item" href="/postJob">Post New Job</a></li>
             </ul>
           </li>
+          <% if(isExist){ %>
+            <li class="nav-link" style="padding: 0; transform: translateY(20%);">
+              <p>Last logged in at :- <%= loginDate %></p>
+            </li>
+            <% } %>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -62,7 +67,7 @@
           </div>
           <% if(isLoggedIn){ %>
             <div class="recruiterButtons">  
-              <a href="/patchJob/<%= job.id %>" class="editButton"><i class="fa-solid fa-file-pen"></i></a>
+              <a href="javascript:void(0)" class="editButton" onclick="editJob('<%= job.id %>')"><i class="fa-solid fa-file-pen"></i></a>
               <a href="javascript:void(0)" onclick="deleteJob('<%= job.id %>')" class="deleteButton"><i class="fa-solid fa-trash-can"></i></a>
             </div>
           <% } %>
@@ -107,12 +112,22 @@
       </div>
 
 
-
+      <% if(errMsg) {%>
+      <div class="applyNowForm showForm">
+      <% }else{ %>
       <div class="applyNowForm">
+      <% } %>
         <div class="innerApplyNowContainer">
           <span class="close" id="apply-close">&times;</span>
           <h2 class="sigmar-regular">Easily</h2>
           <hr>
+          <% if(errMsg) {%>
+            <div class="errorMessage isVisible">
+            <% }else{ %>
+            <div class="errorMessage">
+            <% } %>
+              <%= errMsg %>
+          </div>
           <div class="innerFormContainer">
             <h4>Apply in less than 1 minute</h4>
             <form action="/applyJob/<%= job.id %>" method="post" enctype="multipart/form-data">
@@ -150,7 +165,13 @@
             const response = await fetch(`/deleteJob/${jid}`, {
               method: 'DELETE'
             });
-            if (response.ok) {
+            if(response.status === 403){
+              const errorHTML=await response.text()
+              document.open()
+              document.write(errorHTML)
+              document.close()
+            }
+            else if(response.ok) {
               window.location.href = "/jobs";
             } else {
               alert("Failed to delete job. Please try again.");
@@ -160,6 +181,15 @@
             alert("An error occurred. Please try again.");
           }
         } else {
+          window.location.href = `/viewDetails/${jid}`;
+        }
+      }
+
+      const editJob=async function (jid){
+        const confirmation=confirm("Do you want to edit the job?")
+        if(confirmation){
+          window.location.href=`/patchJob/${jid}`;
+        }else{
           window.location.href = `/viewDetails/${jid}`;
         }
       }

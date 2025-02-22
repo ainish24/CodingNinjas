@@ -41,6 +41,11 @@
               <li><a class="dropdown-item" href="/postJob">Post New Job</a></li>
             </ul>
           </li>
+          <% if(isExist){ %>
+            <li class="nav-link" style="padding: 0; transform: translateY(20%);">
+              <p>Last logged in at :- <%= loginDate %></p>
+            </li>
+            <% } %>
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -51,6 +56,13 @@
   </nav>
     <div class="outerPostJobFormContainer">
         <div class="postJobFormContainer">
+          <% if(errMsg) {%>
+            <div class="errorMessage isVisible">
+            <% }else{ %>
+            <div class="errorMessage">
+            <% } %>
+              <%= errMsg %>
+          </div>
             <h2 class="noto-serif-font">Post a new Job</h3>
             <form method="post" action="/postJob">
                 <div class="mb-3">
@@ -62,7 +74,7 @@
                 </div>
                 <div class="mb-3">
                     <select class="form-select roleSelect" aria-label="Default select example" name="jobRole">
-                        <option disabled>select job designation</option>
+                        <option selected disabled>select job designation</option>
                         <option value="HR">HR</option>
                         <option value="SDE">SDE</option>
                         <option value="DevOps">DevOps</option>

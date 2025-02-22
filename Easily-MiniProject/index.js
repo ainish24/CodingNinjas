@@ -4,10 +4,11 @@ import session from "express-session"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import multer from "multer"
-import path from "path"
 import * as jobControllers from "./src/controllers/jobController.js"
 import * as jobMiddlewares from "./src/middlewares/recruiter.js"
 import { isLoggedIn } from "./src/middlewares/recruiter.js"
+import { validationResult } from "express-validator"
+import {applyValidator,postValidator,registerValidator} from "./src/middlewares/recruiter.js"
 
 
 const app = express()
@@ -37,19 +38,28 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app.get("/", jobControllers.onRender)
-app.post("/register", jobControllers.register)
+app.post("/register",registerValidator,jobControllers.register)
 app.post("/login",jobControllers.login)
 app.get("/login",jobControllers.displayLogin)
 app.get("/logout",jobControllers.logout)
 app.get("/jobs",jobControllers.getJobs)
 app.get("/viewDetails/:id",jobControllers.viewDetails)
-app.get("/postJob",jobMiddlewares.isLoggedIn,jobControllers.getPostJob)
-app.post("/postJob",jobControllers.postJob)
-app.post("/applyJob/:id",upload.single("resume"),jobControllers.applyJob)
+app.get("/postJob",jobControllers.getPostJob)
+app.post("/postJob",postValidator,jobControllers.postJob)
+app.post("/applyJob/:id",upload.single("resume"),applyValidator,jobControllers.applyJob)
 app.get("/applicants/:id",jobMiddlewares.isLoggedIn,jobControllers.viewApplicants)
 app.get("/patchJob/:id",jobControllers.viewEditJob)
 app.patch("/patchJob/:id",jobControllers.editJob)
 app.delete("/deleteJob/:id",jobControllers.deleteJob)
+app.post("/searchJob",jobControllers.searchJob)
+app.use((req, res) => {
+  if(req.session.user){
+    return res.status(404).render('errorPage',{...req.session.user,isExist:true,errMsg:"Error 404 Not Found"})
+}else{
+    const user={name:"Recruiters"}
+    return res.status(404).render('errorPage',{...user, isExist:false,errMsg:"Error 404 Not Found"})
+}
+});
 
 app.listen(3000,()=>{
     console.log("Server is Up!")
