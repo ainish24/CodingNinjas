@@ -78,3 +78,14 @@ module.exports = {
   getFilteredProducts,
   addProductRating
 }
+
+
+
+
+
+
+/*
+  # Additional Notes:
+    - Request parameters: req.params
+    - Query parameters: req.query
+*/

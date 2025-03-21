@@ -6,8 +6,8 @@ const router = express.Router()
 router.get('/', productCntrls.getAllProducts)
 router.get('/search', productCntrls.getSearchedProducts)
 router.post('/filter', productCntrls.getFilteredProducts)
-router.get('/category/:category', productCntrls.getProductByCategory)
 router.get('/:id', productCntrls.getProductById)
-router.post('/:id/ratings', productCntrls.addProductRating)
+router.post('/:id/rating', productCntrls.addProductRating)
+router.get('/category/:category', productCntrls.getProductByCategory)
 
 module.exports = router
