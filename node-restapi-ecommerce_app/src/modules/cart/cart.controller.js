@@ -1,7 +1,7 @@
 const cartModel = require('./cart.model');
 
 const getCartItems = (req, res) => {
-  const { cid } = req.headers
+  const cid = req.user.id
   const cartItems = cartModel.getCartItems(cid)
   res.json({
     status: 'SUCCESS',
@@ -10,7 +10,7 @@ const getCartItems = (req, res) => {
 }
 
 const addCartItem = (req, res) => {
-  const { cid } = req.headers
+  const cid = req.user.id
   const { productId, quantity } = req.body
   cartModel.addToCart(cid, productId, quantity)
   res.json({
@@ -20,7 +20,7 @@ const addCartItem = (req, res) => {
 }
 
 const removeCartItem = (req, res) => {
-  const { cid } = req.headers
+  const cid = req.user.id
   const { productId } = req.body
   cartModel.removeFromCart(cid, productId)
   res.json({

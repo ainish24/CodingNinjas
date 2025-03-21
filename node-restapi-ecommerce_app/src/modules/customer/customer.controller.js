@@ -1,3 +1,4 @@
+const jwt = require("jsonwebtoken")
 const customerModel = require('./customer.model');
 
 const signup = (req, res) => {
@@ -17,13 +18,16 @@ const login = (req, res) => {
   if(user.error) {
     return res.status(401).json({
       status: 'FAILED',
-      message: 'Invalid email or password'
+      message: user.message
     })
   }
 
+  const token = jwt.sign(user,process.env.JWT_PRIVATE_KEY,{expiresIn:'30m'})
+  res.cookie("token",token,{maxAge:30*60*1000})
+
   res.json({
     status: 'SUCCESS',
-    message: 'Customer logged in successfully'
+    message: `Customer ${user.name} has logged in successfully`
   })
 }
 

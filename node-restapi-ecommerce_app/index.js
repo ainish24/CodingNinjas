@@ -1,15 +1,19 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const dotenv=require("dotenv")
+const cookieParser = require("cookie-parser")
 const productRoutes = require('./src/modules/product/product.route')
 const customerRoutes = require('./src/modules/customer/customer.route')
 const cartRoutes = require('./src/modules/cart/cart.route')
 const orderRoutes = require('./src/modules/order/order.route')
 
 const app = express()
+dotenv.config()
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 app.use(express.static('public'))
+app.use(cookieParser())
 
 app.use('/api/products', productRoutes)
 app.use('/api/customers', customerRoutes)
