@@ -29,6 +29,21 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get("/api/users",(req,res)=>{
+  res.json([
+    {
+      name:'John Doe',
+      email:'example@gmail.com',
+      role:'Admin'
+    },
+    {
+      name:'John Doe',
+      email:'example@gmail.com',
+      role:'User'
+    }
+  ])
+})
+
 app.get("*",(req,res)=>{
   res.status(404).send("Not Found!")
 })
@@ -36,45 +51,3 @@ app.get("*",(req,res)=>{
 app.listen(3000, () => {
   console.log('Server is up :)')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  # E-Commerce App (Using REST API)
-    - Features/Modules
-      - Products
-        - Get all products ✅
-        - Get products by category ✅
-        - Get product by ID ✅
-        - Get searched products ✅
-        - Get filtered products (Min.price, Max.price, Brand) ✅
-        - Rate the product ✅
-      - Customers
-        - Sign up ✅
-        - Login ✅
-      - Cart (For individual customers)
-        - Get all cart items of a customer ✅
-        - Add to cart ✅
-        - Delete from cart ✅
-      - Order (For individual customers)
-        - Place order
-        - Get orders by customer ID
-        - Get order by ID
-
-    # Resources:
-      - Express routing: https://expressjs.com/en/guide/routing.html#routing
-
-    # Notes:
-      - Routes -> Controllers -> Models
-*/
