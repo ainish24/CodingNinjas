@@ -1,6 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const dotenv=require("dotenv")
+const swaggerUi=require("swagger-ui-express")
+const swaggerJSON=require('./documentation/swagger.json')
 const cookieParser = require("cookie-parser")
 const productRoutes = require('./src/modules/product/product.route')
 const customerRoutes = require('./src/modules/customer/customer.route')
@@ -19,11 +21,16 @@ app.use('/api/products', productRoutes)
 app.use('/api/customers', customerRoutes)
 app.use('/api/cart', cartRoutes)
 app.use('/api/orders', orderRoutes)
+app.use('/api/docs',swaggerUi.serve,swaggerUi.setup(swaggerJSON))
 
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to ECommerce App'
   })
+})
+
+app.get("*",(req,res)=>{
+  res.status(404).send("Not Found!")
 })
 
 app.listen(3000, () => {
