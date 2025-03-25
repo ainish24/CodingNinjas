@@ -23,7 +23,7 @@ app.get("/test-custom-error", (req, res) => {
 });
 
 app.get("/test-unhandled-error", (req, res) => {
-  throw new customErrorHandler(500,"Oops! Something went wrong... Please try again later!");
+  throw "Unknown Server Error";
 });
 
 app.use(invalidRoutesHandlerMiddleware);

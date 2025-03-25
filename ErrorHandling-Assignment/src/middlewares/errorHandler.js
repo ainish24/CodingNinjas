@@ -9,11 +9,11 @@ export class customErrorHandler extends Error {
 }
 
 export const errorHandlerMiddleware = (err, req, res, next) => {
-  // Write your code here
-
-  logger.error(err.message,{
-    "request URL": req.originalUrl
-  });
-
-  res.status(500).send(err.message)
+  if (err instanceof customErrorHandler) {
+    logger.error(err.message,{"request URL": req.originalUrl});
+    res.status(err.statusCode).send(err.message);
+  } else {
+    logger.error("oops! something went wrong...Try again later!",{"request URL": req.originalUrl});
+    res.status(500).send("oops! something went wrong...Try again later!");
+  }
 };
