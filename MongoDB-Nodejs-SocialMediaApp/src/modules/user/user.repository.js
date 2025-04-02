@@ -3,7 +3,7 @@ const db=getDatabase()
 
 const createUser=async (newUser)=>{
     try {
-        const result = await db.collection('user').insertOne(newUser)
+        const result = await db.collection('users').insertOne(newUser)
         return result.insertedId
     } catch (error) {
      console.log('Something went wrong while adding user. ',error)
@@ -13,7 +13,7 @@ const createUser=async (newUser)=>{
 
 const findUserByEmail=async (email)=>{
     try {
-        const result = await db.collection('user').findOne({email})
+        const result = await db.collection('users').findOne({email})
         return result
     } catch (error) {
      console.log('Error validating the user. ',error)
