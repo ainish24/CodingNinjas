@@ -38,37 +38,47 @@ const addPost=async (req,res)=>{
     }
 }
 
-// const updatePost=async (req,res)=>{
-//     try {
-//         const {email, password}=req.body
-//         const user=await userRepository.findUserByEmail(email)
-//         if(!user){
-//             return res.status(401).json({
-//                 status:false,
-//                 message:'User with given email does not exist'
-//             })
-//         }
-//         const doesPasswordMatch=await bcrypt.compare(password,user.password)
+const updatePost=async (req,res)=>{
+    try {
+        const newData=req.body
+        const postId=req.params.id
+        await postRepository.updatePost(postId, newData)
+        return res.json({
+            success:true,
+            message:'Post updated successfully'
+        })
+    } catch (error) {
+        console.log(error)
+        return res.json({
+            success:false,
+            message:'Something went wrong'
+        })
+    }
+}
 
-//         if(!doesPasswordMatch){
-//             return res.status(401).json({
-//                 status:false,
-//                 message:'Invalid credentials'
-//             })
-//         }
+const deletePost=async (req,res)=>{
+    try{
+    const postId=req.params.id
+    const result=await postRepository.deletPost(postId)
+    if (result.deletedCount === 0) {
+        throw new Error("Post not found");
+    }
+    return res.json({
+        success:true,
+        message:'Post deleted successfully'
+    })
+}catch(error) {
+    console.log(error)
+    return res.json({
+        success:false,
+        message:'Something went wrong'
+    })
+}
+}
 
-//         const token=jwt.sign(user,process.env.JWT_PRIVATE_KEY,{expiresIn:'15m'})
-//         res.cookie('token',token,{maxAge:15*60*1000})
-//         res.json({
-//             status:true,
-//             message:`User ${user.name} Logged In Successfully`
-//         })
-//     } catch (error) {
-//         res.status(500).json({
-//             success:false,
-//             message:'Something went wrong!'
-//         })
-//     }
-// }
-
-module.exports={getPosts, addPost}
+module.exports={
+    getPosts, 
+    addPost,
+    updatePost,
+    deletePost
+}
