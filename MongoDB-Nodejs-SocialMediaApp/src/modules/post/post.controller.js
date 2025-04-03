@@ -1,4 +1,5 @@
 const postRepository = require('./post.repository.js')
+const commentRepository=require('../comment/comment.repository.js')
 const jwt = require('jsonwebtoken')
 const bcrypt=require('bcrypt')
 
@@ -76,9 +77,26 @@ const deletePost=async (req,res)=>{
 }
 }
 
+const getPostsComments=async (req,res)=>{
+    try {
+        const postId=req.params.id
+        const comments=await commentRepository.getPostComments(postId)
+        res.json({
+            status:true,
+            data:comments
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:'Something went wrong!'
+        })
+    }
+}
+
 module.exports={
     getPosts, 
     addPost,
     updatePost,
-    deletePost
+    deletePost,
+    getPostsComments
 }

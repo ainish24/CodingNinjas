@@ -10,5 +10,6 @@ router.get('/',postController.getPosts)
 router.post('/',postController.addPost)
 router.patch('/:id',postController.updatePost)
 router.delete('/:id',postController.deletePost)
+router.get('/:id/comments',postController.getPostsComments)
 
 module.exports=router

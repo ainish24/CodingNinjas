@@ -53,11 +53,20 @@ const deletPost=async (postId)=>{
     }
 }
 
-
+const getPostsByUser=async (userId)=>{
+    try{
+    const result = await db.collection('posts').find({userId}).toArray()
+    return result
+    }catch(error){
+        console.error("Error fetching posts by ID:", error);
+        throw error;
+    }
+}
 
 module.exports={
     getAllPosts,
     createPost,
     updatePost,
-    deletPost
+    deletPost,
+    getPostsByUser
 }

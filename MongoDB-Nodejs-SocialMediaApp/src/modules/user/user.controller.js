@@ -1,4 +1,5 @@
 const userRepository = require('./user.repository.js')
+const postRepository=require('../post/post.repository.js')
 const jwt = require('jsonwebtoken')
 const bcrypt=require('bcrypt')
 
@@ -57,4 +58,20 @@ const loginUser=async (req,res)=>{
     }
 }
 
-module.exports={signupUser,loginUser}
+const getPostsByUser=async (req,res)=>{
+    try {
+        const userId=req.user._id
+        const posts=await postRepository.getPostsByUser(userId)
+        res.json({
+            status:true,
+            data:posts
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:'Something went wrong!'
+        })
+    }
+}
+
+module.exports={signupUser,loginUser,getPostsByUser}
