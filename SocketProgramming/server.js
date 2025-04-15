@@ -20,60 +20,73 @@ const io = new Server(server);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(__dirname + '/public'))
 
-// Serve static files
-app.use(express.static(join(__dirname, 'public')));
-
-// MongoDB connection
 const connectToDb = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URL);
-    console.log('Database connected ✅');
+    await mongoose.connect(process.env.MONGODB_URL)
+    console.log('Database connected ✅')
   } catch (error) {
-    console.log('Database error: ', error);
+    console.log('Database error: ', error)
   }
-};
-
-// Message schema and model
+}
 const messageSchema = new mongoose.Schema({
   name: String,
   message: String,
-});
-const Message = mongoose.model('Message', messageSchema);
+})
+const Message = mongoose.model('Message', messageSchema)
 
-// Save message function
 const saveMessage = async ({ name, message }) => {
   try {
-    await Message.create({ name, message });
-    console.log('Message synced');
+    await Message.create({ name, message })
+    console.log('Message synced')
   } catch (error) {
-    console.log('DB Error', error);
+    console.log('DB Error', error)
   }
-};
+}
 
-// Users store
-const users = {};
+const users = {}
 
-// Socket.io connection handler
+// Handle client connections (event: 'connection')
 io.on('connection', (socket) => {
-  console.log('A user connected', socket.id);
+  console.log('A user connected', socket.id)
 
   socket.on('setUsername', (name) => {
-    users[socket.id] = name;
-    console.log(`${users[socket.id]} connected`);
-    socket.broadcast.emit('joinMessage', `${users[socket.id]} joined`);
-    socket.emit('joinMessage', 'You joined');
-  });
+    users[socket.id] = name
+    console.log(`${users[socket.id]} connected`)
+    socket.broadcast.emit('joinMessage', `${users[socket.id]} joined`)
+    socket.emit('joinMessage', 'You joined')
+  })
 
-  // Add the rest of your socket logic here
-});
+  // Handle custom event from the client
+  socket.on('newMessage', async (message) => {
+    // Send custom event from server to the sender client
+    // socket.emit('serverMsg', 'Your message was received')
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, async () => {
-  await connectToDb();
-  console.log(`Server running on http://localhost:${PORT} 🚀`);
-});
+    // Send custom event from server to all the client
+    const newMessageDetails = {
+      name: users[socket.id],
+      message: message,
+    }
+    
+    saveMessage(newMessageDetails)
+    io.emit('newMessageToAll', newMessageDetails)
+  })
+
+  // Handle client disconnections (event: 'disconnect')
+  socket.on('disconnect', () => {
+    console.log(`${users[socket.id]} disconnected`)
+  })
+})
+
+app.get('/', (req, res) => {
+  res.send('Hello, World!')
+})
+
+server.listen(3000, () => {
+  console.log('Server is running at http://localhost:3000')
+  connectToDb()
+})
 
 /*
   # Socket Programming
