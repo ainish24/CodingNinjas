@@ -18,3 +18,5 @@ node_modules
 MongoDB-Nodejs-SocialMediaApp/node_modules
 Postaway-BackEndProject/node_modules
 Postaway-BackEndProject/.env
+ChatterUp/node_modules
+ChatterUp/.env
