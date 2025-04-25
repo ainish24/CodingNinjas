@@ -1,0 +1,31 @@
+#div1 {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    top: 100px;
+    left: 100px;
+    background-color: aqua;
+    animation: bounce 5s ease-out infinite;
+  }
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+
+    25% {
+      transform: translateY(-40px);
+    }
+
+    50% {
+      transform: translateY(0px);
+    }
+
+    75% {
+      transform: translateY(-20px);
+    }
+
+    to {
+      transform: translateY(0px);
+    }
+  }
+  
