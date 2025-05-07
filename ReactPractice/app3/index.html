@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Photo Gallery</title>
+        <meta charset="utf-8">
+            <!-- React -->
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+            <!-- ReactDOM -->
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+            <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+
+        <script type="text/babel">
+            const imgLinks=["https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg",
+            "https://images.pexels.com/photos/12784538/pexels-photo-12784538.jpeg",
+            "https://images.pexels.com/photos/12779583/pexels-photo-12779583.jpeg",
+            "https://images.pexels.com/photos/12798448/pexels-photo-12798448.jpeg",
+            "https://images.pexels.com/photos/1287135/pexels-photo-1287135.jpeg",
+            "https://images.pexels.com/photos/640907/pexels-photo-640907.jpeg"
+            ]
+            let currentIndex=0
+            const styles={
+                mainContainer:{
+                    marginTop:"2em",
+                    textAlign:"center",
+                    display:"flex",
+                    flexDirection:"column",
+                    position:"relative",
+                },
+                mainImageContainer:{
+                    marginBottom:"1em"
+                },
+                mainImage:{
+                    width:"60em",
+                    height:"30em"
+                },
+                imgContainer:{
+                    display:"flex",
+                    justifyContent:"center",
+                    gap:"0.62em",
+                },
+                imgWrapper:{
+
+                },
+                image:{
+                    width:"9.5em",
+                    height:"9em",
+                    cursor:"pointer"
+                },
+                button:{
+                    backgroundColor:"transparent",
+                    border:"none",
+                    fontSize:"2em",
+                    opacity:"0.3",
+                    position:"absolute",
+                    cursor:"pointer"
+                },
+                leftButton:{
+                    left:"9em",
+                    top:"7em"
+                },
+                rightButton:{
+                    right:"9em",
+                    top:"7em"
+                },
+            }
+
+            const changeIndex=(change)=>{
+                if(currentIndex+change==-1){
+                    currentIndex=imgLinks.length-1
+                    root.render(<App />)
+                    return
+                }else if(currentIndex+change==imgLinks.length){
+                    currentIndex=0
+                    root.render(<App />)
+                    return
+                }
+                currentIndex+=change
+                root.render(<App />)
+                console.log(currentIndex)
+            }
+            const changeImageIndex=(index)=>{
+                currentIndex=index
+                root.render(<App />)
+            }
+            const App=()=>{
+                return(
+                    <>
+                    <div style={styles.mainContainer}>
+                        <div style={styles.mainImageContainer}>
+                            <img src={imgLinks[currentIndex]} alt="main image" style={styles.mainImage}/>
+                        </div>
+
+                        <button style={{...styles.button, ...styles.leftButton}} onClick={()=>{changeIndex(-1)}}>⬅️</button>
+                        <button style={{...styles.button, ...styles.rightButton}} onClick={()=>{changeIndex(+1)}}>➡️</button>
+
+                        <div style={styles.imgContainer}>
+                            {imgLinks.map((img,index)=>{
+                                return (<div key={index} style={styles.imgWrapper}>
+                                    <img src={img} style={styles.image} onClick={()=>{changeImageIndex(index)}}/>
+                                </div>)
+                            })}
+                        </div>
+                    </div>
+                    </>
+                )
+            }
+            const root=ReactDOM.createRoot(document.getElementById('root'))
+            root.render(
+                <App />
+            )
+        </script>
+    </body>
+</html>

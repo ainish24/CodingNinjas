@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Score Keeper App</title>
+        <!-- React -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+        <!-- ReactDOM -->
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+
+        <script type="text/babel">
+            const styles={
+                score:{
+                    textAlign:"center",
+                    fontSize:"15em"
+                },
+                buttonsDiv:{
+                    textAlign:"center",
+                },
+                buttons:{
+                    marginRight:"1em",
+                    marginLeft:"1em",
+                    width:"8em",
+                    height:"2em",
+                    fontSize:"1.5em",
+                    borderRadius:"10px",
+                    cursor:"Pointer"
+                }
+            }
+            const adjustment=(change)=>{
+                const scoreDiv=document.getElementsByClassName("score")[0]
+                const value=scoreDiv.innerText
+                if(change==-1 && scoreDiv.innerText=="0"){
+                    alert("cannot go below 0")
+                    return
+                }
+                scoreDiv.innerText=Number(value)+change
+            }
+            const App=()=>{
+                return(
+                    <>
+                    <h1 style={{textAlign:"center"}}>Score Keeper App</h1>
+                    <div className="score" style={styles.score}>
+                        0
+                    </div>
+                    <div className="Buttons" style={styles.buttonsDiv} >
+                        <button style={styles.buttons} onClick={()=>adjustment(+1)}>Increment</button>
+                        <button style={styles.buttons} onClick={()=>adjustment(-1)}>Decrement</button>
+                    </div>
+                    </>
+                )
+            }
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(<App />)
+        </script>
+    </body>
+</html>
