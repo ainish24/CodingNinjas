@@ -1,0 +1,8 @@
+.selected{
+    background-color:#CCCCCC;
+    display: flex;
+    justify-content: space-between;
+}
+.SubMenuIcon{
+    font-size: 1.8em;
+}
