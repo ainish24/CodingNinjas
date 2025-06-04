@@ -8,7 +8,10 @@ import {
   CenterButton,
 } from "./Styled";
 const Wheel = ({ showMenu, setShowMenu, handleScroll }) => {
-  const wheelRef = useRef(null);
+  //implementing scroll by determining angle of the rotation
+
+  {
+    /* const wheelRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [prevAngle, setPrevAngle] = useState(null);
   useEffect(() => {
@@ -57,10 +60,57 @@ const Wheel = ({ showMenu, setShowMenu, handleScroll }) => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", stopDragging);
     };
-  }, [isDragging, prevAngle, handleScroll]);
+  }, [isDragging, prevAngle, handleScroll]); */
+  }
+
+  //implementing scroll by using the technique taught in class
+
+  let prevbtn = useRef("menu-btn"),
+    currbtn = useRef("menu-btn");
+  useEffect(() => {
+    const ipodbtns = document.getElementsByClassName("ipodBtns");
+    const allbtns = ["menu-btn", "prev-btn", "next-btn", "pp-btn"];
+
+    const handleHover = (e) => {
+      if (allbtns.includes(e.target.id)) {
+        currbtn.current = e.target.id;
+      }
+
+      if (
+        (prevbtn.current === "menu-btn" && currbtn.current === "next-btn") ||
+        (prevbtn.current === "next-btn" && currbtn.current === "pp-btn") ||
+        (prevbtn.current === "pp-btn" && currbtn.current === "prev-btn") ||
+        (prevbtn.current === "prev-btn" && currbtn.current === "menu-btn")
+      ) {
+        handleScroll("down");
+      }
+      if (
+        (prevbtn.current === "menu-btn" && currbtn.current === "prev-btn") ||
+        (prevbtn.current === "prev-btn" && currbtn.current === "pp-btn") ||
+        (prevbtn.current === "pp-btn" && currbtn.current === "next-btn") ||
+        (prevbtn.current === "next-btn" && currbtn.current === "menu-btn")
+      ) {
+        handleScroll("up");
+      }
+
+      prevbtn.current = currbtn.current;
+    };
+
+    for (let btn of ipodbtns) {
+      btn.addEventListener("mouseover", handleHover);
+    }
+
+    return () => {
+      for (let btn of ipodbtns) {
+        btn.removeEventListener("mouseover", handleHover);
+      }
+    };
+  }, []);
+
   return (
     <>
-      <WheelButton ref={wheelRef} onMouseDown={() => setIsDragging(true)}>
+      {/* <WheelButton ref={wheelRef} onMouseDown={() => setIsDragging(true)}> */}
+      <WheelButton>
         <MenuSpan
           onClick={() => setShowMenu(!showMenu)}
           className="ipodBtns"

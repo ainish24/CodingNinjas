@@ -1,7 +1,7 @@
 import Screen from "./Screen/Screen";
 import Wheel from "./Wheel/Wheel.jsx";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 const ContainerDiv = styled.div`
   display: flex;
@@ -34,17 +34,19 @@ const Ipod = () => {
   const [showMenu, setShowMenu] = useState(true);
   const [selectedOption, changeSelected] = useState("");
   const [highlightedOption, changeHighlighted] = useState("Cover Flow");
-
+  // const currentIndex = useMemo(() => Options.findIndex((opt) => opt.text === highlightedOption), [highlightedOption]);
   const handleScroll = (direction) => {
-    console.log(direction)
-    const currentIndex = Options.findIndex((opt) => opt.text == highlightedOption);
-    if (direction === "down" && currentIndex < Options.length - 1) {
-      changeHighlighted(Options[currentIndex + 1].text);
-    } else if (direction === "up" && currentIndex > 0) {
-      changeHighlighted(Options[currentIndex - 1].text);
-    }
+    changeHighlighted((prev) => {
+      const currentIndex = Options.findIndex((opt) => opt.text === prev);
+      if (direction === "down" && currentIndex < Options.length - 1) {
+        return Options[currentIndex + 1].text;
+      } else if (direction === "up" && currentIndex > 0) {
+        return Options[currentIndex - 1].text;
+      }
+      return prev;
+    });
   };
-  
+
   return (
     <ContainerDiv>
       <Screen
@@ -55,7 +57,11 @@ const Ipod = () => {
         highlightedOption={highlightedOption}
         changeHighlighted={changeHighlighted}
       />
-      <Wheel showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll}/>
+      <Wheel
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        handleScroll={handleScroll}
+      />
     </ContainerDiv>
   );
 };
