@@ -27,33 +27,34 @@ export const Menu = styled.div`
   height: 14em;
 `;
 
-export const StyledHeading= styled.h3`
+export const StyledHeading = styled.h3`
     margin-left:0.6em;
 `
 
-export const MenuList=styled.ul`
+export const MenuList = styled.ul`
     list-style-type:none;
     padding:1em 0em 0em 1em;
 `
-export const StyledLi=styled.li`
+export const StyledLi = styled.li`
     margin-bottom:0.3em;
     width:5.5em;
     padding-left:0.5em;
     padding-right:0.5em;
 `
-export const StyledIcon=styled(FontAwesomeIcon)`
+export const StyledIcon = styled(FontAwesomeIcon)`
     font-size:0.6em;
     margin-top:0.4em;
 `
 
-export const StyledSubMenu= styled.div`
+export const StyledSubMenu = styled.div`
   width: 16em;
   height: 14em;
   margin: 1.5em 2em;
-    box-sizing: border-box;
+  box-sizing: border-box;
   border: 7px solid black;
   border-radius: 15px;
   display:flex;
+  gap:0.5em;
   justify-content:center;
   align-items:center;
   position:absolute;

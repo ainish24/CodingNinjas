@@ -1,12 +1,26 @@
-# React + Vite
+iPod.js - React-Based iPod UI Clone
+Overview
+A React-based interactive iPod UI with smooth scrolling, modular architecture, and optimized state management.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Angle-based scroll functionality
+Modular code structure for maintainability
+State management using React hooks
+Quadrant-based scrolling for accuracy
+Styled Components for UI rendering
 
-Currently, two official plugins are available:
+Technologies Used :-
+React.js - Component-based UI
+Styled Components - Modular styling
+useRef & useEffect - Track UI elements & lifecycle
+Math.atan2() - Compute cursor angle for smooth scrolling
+FontAwesome - Icons for UI feedback
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How to Run :-
+1. Install dependencies
+npm install
 
-## Expanding the ESLint configuration
+2. Start the server
+npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+For the Innovation part, I have integrated 3 different types of scrolling techniques.

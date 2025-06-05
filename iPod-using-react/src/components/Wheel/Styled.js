@@ -9,26 +9,42 @@ export const WheelButton=styled.div`
     position:relative;
     cursor:pointer;
 `
-export const MenuSpan=styled.span`
+export const MenuSpan=styled.button`
+    cursor:pointer;
+    user-select:none;
+    background-color:black;
+    border:none;
     position:absolute;
     color:#E8E5DA;
     top:10%;
-    left:39%;
+    left:37%;
 `
-export const PlayPause=styled.span`
+export const PlayPause=styled.button`
+    cursor:pointer;
+    user-select:none;
+    background-color:black;
+    border:none;
     position:absolute;
     color:#E8E5DA;
     bottom:10%;
-    left:46%;
+    left:43%;
 `
-export const Previous=styled.span`
+export const Previous=styled.button`
+    cursor:pointer;
+    user-select:none;
+    background-color:black;
+    border:none;
     position:absolute;
     color:#E8E5DA;
     bottom:45%;
     left:10%;
     font-size:1.2em;
 `
-export const Next=styled.span`
+export const Next=styled.button`
+    cursor:pointer;
+    user-select:none;
+    background-color:black;
+    border:none;
     position:absolute;
     color:#E8E5DA;
     bottom:45%;
