@@ -11,6 +11,9 @@ function App() {
 
   useEffect(() => {
     fetchUsers();
+    updateUser("userId"); // Replace "userId" with the actual user ID you want to update
+    deleteUser("userId"); // Replace "userId" with the actual user ID you want to delete
+    // Note: You can call these functions based on your application's logic.
   }, []);
 
   // Fetch users from Firestore
