@@ -1,0 +1,23 @@
+#head{
+    display: inline-block;
+    position: relative;
+    margin: 10px 20px;
+}
+#spanTag{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+#buttonTag{
+    border: 1px solid black;
+    border-radius: 7%;
+    background:none;
+}
+.hidden{
+    display: none;
+}
+.card-image{
+    text-align: center;
+    width: 15em;
+    height: 15em;
+}

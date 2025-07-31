@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Test Project</title>
+</head>
+
+<body>
+    <h1 id="head">Test Project</h1>
+    <span id="spanTag"><button id="buttonTag" onclick="toggleForm()">Add/Edit</button></span>
+    <div class="container d-flex justify-content-around">
+        <% products.forEach((product)=>{ %>
+            <div class="card" style="width: 18rem;">
+                <img src=<%=product.img_url %> class="card-img-top card-image d-block mx-auto">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        <%= product.name %>
+                    </h5>
+                    <button class="btn btn-primary" onclick="editProduct('<%= JSON.stringify(product) %>')">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteProduct('<%= product.id %>')">Delete</button>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+
+    <div class="container mt-5">
+        <% if(errMsg){ %>
+            <div class="alert alert-danger" role="alert" id="errorDiv">
+                A simple danger alert—check it out!
+            </div>
+            <% } %>
+                <form id="aeForm" class="hidden">
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="productName" aria-describedby="emailHelp"
+                            name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgUrl" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="imgUrl" name="img_url">
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button type="button" class="btn btn-primary" onclick="submitForm('/', 'post')">Add</button>
+                        <button type="button" class="btn btn-primary" onclick="submitForm('/', 'patch')">Edit</button>
+                    </div>
+                </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>
