@@ -4,7 +4,8 @@ const detailController = async(req,res)=>{
     try {
         const {username}= req.body
         const foundUser=await User.findOne({email:username})
-        const userPosts = await Post.aggregate([{$match:{user:foundUser._id}} ,{$project:{_id:1, user:1}}])
+        // const userPosts = await Post.aggregate([{$match:{user:foundUser._id}} ,{$project:{_id:0,postId:"$_id", userId:"$user"}}])
+        const userPosts = await Post.aggregate([{$match:{user:foundUser._id}}])
         console.log(userPosts)
         let details =[]
         res.status(200).json({
